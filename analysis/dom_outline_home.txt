@@ -1,0 +1,148 @@
+<html .no-js>
+  <head>
+    <title>
+    <base>
+      <script>
+      <script>
+      <script>
+    <body>
+      <canvas id=canvas>
+      <div id=ui>
+        <header id=header>
+          <div id=header-container>
+            <div id=header-background>
+            <a id=header-logo>
+              <svg/>
+            <div id=header-center>
+              <button id=header-center-project-back-btn>
+                <svg/>
+                <p id=header-center-project-back-btn-text>
+                <svg/>
+                <div id=project-details-header-back-background>
+            <div id=header-right>
+              <button id=header-right-sound-btn>
+                <canvas>
+              <button id=header-right-talk-btn-placeholder>
+              <button id=header-right-talk-btn>
+                <a>
+                <div id=header-right-talk-container>
+                    <svg/>
+              <button id=header-right-menu-btn>
+                <div id=header-right-menu-btn-inner>
+            <div id=header-menu>
+              <div id=header-menu-links>
+                <a .header-menu-link data-page>
+                    <svg/>
+                <a .header-menu-link data-page>
+                    <svg/>
+                <a .header-menu-link data-page>
+                    <svg/>
+                <button .header-menu-link data-scroll-to>
+                    <svg/>
+              <div id=header-menu-newsletter>
+                <h3 id=header-menu-newsletter-title>
+                <div id=header-menu-newsletter-input>
+                      <svg/>
+              <button id=header-menu-talk>
+                <a>
+                <div id=header-menu-text>
+                <svg/>
+              <a id=header-menu-labs>
+                <div id=header-menu-labs-inner>
+                    <svg/>
+                  <svg/>
+                  <svg/>
+        <div id=page-container>
+          <div id=page-container-inner>
+            <div id=home .page>
+              <div id=home-hero .section>
+                <h1 id=home-hero-title>
+                <div id=home-hero-visual-container>
+                <div id=home-hero-scroll-container>
+              <div id=home-reel .section>
+                <h4 id=home-reel-title>
+                <div id=home-reel-content>
+                      <svg/>
+                <div id=home-reel-thumb-wrapper>
+                <div id=home-reel-container>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                              <svg/>
+                        <svg/>
+              <div id=home-featured .section>
+                <div id=home-featured-title-top>
+                <div .project-list>
+                <a id=home-featured-cta>
+                    <svg/>
+              <div id=home-goal .section>
+                <div id=home-goal-context>
+                <div id=home-goal-tunnel-title>
+                <div id=home-goal-image-in-outer>
+                <div id=home-goal-image-out-outer>
+          <div id=page-extra-sections>
+            <div id=end-section .section>
+              <div id=end-section-outer>
+                <div id=end-section-inner>
+            <div id=footer-section .section>
+              <div id=footer-bg>
+              <div id=footer-top>
+              <div id=footer-middle>
+                <div id=footer-middle-contact>
+                      <svg/>
+                      <svg/>
+                      <svg/>
+                <div id=footer-middle-newsletter>
+                        <svg/>
+              <div id=footer-bottom>
+                <div id=footer-bottom-copyright>
+                <a id=footer-bottom-labs>
+                <div id=footer-bottom-tagline>
+                <div id=footer-bottom-up>
+                  <svg/>
+                  <svg/>
+            <div id=scroll-nav-section .section data-path>
+              <div id=scroll-nav-content>
+                <div id=scroll-nav-subtitle>
+                <div id=scroll-nav-main>
+                      <svg/>
+                <div id=scroll-nav-cross-line>
+      <div id=scroll-indicator>
+        <div id=scroll-indicator-bar>
+      <div id=input-blocker>
+      <div id=video-overlay>
+        <div id=video-overlay__vimeo-video>
+        <div id=video-overlay__mobile-close-btn>
+          <svg/>
+        <div id=video-overlay__controls>
+          <button id=video-overlay__play-btn>
+          <div id=video-overlay__progress-container>
+            <div id=video-overlay__progress-active>
+            <div id=video-overlay__progress-bg>
+          <button id=video-overlay__mute-btn>
+        <div id=video-overlay-cursor>
+          <svg/>
+      <canvas id=transition-overlay>
+      <div id=preloader>
+        <div id=preloader-percent-digits>
+          <div .preloader-percent-digit>
+            <div .preloader-percent-digit-num>
+            <div .preloader-percent-digit-num>
+          <div .preloader-percent-digit>
+            <div .preloader-percent-digit-num>
+            <div .preloader-percent-digit-num>
+          <div .preloader-percent-digit>
+            <div .preloader-percent-digit-num>
+            <div .preloader-percent-digit-num>

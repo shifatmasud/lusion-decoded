@@ -1,0 +1,1357 @@
+
+## MathUtils  (byte 532188, 2818 bytes)
+fields: PI = Math.PI; PI2 = this.PI*2; HALF_PI = this.PI*.5; DEG2RAD = this.PI/180; RAD2DEG = 180/this.PI
+  - linearStep(e, t, r)  [53b]
+  - step(e, t)  [25b]
+  - clamp(e, t, r)  [34b]
+  - mod(e, t)  [36b]
+  - mix(e, t, r)  [28b]
+  - cMix(e, t, r)  [45b]
+  - unMix(e, t, r)  [31b]
+  - cUnMix(e, t, r)  [49b]
+  - saturate(e)  [37b]
+  - fit(e, t, r, n, a, l)  [67b]
+  - unClampedFit(e, t, r, n, a, l)  [75b]
+  - lerp(e, t, r)  [31b]
+  - loop(e, t, r)  [61b]
+  - normalize(e, t, r)  [56b]
+  - smoothstep(e, t, r)  [58b]
+  - fract(e)  [32b]
+  - hash(e)  [53b]
+  - hash2(e, t)  [70b]
+  - sign(e)  [28b]
+  - isPowerOfTwo(e)  [33b]
+  - powerTwoCeilingBase(e)  [65b]
+  - powerTwoCeiling(e)  [80b]
+  - powerTwoFloorBase(e)  [64b]
+  - powerTwoFloor(e)  [76b]
+  - latLngBearing(e, t, r, n)  [142b]
+  - distanceTo(e, t)  [42b]
+  - distanceSqrTo(e, t)  [34b]
+  - distanceTo3(e, t, r)  [49b]
+  - distanceSqrTo3(e, t, r)  [41b]
+  - latLngDistance(e, t, r, n)  [151b]
+  - cubicBezier(e, t, r, n, a)  [92b]
+  - cubicBezierFn(e, t, r, n)  [108b]
+  - normalizeAngle(e)  [91b]
+  - closestAngleTo(e, t)  [54b]
+  - randomRange(e, t)  [46b]
+  - randomRangeInt(e, t)  [63b]
+  - padZero(e, t)  [100b]
+  - lerpColor(e, t, r)  [140b]
+  - getSeedRandomFn(e)  [377b]
+
+## Browser  (byte 538991, 845 bytes)
+fields: isMobile = detectUA.isMobile||detectUA.isTablet; isDesktop = detectUA.isDesktop; device = this.isMobile?"mobile":"desktop"; isAndroid = !!detectUA.isAndroid; isIOS = !!detectUA.isiOS; isMacOS = !!detectUA.isMacOS; isWindows = detectUA.isWindows.version!==null; isLinux = userAgent.indexOf("linux")!=-1; ua = userAgent; isEdge = browserName==="Microsoft Edge"; isIE = browserName==="Internet Explorer"; isFirefox = browserName==="Firefox"; isChrome = browserName==="Chrome"; isOpera = browserName==="Opera"; isSafari = browserName==="Safari"; isSupportMSAA = !userAgent.match("version/15.4 "); isSupportOgg = !!audioElem.canPlayType("audio/ogg"); isRetina = window.devicePixelRatio&&window.devicePixelRatio>=; devicePixelRatio = window.devicePixelRatio||1; cpuCoreCount = navigator.hardwareConcurrency||1; baseUrl = document.location.origin; isIFrame = window.self!==window.top
+  - constructor()  [15b]
+
+## Settings  (byte 540082, 1322 bytes)
+fields: CDN_PATH = ""; TEAM_PATH = "/assets/team/"; PROJECT_PATH = "/assets/projects/"; MODEL_PATH = "/assets/models/"; IMAGE_PATH = "/assets/images/"; TEXTURE_PATH = "/assets/textures/"; AUDIO_PATH = "/assets/audios/"; SPRITE_PATH = "/assets/sprites/"; RENDER_TARGET_FLOAT_TYPE = null; DATA_FLOAT_TYPE = null; USE_FLOAT_PACKING = !1; USE_WEBGL2 = !0; DPR = Math.min(1.5,browser$1.devicePixelRatio)||1; USE_PIXEL_LIMIT = !0; MAX_PIXEL_COUNT = 2560*1440; MOBILE_WIDTH = 812; IS_SMALL_SCREEN = Math.min(window.screen.width,window.screen.height); JUMP_SECTION = ""; JUMP_OFFSET = 0; USE_HD = !1; SHOW_DETAILS = ""; CROSS_ORIGINS = {"https://lusion.dev/":"anonymous"}; IS_DEV = !1; LOG = !1; SKIP_ANIMATION = !1; WEBGL_OFF = !1; LOOK_DEV_MODE = !1; TEST_TUNNEL = !1; HOME_TEST = !1; OPEN_CONTACT = !1; TEST_BALLOONS = !1; BALLOON_COLOR = ""; USE_AUDIO = browser$1.isSupportOgg&&!browser$1.isMobile
+  - constructor()  [262b]
+  - override(e)  [251b]
+
+## Properties  (byte 558047, 3113 bytes)
+fields: win = window; isSecureConnection = window.location.protocol==="https:"; loader = quickLoader$1.create(); percent = 0; easedPercent = 0; domRoot = document.querySelector(":root"); _isSupportedDevice = !1; _isSupportedBrowser = !1; _isSupportedWebGL = !1; _isSupportedMobileOrientation = !1; _isSupported = !1; time = 0; deltaTime = 0; hasInitialized = !1; hasStarted = !1; startTime = 0; viewportWidth = 0; viewportHeight = 0; width = 0; height = 0; useMobileLayout = !1; renderer = null; scene = null; camera = null; cameraDirection = new Vector3(0,0,1); postprocessing = null; resolution = new Vector2; viewportResolution = new Vector2; bgColor = new Color; canvas = null; gl = null; webglDPR = 1; webglOpts = {antialias:!1,alpha:!1,xrCompatible:!1,powerPrefer; sharedUniforms = {u_aspect:{value:1},u_cameraDirection:{value:this.; initTaskList = []; changeCamera = new MinSignal$2; smaa = null; fxaa = null; aboutPageHeroEfxPrepass = null; cameraMotionBlur = null; aboutPageHeroEfx = null; gtao = null; bloom = null; screenPaintDistortion = null; final = null; offWhiteColorHex = computedStyle.getPropertyValue("--color-off-white"; blackColorHex = computedStyle.getPropertyValue("--color-black").tr; blueColorHex = computedStyle.getPropertyValue("--color-blue").tri; bgColorHex = computedStyle.getPropertyValue("--color-off-white"; opacity = 1; cameraLookX = 0; cameraLookY = 0; defaults = {defaultCameraPosition:new Vector3(0,0,5),defaultL; onFirstClicked = new MinSignal$2; isPreloaderFinished = !1; balloonsColorIndex = 0; globalRadius = 0; isContactFromProjectPage = !1
+  - constructor()  [15b]
+  - reset()  [94b]
+
+## SecondOrderDynamics  (byte 565489, 2375 bytes)
+fields: target0 = null; target = null; prevTarget = null; value = null; valueVel = null; k1; k2; k3; _f; _z; _r; _w; _z; _d; _targetVelCache; _cache1; _cache2; _k1Stable; _k2Stable; isVector = null; isRobust = null
+  - constructor(e, t=1.5, r=.8, n=2, a=!0)  [640b]
+  - update(e, t=0)  [15b]
+  - reset(e=null)  [15b]
+  - _resetVector(e=this.target0)  [119b]
+  - _resetNumber(e=this.target0)  [90b]
+  - setFZR(e=this._f, t=this._z, r=this._r)  [200b]
+  - _computeStableCoefficients(e)  [108b]
+  - _computeRobustStableCoefficients(e)  [302b]
+  - _updateVector(e, t=this.target)  [450b]
+  - _updateNumber(e, t=this.target)  [236b]
+
+## Input  (byte 567864, 6335 bytes)
+fields: onDowned = new MinSignal$2; onMoved = new MinSignal$2; onUped = new MinSignal$2; onClicked = new MinSignal$2; onWheeled = new MinSignal$2; onXScrolled = new MinSignal$2; onYScrolled = new MinSignal$2; wasDown = !1; isDown = !1; downTime = 0; hasClicked = !1; hasMoved = !1; hadMoved = !1; justClicked = !1; mouseXY = new Vector2; _prevMouseXY = new Vector2; prevMouseXY = new Vector2; mousePixelXY = new Vector2; _prevMousePixelXY = new Vector2; prevMousePixelXY = new Vector2; downXY = new Vector2; downPixelXY = new Vector2; deltaXY = new Vector2; deltaPixelXY = new Vector2; deltaDownXY = new Vector2; deltaDownPixelXY = new Vector2; deltaDownPixelDistance = 0; deltaWheel = 0; deltaDragScrollX = 0; deltaScrollX = 0; deltaDragScrollY = 0; deltaScrollY = 0; isDragScrollingX = !1; isDragScrollingY = !1; isWheelScrolling = !1; dragScrollXMomentum = 0; dragScrollYMomentum = 0; dragScrollMomentumMultiplier = 10; canDesktopDragScroll = !1; needsCheckDragScrollDirection = !1; lastScrollXDirection = 0; lastScrollYDirection = 0; easedMouseDynamics = {}; dragScrollDynamic; downThroughElems = []; currThroughElems = []; prevThroughElems = []; clickThroughElems = []
+  - preInit()  [682b]
+  - init()  [8b]
+  - resize()  [81b]
+  - update(e)  [122b]
+  - addEasedInput(e, t=1.5, r=.8, n=2)  [109b]
+  - postUpdate(e)  [486b]
+  - _onWheel(e)  [430b]
+  - _onDown(e)  [617b]
+  - _onMove(e)  [1327b]
+  - _onUp(e)  [768b]
+  - _getTouchBound(e, t, r)  [126b]
+  - _getInputXY(e, t)  [112b]
+  - _getInputPixelXY(e, t)  [49b]
+  - _setThroughElementsByEvent(e, t)  [101b]
+  - hasThroughElem(e, t)  [123b]
+  - hasThroughElemWithClass(e, t)  [156b]
+
+## ScrollDomRange  (byte 574221, 1249 bytes)
+  - constructor(e, t)  [345b]
+  - update(e, t, r, n)  [882b]
+
+## Tween  (byte 575487, 852 bytes)
+  - constructor(e, t)  [158b]
+  - static autoUpdate(e)  [103b]
+  - restart()  [36b]
+  - kill()  [28b]
+  - to(e, t, r=null)  [80b]
+  - fromTo(e, t, r, n)  [133b]
+  - update(e=0, t=!1)  [301b]
+
+## FboHelper  (byte 577072, 7267 bytes)
+fields: isWebGL2; renderer; quadGeom; triGeom; floatType; precisionPrefix; precisionPrefix2; vertexShader; _scene; _camera; _tri; copyMaterial; uvCopyMaterial; clearMaterial; _debugScene; _debugMesh; _debugMaterial
+  - init(e, t)  [2648b]
+  - copy(e, t)  [87b]
+  - uvCopy(e, t)  [91b]
+  - render(e, t)  [171b]
+  - renderGeometry(e, t, r)  [119b]
+  - renderMesh(e, t, r=this._camera)  [275b]
+  - debugTo(e, t, r, n, a)  [554b]
+  - parseDefines(e)  [115b]
+  - clearColor(e, t, r, n, a)  [133b]
+  - getColorState()  [428b]
+  - setColorState(e)  [267b]
+  - createRawShaderMaterial(e)  [594b]
+  - createDataTexture(e, t, r, n=!1, a=!0)  [240b]
+  - createRenderTarget(e, t, r=!1, n=!1, a=0)  [370b]
+  - createMultisampleRenderTarget(e, t, r=!1, n=!1, a=8)  [423b]
+  - clearMultisampleRenderTargetState(e)  [544b]
+
+## Task  (byte 584369, 1211 bytes)
+fields: _completeCount = 0; _completeTotal = 0
+  - constructor(e)  [109b]
+  - get isCompleted()  [66b]
+  - run()  [7b]
+  - createMultiCallbackFunc(e)  [154b]
+  - _onComplete()  [36b]
+  - createCallbackFunc(e)  [258b]
+  - createShaderMaterialFunc(e)  [171b]
+  - createCompileSceneFunc(e)  [266b]
+  - createInitTextureFunc(e)  [98b]
+
+## TaskManager  (byte 585580, 660 bytes)
+fields: percent = 1; taskList = []; _activeTaskList = []; _activeTaskIndex = 0; _needsStart = !1; onCompleted = new MinSignal$2
+  - start()  [43b]
+  - _start()  [119b]
+  - add(e)  [64b]
+  - update()  [312b]
+
+## Page  (byte 586274, 1248 bytes)
+fields: domContainer; route = null; time = 0; showDuration = 1; hideDuration = 1; showRatio = 0; hideRatio = 0; _showPageTween; _hidePageTween; isActive = !1; hasInitialized = !1; hasExtraPages = !0; hasEndVisual = !0; endVisualColor = properties.blueColorHex; endVisualUseTextured = !1; endSectionActiveThreshold = .9; useGenericTransition = !0; isFirstShown = !1; bypassShowingLoading = !1; preUfxContainer = new Object3D; postUfxContainer = new Object3D; onShowStarted = new MinSignal$2; onShowCompleted = new MinSignal$2; onHideStarted = new MinSignal$2; onHideCompleted = new MinSignal$2
+  - constructor()  [86b]
+  - get activeRatio()  [59b]
+  - hasProject(e)  [23b]
+  - get isScrollTarget()  [65b]
+  - preInit(e)  [12b]
+  - preInitContent(e)  [19b]
+  - init(e)  [85b]
+  - initContent(e)  [16b]
+  - show(e, t, r)  [163b]
+  - hide(e, t, r)  [167b]
+  - resize(e, t)  [13b]
+  - update(e)  [11b]
+
+## Ease  (byte 587533, 3253 bytes)
+  - quadIn(e)  [21b]
+  - quadOut(e)  [26b]
+  - quadOutIn(e)  [75b]
+  - quadInOut(e)  [53b]
+  - cubicIn(e)  [24b]
+  - cubicOut(e)  [28b]
+  - cubicOutIn(e)  [78b]
+  - cubicInOut(e)  [56b]
+  - quartIn(e)  [26b]
+  - quartOut(e)  [32b]
+  - quartOutIn(e)  [78b]
+  - quartInOut(e)  [61b]
+  - quintIn(e)  [28b]
+  - quintOut(e)  [32b]
+  - quintOutIn(e)  [78b]
+  - quintInOut(e)  [64b]
+  - sineIn(e)  [41b]
+  - sineOut(e)  [40b]
+  - sineOutIn(e)  [75b]
+  - sineInOut(e)  [47b]
+  - expoIn(e)  [44b]
+  - expoOut(e)  [46b]
+  - expoOutIn(e)  [75b]
+  - expoInOut(e)  [97b]
+  - circIn(e)  [36b]
+  - circOut(e)  [38b]
+  - circOutIn(e)  [75b]
+  - circInOut(e)  [82b]
+  - elasticIn(e)  [160b]
+  - elasticOut(e)  [156b]
+  - elasticOutIn(e)  [84b]
+  - elasticInOut(e)  [231b]
+  - backIn(e)  [47b]
+  - backOut(e)  [51b]
+  - backOutIn(e)  [75b]
+  - backInOut(e)  [91b]
+  - bounceIn(e)  [43b]
+  - bounceOut(e)  [150b]
+  - bounceOutIn(e)  [81b]
+  - bounceInOut(e)  [81b]
+  - lusion(e)  [49b]
+  - cubicBezier(e, t, r, n, a)  [486b]
+
+## Stage3D extends Scene  (byte 601164, 266 bytes)
+fields: wasActive = null; isActive = null
+  - constructor(e={})  [146b]
+  - preInit()  [11b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - syncProperties(e)  [19b]
+  - update(e)  [11b]
+
+## Blur  (byte 602967, 1015 bytes)
+fields: material = null
+  - getBlur9Material()  [431b]
+  - blur(e, t, r, n, a, l)  [558b]
+
+## ShaderHelper  (byte 604002, 476 bytes)
+  - glslifyStrip(e)  [59b]
+  - addChunk(e, t)  [50b]
+  - _wrapInclude(e)  [41b]
+  - insertBefore(e, t, r, n)  [102b]
+  - insertAfter(e, t, r, n)  [105b]
+  - replace(e, t, r, n)  [99b]
+
+## BlueNoise  (byte 604888, 924 bytes)
+fields: sharedUniforms = {u_blueNoiseTexture:{value:null},u_blueNoiseLinear; TEXTURE_SIZE = 128
+  - preInit()  [634b]
+  - update(e)  [92b]
+
+## ScreenPaint  (byte 612138, 4150 bytes)
+fields: _lowRenderTarget; _lowBlurRenderTarget; _prevPaintRenderTarget; _currPaintRenderTarget; _material; _material2; _distortionMaterial; _fromDrawData; _toDrawData; drawEnabled = !0; needsMouseDown = !1; enabled = !0; minRadius = 0; maxRadius = 100; radiusDistanceRange = 100; pushStrength = 25; accelerationDissipation = .8; velocityDissipation = .985; weight1Dissipation = .985; weight2Dissipation = .5; useNoise = !1; curlScale = .1; curlStrength = 5; _prevUseNoise = null; sharedUniforms = {u_paintTexelSize:{value:new Vector2},u_paintTextu; clear = ()=>{fboHelper.clearColor(.5,.5,0,0,this._lowRende
+  - init()  [856b]
+  - resize(e, t)  [406b]
+  - update(e)  [2034b]
+
+## HomeBalloonsBackground  (byte 616322, 1569 bytes)
+fields: container = new Object3D; mesh = null; activeRatio = 0; clipOffset = new Vector2; clipScale = new Vector2(1,1)
+  - constructor()  [15b]
+  - preInit()  [11b]
+  - init()  [1004b]
+  - resize(e, t)  [13b]
+  - update(e)  [399b]
+
+## HomeBalloonsBody  (byte 618021, 1621 bytes)
+fields: position0 = new Vector3; velocity0 = new Vector3; position = new Vector3; velocity = new Vector3; gravityVel = new Vector3; gravityAcc = new Vector3; gravityForce = new Vector3; angularVelocity = new Vector3; torque = new Vector3; quaternion = new Quaternion; radius = 1; mass = 1; volume = 1; density = 1; friction = 1; frictionTot = 0; restitution = 1; inertia = 0
+  - constructor(e=1, t=1, r=.5, n=.5, a=!1)  [476b]
+  - reset()  [78b]
+  - applyImpulse()  [339b]
+  - updateGravity(e)  [288b]
+  - update(e)  [102b]
+
+## HomeBalloonsPhysics  (byte 619867, 2557 bytes)
+fields: MOUSE_RADIUS = .025; MOUSE_INFLUENCE = .1; MOUSE_PUSH_FORCE = .12; bodies = []; isActive = !0
+  - initWorld()  [216b]
+  - reset()  [68b]
+  - update(e)  [2166b]
+
+## HomeBalloons extends Stage3D  (byte 622532, 10193 bytes)
+fields: NUM_BALLOONS = 0; NEIGHBOUR_COUNT = -1; container = new Object3D; balloonList = []; prePassMeshList = []; _sortedBalloonList; instancedPositionRadiusAttribute; instancedPositionRadiusArray; instancedNearPositionRadiusAttributes = []; instancedNearPositionRadiusArrays = []; ratio = 0; cacheRT = null; cacheRTBlur0 = null; cacheRTBlur1 = null; cacheRTBlur2 = null; cacheRTBlur3 = null; sharedUniforms = {u_blurredTextures:{value:[]},u_blurredTextureSize; isReady = !1; lockedIndex = -1; changeHomeHeroColorSignal = new MinSignal$2
+  - constructor()  [1217b]
+  - preInit()  [603b]
+  - init()  [2851b]
+  - onBeforeRenderFront()  [886b]
+  - onBeforeRenderBack()  [174b]
+  - resize(e, t)  [257b]
+  - _sortDist2(e, t)  [47b]
+  - _sortMeshDist2(e, t)  [63b]
+  - syncProperties(e)  [197b]
+  - updateColor()  [312b]
+  - updateUniforms()  [551b]
+  - updateSorting()  [963b]
+  - updateRenderOrder()  [431b]
+  - updateTransformations()  [422b]
+  - update(e)  [626b]
+
+## Visuals  (byte 632761, 647 bytes)
+fields: defaultStage3D = new Stage3D; currentStage3D = null; stage3DList = []
+  - preInit()  [11b]
+  - init()  [8b]
+  - start()  [9b]
+  - resize(e, t)  [13b]
+  - deactivateAll()  [100b]
+  - syncProperties(e)  [265b]
+  - update(e)  [164b]
+
+## AudioGroup  (byte 649637, 374 bytes)
+fields: id = ""; children = []; volume = 1
+  - init(e)  [30b]
+  - update(e)  [73b]
+  - add(e)  [56b]
+  - remove(e)  [86b]
+  - play()  [42b]
+  - stop()  [42b]
+
+## AudioItem  (byte 650050, 3871 bytes)
+fields: autoplay = !1; elem = null; id = ""; url = ""; fileSize = 100; isMutable = !1; isPositional = !1; isLoopable = !1; isPreload = !0; onInitialized = new MinSignal$2; onEnded = new MinSignal$2; onPlayed = new MinSignal$2; volume = 1; audioObject = null; hasInitialized = !1; container = null; refDistance = 1; _buffer = null; _originalOnEnd = null; needsFilter = !1; fadeTime = 0; fadeDuration = 1; isFadingIn = !1; isFadingOut = !1; isSfx = !1
+  - preInit(e)  [82b]
+  - init(e)  [1049b]
+  - load(e)  [270b]
+  - setFinalVolume(e)  [61b]
+  - activateFilter()  [175b]
+  - deactivateFilter()  [172b]
+  - setFilterFrequency(e=MAX_FREQ)  [131b]
+  - setFilterFrequencyViaRatio(e=1)  [109b]
+  - setPositionObjectParent(e)  [175b]
+  - decodeAudioData()  [155b]
+  - onEnd()  [79b]
+  - play()  [225b]
+  - stop()  [184b]
+  - setRefDistance(e)  [124b]
+  - setFadeIn(e=1)  [102b]
+  - setFadeOut(e=1)  [91b]
+  - update(e)  [302b]
+
+## GlobalAudios  (byte 653921, 1647 bytes)
+fields: hasInit = !1
+  - constructor()  [15b]
+  - init()  [1591b]
+  - update()  [10b]
+
+## Audios  (byte 655639, 2358 bytes)
+fields: groups = {}; items = {}; isActive = !0; volume = 0; listener = null; _boundOnBodyClick = null; _onBodyClicked = new MinSignal$2; _onRolloverCount = -1; _onClickCount = -1; _onFocusCount = -1; prevBgMusicId = null; currBgMusicId = null; wasActive = !1; _counts = {}; _maxes = {}
+  - preInit()  [598b]
+  - _parseCountText(e)  [112b]
+  - init()  [110b]
+  - on()  [22b]
+  - off()  [23b]
+  - toggle()  [38b]
+  - pause()  [37b]
+  - resume()  [10b]
+  - getListener(e)  [87b]
+  - _onBodyClick()  [188b]
+  - addHoverClickEvents(e)  [81b]
+  - addHoverEvent(e, t="hover")  [96b]
+  - addClickEvent(e, t="click")  [111b]
+  - countPlay(e)  [126b]
+  - fadeBgMusic(e, t=1, r=void0)  [234b]
+  - update(e)  [237b]
+
+## HomeHeroSection  (byte 658021, 3948 bytes)
+fields: domContainer; domHomeTitle; sectionDomRange
+  - preInit(e)  [1127b]
+  - init()  [187b]
+  - initEvent()  [80b]
+  - resize(e, t)  [498b]
+  - _updateUi(e)  [793b]
+  - _onWheel()  [44b]
+  - update(e)  [934b]
+  - hide()  [21b]
+  - _reset()  [199b]
+
+## UfxMesh extends Mesh  (byte 663586, 2647 bytes)
+fields: pivot = new Vector2; paddingL = 0; paddingR = 0; paddingT = 0; paddingB = 0; refDom; requireBg; tick = 0; _domX = 0; _domY = 0; _domWidth = 0; _domHeight = 0; _capturedOffsetX = 0; _capturedOffsetY = 0
+  - constructor(e={})  [466b]
+  - _onBeforeRender()  [250b]
+  - _initMaterial(e)  [800b]
+  - syncDom(e=0, t=0)  [185b]
+  - syncRect(e, t, r, n, a=0, l=0)  [230b]
+  - testViewport(e=0, t=0)  [212b]
+  - update(e=0, t=0)  [311b]
+
+## Line  (byte 673255, 3720 bytes)
+fields: container = new Object3D; innerContainer = new Object3D; geometry = new BufferGeometry; mesh = null; lineId = 0; aoThreshold = .47; radius = .008; lineData = null
+  - constructor(e=0)  [74b]
+  - preInit()  [160b]
+  - init()  [1341b]
+  - resize(e, t)  [97b]
+  - update(e, t, r=0)  [1896b]
+
+## TimingSrcConnector extends EventTarget  (byte 693102, 2427 bytes, third-party)
+fields: logger; speedAdjustment = 0; adjustSpeed = async(e,t)=>{if(this.speedAdjustment===t)return;co
+  - constructor(e, t)  [184b]
+  - disconnect()  [57b]
+  - init(e, t, r)  [470b]
+  - updateTimingObject(e, t)  [155b]
+  - updatePlayer(e, t, r)  [482b]
+  - maintainPlaybackPosition(e, t, r)  [615b]
+  - log(e)  [49b]
+  - waitForTOReadyState(e, t)  [140b]
+
+## Player  (byte 695596, 8597 bytes, third-party)
+  - constructor(e)  [1990b]
+  - static isVimeoUrl(e)  [42b]
+  - callMethod(e)  [326b]
+  - get(e)  [158b]
+  - set(e, t)  [233b]
+  - on(e, t)  [341b]
+  - off(e, t)  [241b]
+  - loadVideo(e)  [51b]
+  - ready()  [135b]
+  - addCuePoint(e)  [133b]
+  - removeCuePoint(e)  [61b]
+  - enableTextTrack(e)  [272b]
+  - disableTextTrack()  [62b]
+  - selectAudioTrack(e, t)  [140b]
+  - selectDefaultAudioTrack()  [76b]
+  - pause()  [40b]
+  - play()  [38b]
+  - requestFullscreen()  [118b]
+  - exitFullscreen()  [97b]
+  - getFullscreen()  [108b]
+  - requestPictureInPicture()  [76b]
+  - exitPictureInPicture()  [70b]
+  - getPictureInPicture()  [58b]
+  - remotePlaybackPrompt()  [70b]
+  - unload()  [42b]
+  - destroy()  [1026b]
+  - getAutopause()  [44b]
+  - setAutopause(e)  [47b]
+  - getBuffered()  [42b]
+  - getCameraProps()  [48b]
+  - setCameraProps(e)  [51b]
+  - getChapters()  [42b]
+  - getCurrentChapter()  [54b]
+  - getColor()  [36b]
+  - getColors()  [121b]
+  - setColor(e)  [39b]
+  - setColors(e)  [301b]
+  - getCuePoints()  [44b]
+  - getCurrentTime()  [48b]
+  - setCurrentTime(e)  [51b]
+  - getDuration()  [42b]
+  - getEnded()  [36b]
+  - getLoop()  [34b]
+  - setLoop(e)  [37b]
+  - setMuted(e)  [39b]
+  - getMuted()  [36b]
+  - getPaused()  [38b]
+  - getPlaybackRate()  [50b]
+  - setPlaybackRate(e)  [53b]
+  - getPlayed()  [38b]
+  - getQualities()  [44b]
+  - getQuality()  [40b]
+  - setQuality(e)  [43b]
+  - getRemotePlaybackAvailability()  [78b]
+  - getRemotePlaybackState()  [64b]
+  - getSeekable()  [42b]
+  - getSeeking()  [40b]
+  - getTextTracks()  [46b]
+  - getAudioTracks()  [48b]
+  - getEnabledAudioTrack()  [60b]
+  - getDefaultAudioTrack()  [60b]
+  - getVideoEmbedCode()  [54b]
+  - getVideoId()  [40b]
+  - getVideoTitle()  [46b]
+  - getVideoWidth()  [46b]
+  - getVideoHeight()  [48b]
+  - getVideoUrl()  [42b]
+  - getVolume()  [38b]
+  - setVolume(e)  [41b]
+  - setTimingSrc(e, t)  [288b]
+
+## VideoOverlay  (byte 704389, 7257 bytes)
+fields: domVideoContainer; domVideoCursor; domVideoCursorSvg; isOpened = !1; openedRatio = 0; domVideoCursorDirection = -1; domVideoCursorActive = !1; domVideoCursorActiveRatio = 0; domVideoCursorRotateRatio = 0; domVideoCursorExtraRotationMotion = new SecondOrderDynamics(0,1,.8,1.2); hoverScaleFactor = 1; isVideoMuted = !1; isControlsHover = !1; isVideoPlaying = !1; isVideoReady = !1; videoPercentageWatched = 0; videoDuration = 0; videoWidth = 1920; videoHeight = 1080; hasInitalited = !1; isProjectPage = !1
+  - preInit()  [2927b]
+  - initAndPlayVideo(e=VIDEO_LIST.MAIN_VIDEO_REEL, t=!1)  [387b]
+  - init()  [90b]
+  - resize()  [1376b]
+  - update(e)  [1693b]
+  - open()  [119b]
+  - close()  [195b]
+
+## HomeReelSection  (byte 711682, 18004 bytes)
+fields: domContainer; domTitle; domTitleLine1; domDesc; domTopContainer; domBottomContainer; domTopPlayButton; domReelContainer; domVideoPlaceholder; videoPlaceholderHeight = 0; ufxMesh; ufxShowRatio = 0; ufxMeshRadialCenter = new Vector2(.5,.5); isUfxMeshHover = !1; ROLLUP_ANIMATION_INTERVAL = 2; currRollupTime = 0; prevRollupTime = 0; hoverRatio = 0; geometry = null; _needsReset = !0; isVerticalVideo = !1; showVideoPlaceholderButton = !1
+  - preInit(e)  [4668b]
+  - init()  [281b]
+  - _onPageHideStarted()  [118b]
+  - resize(e, t)  [1378b]
+  - update(e)  [2054b]
+  - _updateUI(e, t, r)  [6470b]
+  - _onDomVideoButtonClick()  [83b]
+  - _onDomVideoButtonMouseenter()  [193b]
+  - _onDomVideoButtonMouseleave()  [199b]
+  - _onVideoMeshMouseEnter()  [48b]
+  - _onVideoMeshMouseLeave()  [48b]
+  - _splitText()  [764b]
+  - _reset()  [1286b]
+
+## DomHelper  (byte 729770, 730 bytes)
+  - clone(e)  [96b]
+  - _collapseWhiteSpace(e)  [59b]
+  - getLinesFromText(e)  [156b]
+  - getLinesFromTextNode(e)  [402b]
+
+## ProjectItem  (byte 734096, 6624 bytes)
+fields: static hoverDom = null
+  - constructor(e, t, r, n)  [2378b]
+  - _onMouseEnter()  [105b]
+  - _onMouseLeave()  [32b]
+  - syncDom()  [59b]
+  - _findIndexFromThresholds(e)  [147b]
+  - update(e)  [3847b]
+  - preloadImage()  [16b]
+
+## ProjectItemList  (byte 740720, 2708 bytes)
+fields: selectedId = null; page = null; zoomRatio = 0; projectItems = {}; projectItemList = []; ufxContainer = new Object3D; ufxPivotContainer = new Object3D; resize = (e,t)=>{this.needsSyncUfx=!0,this.ufxPivotContaine
+  - constructor(e, t)  [966b]
+  - hasProject(e)  [43b]
+  - getProjectItemTop(e)  [97b]
+  - _onDomItemMouseEnter(e)  [121b]
+  - _onDomItemMouseLeave(e)  [124b]
+  - update(e)  [953b]
+
+## HomeFeaturedSection  (byte 743428, 3219 bytes)
+fields: domContainer; domTitle; domDisclaimer; domCta; projectItemList; time = 0; _needsReset = !0
+  - preInit(e)  [521b]
+  - init()  [8b]
+  - resize(e, t)  [63b]
+  - update(e)  [1591b]
+  - _reset()  [423b]
+  - _splitText()  [505b]
+
+## TextureHelper  (byte 747074, 1621 bytes)
+fields: blackTexture; whiteTexture; transparentTexture; channelMixerMaterial
+  - init()  [185b]
+  - _createPixelTexture(e)  [87b]
+  - mixChannels(e, t, r=-1, n=-1, a=-1, l=-1)  [1262b]
+
+## Simple1DNoise  (byte 748733, 668 bytes)
+fields: static MAX_VERTICES = 512; static MAX_VERTICES_MASK = Simple1DNoise.MAX_VERTICES-1; _scale = 1; _amplitude = 1; _r = []
+  - constructor(e)  [125b]
+  - getVal(e)  [199b]
+  - getFbm(e, t)  [85b]
+  - get amplitude()  [39b]
+  - set amplitude(e)  [35b]
+  - get scale()  [31b]
+  - set scale(e)  [27b]
+
+## BrownianMotion  (byte 749424, 2044 bytes)
+fields: _position = new Vector3; _rotation = new Quaternion; _euler = new Euler; _scale = new Vector3(1,1,1); _matrix = new Matrix4; _enablePositionNoise = !0; _enableRotationNoise = !0; _positionFrequency = .25; _rotationFrequency = .25; _positionAmplitude = .3; _rotationAmplitude = .003; _positionScale = new Vector3(1,1,1); _rotationScale = new Vector3(1,1,0); _positionFractalLevel = 3; _rotationFractalLevel = 3; _times = new Float32Array(6); _noise = new Simple1DNoise; static FBM_NORM = 1/.75
+  - constructor()  [28b]
+  - rehash()  [63b]
+  - update(e)  [1005b]
+  - get positionAmplitude()  [55b]
+  - set positionAmplitude(e)  [51b]
+  - get positionFrequency()  [55b]
+  - set positionFrequency(e)  [51b]
+  - get rotationAmplitude()  [55b]
+  - set rotationAmplitude(e)  [51b]
+  - get rotationFrequency()  [55b]
+  - set rotationFrequency(e)  [51b]
+  - get matrix()  [33b]
+  - set matrix(e)  [29b]
+
+## PostEffect  (byte 757190, 413 bytes)
+fields: sharedUniforms = {}; enabled = !0; material = null; renderOrder = 0; _hasShownWarning = !1
+  - init(e)  [30b]
+  - needsRender()  [23b]
+  - warn(e)  [74b]
+  - setPostprocessing(e)  [22b]
+  - render(e, t=!1)  [169b]
+
+## GoalTunnelEfx extends PostEffect  (byte 758493, 2323 bytes)
+fields: needsSync = !0; amount = 1; _position = null; _quaternion = null; _scale = null; _q = null; projectionMatrix = null; prevProjectionMatrix = null; projectionViewMatrix = null; prevProjectionViewMatrix = null; projectionViewInverseMatrix = null; offsetPostion = null; offsetRotation = null; offsetScale = null; isActive = !1
+  - init(e)  [893b]
+  - needsRender(e)  [77b]
+  - syncCamera(e)  [333b]
+  - render(e, t=!1)  [701b]
+
+## GoalBlackTunnel  (byte 760986, 5378 bytes)
+fields: container = new Object3D; GRID_SIZE = 20; textures = {}; feedbackRenderTarget = null; _structureGeometries = {}; _baseGeometries = {}; sharedUniforms = {u_blackTunnelTransformRatio:{value:0},u_showRatio; textureTypeList = ["arm","base","nor"]; timeBasedPulseTime = 0; timeBasedLinearTime = 0
+  - preInit()  [867b]
+  - _onGeometryLoad(e, t, r)  [1001b]
+  - _onAfterRender()  [252b]
+  - _onGreebleTextureLoad(e, t)  [586b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - update(e)  [2126b]
+
+## OrbitControls extends EventDispatcher  (byte 766485, 10853 bytes, third-party)
+  - constructor(e, t)  [10808b]
+
+## DeviceOrientationControls  (byte 777338, 2143 bytes, third-party)
+fields: object = null; enabled = !0; hasValue = !1; deviceOrientation = {}; screenOrientation = 0; alphaOffset = 0; zee = new Vector3(0,0,1); euler = new Euler; q0 = new Quaternion; q1 = new Quaternion(-Math.sqrt(.5),0,0,Math.sqrt(.5)); _onBoundDeviceOrientationChangeEvent; _onBoundScreenOrientationChangeEvent
+  - constructor(e)  [260b]
+  - _onDeviceOrientationChangeEvent(e)  [60b]
+  - _onScreenOrientationChangeEvent()  [79b]
+  - setObjectQuaternion(e, t, r, n, a)  [157b]
+  - connect()  [637b]
+  - disconnect()  [215b]
+  - update()  [401b]
+  - dispose()  [28b]
+
+## CameraControls  (byte 779481, 4816 bytes)
+fields: useOrbitControls = !1
+  - preInit(e)  [1274b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - update(e)  [3479b]
+
+## GoalTunnelAstronauts  (byte 797812, 19352 bytes)
+fields: container = new Object3D; materials = {}; meshes = {}; cloneMeshes = {}; CLONES_COUNT = 4; TOTAL_COUNT = 5; transformObjectList = []; partIdList = ["helmet","helmet_glass","glove_shoes","wearpack",; textureTypeList = ["arm","base","nor"]; textures = {}; textureUniforms = {}; extraCameraViewportOffsetX = 0; extraCameraViewportOffsetY = 0; instancePosAttribute; instanceOrientAttribute; instanceAnimationFrameFromToBlend1Attribute; instanceAnimationFrameFromToBlend2Attribute; instanceClonePosAttribute; instanceCloneOrientAttribute; instanceCloneAnimationFrameFromToBlend1Attribute; instanceCloneAnimationFrameFromToBlend2Attribute; _cameraNeedsSync = !1; sharedUniforms = {u_time:properties.sharedUniforms.u_time,u_animati; whiteTunnelUniforms = {u_matcapTexture:{value:null},u_frameOutRatio:{val; blackTunnelUniforms = {u_matcapTexture:{value:null},u_frameIn:{value:0},; cloneUniforms = {u_alpha:{value:0}}; BONE_COUNT = 53; frameCount = -1; showRatio = 1; clonesShowRatio = 0; cardNoise = new Simple1DNoise; renderTarget = null; interRenderTarget = null; textureSize = null; isCardActive = !1; cardTextureSize = new Vector2(5,23); cardTime = 0
+  - preInit()  [4338b]
+  - _initLedTexture()  [332b]
+  - initGui()  [33b]
+  - _onTextureLoad(e, t, r)  [511b]
+  - _onGeometryLoad(e, t, r)  [2499b]
+  - _onBeforeRender(e, t, r)  [984b]
+  - _onAfterRender(e, t, r)  [202b]
+  - _onAnimationLoad(e)  [796b]
+  - init()  [116b]
+  - resize(e, t)  [207b]
+  - updateTransforms(e)  [2975b]
+  - updateAnimation(e)  [2341b]
+  - updateCard(e)  [363b]
+  - update(e)  [1688b]
+
+## GoalWhiteTunnel  (byte 821258, 2244 bytes)
+fields: container = new Object3D; baseMesh; wallMesh; BLOCK_COUNT = 16; TEXTURE_SIZE = 1024; prevRatio = 0; pt0 = new Vector3; pt1 = new Vector3; pt2 = new Vector3; sharedUniforms = {u_texture:{value:null},u_ratioInverse:{value:0},u
+  - preInit()  [600b]
+  - _onTunnelBlockLoad(e, t)  [795b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - update(e)  [587b]
+
+## Ufx extends PostEffect  (byte 825532, 929 bytes)
+fields: scene = new Scene; camera = new PerspectiveCamera(60,1); frameIdx = -1; sectionLayer = new Object3D; projectDetailsLayer = new Object3D; sharedUniforms = {u_fromTexture:{value:null}}
+  - init()  [8b]
+  - setPostprocessing(e)  [231b]
+  - render(e, t=!1)  [494b]
+
+## PreUfx extends Ufx  (byte 826461, 40 bytes)
+fields: renderOrder = 50
+
+## GoalTunnelGlass  (byte 826654, 3331 bytes)
+fields: PIECE_COUNT = 946; domFrameHeight = 1; domFrameRotation = 0; domFrameScale = 1; fragmentScale = 1; container; mesh; _geometry; ratio = 0; frameCount = 0; sharedUniforms = {u_positionTexture:{value:null},u_orientTexture:{v
+  - preInit()  [262b]
+  - _onModelLoad(e)  [837b]
+  - _onBeforeRender(e, t, r)  [301b]
+  - _onAfterRender(e, t, r)  [196b]
+  - _onAnimationLoad(e)  [509b]
+  - init()  [34b]
+  - resize(e, t)  [13b]
+  - update(e)  [819b]
+
+## NewletterForm  (byte 837278, 1285 bytes)
+fields: isSendingTheNewletterRequest = !1; domNewsletterForm; domNewsletterMessage
+  - constructor(e, t, r)  [179b]
+  - _onFormSubmit(e)  [1014b]
+
+## FooterSection  (byte 838563, 6697 bytes)
+fields: domContainer; offsetY = 0; _needsReset = !0
+  - preInit()  [2356b]
+  - init()  [217b]
+  - resize(e, t)  [273b]
+  - getDomRange()  [66b]
+  - update(e)  [2338b]
+  - _splitText()  [698b]
+  - _createWrapper(e, t)  [371b]
+  - _reset()  [269b]
+  - _onDomUpBtnClick()  [50b]
+
+## GoalSectionRanges  (byte 845298, 3549 bytes)
+fields: items = {}; itemList = [{id:"blackFrameShow",isPixelBased:!0},{id:"blackF; offsetY = 0; prevRatio = null; ratio = null; wasActive = null; isActive = null; _cachedRanges = {}; totalPixelCount = 0; totalTunnelWeight = 0; baseY = 0; domContainer; domImgIn; domImgOut; tick = 0; SHOW_DEBUG = !1; _debugTimeline; _debugTimelineItems = []; _debugTimelineIndicator
+  - init(e)  [1252b]
+  - resize(e, t)  [984b]
+  - update(e)  [361b]
+  - getRange(e, t=e)  [375b]
+
+## GoalTunnelsBackground  (byte 850102, 1072 bytes)
+fields: container = new Object3D; mesh = null
+  - constructor()  [15b]
+  - preInit()  [244b]
+  - init()  [349b]
+  - resize(e, t)  [13b]
+  - update(e)  [389b]
+
+## GoalWhiteTunnelParticles  (byte 854893, 2676 bytes)
+fields: PARTICLE_COUNT = 64; container = new Object3D; mesh = null; material = null; geometry = null; activeRatio = 0
+  - constructor()  [15b]
+  - preInit()  [98b]
+  - init()  [2169b]
+  - resize(e, t)  [13b]
+  - update(e)  [256b]
+
+## GoalWhiteTunnelStickers  (byte 859986, 2136 bytes)
+fields: COUNT = 26; container = new Object3D; mesh = null; material = null; geometry = null; textureSize = new Vector2(1465,1024); sharedUniforms = {u_texture:{value:null},u_textureSize:{value:this.
+  - preInit()  [182b]
+  - init()  [1446b]
+  - resize(e, t)  [13b]
+  - update(e)  [256b]
+
+## GoalTunnels extends Stage3D  (byte 862180, 6317 bytes)
+fields: THRESHOLD = [0,.3,.8,1]; blackTitleRatio = 0; blackTunnelRatio = 0; whiteTunnelRatio = 0; frameHeight = 1; EndCameraDepthToFrame = 2; isBlackTitleActive = !1; isBlackTunnelActive = !1; isWhiteTunnelActive = !1; expectedFov = 45; freezeRatio = 0; tunnelDeltaTime = 1; tunnelTime = 1; sharedUniforms = {u_whiteTunnelRatio:{value:0},u_tunnelTime:{value:
+  - constructor()  [230b]
+  - preInit()  [552b]
+  - init()  [245b]
+  - resize(e, t)  [208b]
+  - updateRatios()  [2365b]
+  - syncProperties(e)  [1693b]
+  - resetAstronautLayer()  [63b]
+  - update(e)  [613b]
+
+## HomeGoalSectionTunnelTitle  (byte 870995, 2066 bytes)
+fields: domContainer; domLines; domLineWords = []; totalLineHeight = 0; RATIO_FROM = .25; RATIO_TO = 1
+  - init(e)  [366b]
+  - resize(e, t)  [616b]
+  - _resetWords()  [210b]
+  - update(e)  [758b]
+
+## GoalSection  (byte 873225, 9951 bytes)
+fields: domContainer; domContext; domContextInner; domImgIn; domImgInInner; domImgOut; domImgOutInner; frameBgMesh; _placeholderTexture1; _placeholderTexture2; offsetY = 0; radiusRatio = 0; uiBgColorNeedsOverride = !1; isUIBgBlack = !1; _needsReset = !0; sectionPaddingTop = 0; line = null
+  - preInit(e)  [1619b]
+  - init()  [409b]
+  - show()  [8b]
+  - hide()  [8b]
+  - resize(e, t)  [343b]
+  - update(e)  [6629b]
+  - _splitText()  [419b]
+  - _reset()  [245b]
+
+## ProjectDetailsScreen  (byte 889868, 6837 bytes)
+fields: screenRT; screenCamera; screenScene = new Scene; screenMesh; shadowContainer = new Object3D; shadowCamera; shadowRt; shadowBlurRt1; shadowBlurRt2; shadowBlurRt3; shadowFinalRt; plantGeo; plantMaterial; plantMesh0; plantMesh1; plantMesh2; velocity = new Vector2; mouse = new Vector2; angleForce = 0; angleForceEased = 0; shadow = 1; previewBgThreshold = 1; previewColorRatio = 0; previewBgColorDefaultColorHex = "#F3F4F9"; previewBgColorHex = "#000"; sharedUniforms = {u_shadowTexture:{value:null},u_shadowViewMatrixCa
+  - preInit(e)  [1184b]
+  - init()  [1537b]
+  - _onPlantMeshRender(e)  [110b]
+  - resize()  [549b]
+  - update(e)  [2797b]
+
+## Route  (byte 896757, 520 bytes)
+  - constructor(e)  [193b]
+  - setTitleDom(e, t, r, n)  [87b]
+  - setTarget(e)  [227b]
+
+## RouteManager  (byte 897392, 2614 bytes)
+fields: routes = {}; matchList = []; currPath = null; _pendingPath = null; queryStr; onRouteChanged = new MinSignal$2
+  - get currRoute()  [50b]
+  - init()  [126b]
+  - addPath(e, t)  [96b]
+  - _createRoute(e)  [87b]
+  - _fetchHtml(e)  [161b]
+  - _initDom(e, t)  [477b]
+  - _attachEvents(e)  [480b]
+  - _onRegularLinkClick(e, t)  [172b]
+  - _onInternalLinkClick(e, t)  [117b]
+  - _onDomReady(e)  [99b]
+  - parseUrl(e=loc.href)  [133b]
+  - parsePath(e)  [49b]
+  - setUrl(e=loc.href)  [58b]
+  - setPath(e)  [146b]
+  - preFetch(e)  [51b]
+  - _onStatePop(e)  [197b]
+
+## Header  (byte 900078, 7865 bytes)
+fields: sectionId = ["home","about","project","who","end"]; isActive = !1; ratio = 0; soundBtnTime = 0; soundBtnSize = 0; soundBtnHoverRatio = 0; soundBtnHoverAngle = 0; isSoundBtnHover = !1; forceWhite = !1; menu = {opened:!1,ratio:0}; headerColor = "transparent"; headerTextColor = "#000"
+  - preInit()  [2260b]
+  - init()  [974b]
+  - show()  [24b]
+  - hideTalkBtn()  [15b]
+  - changeSection(e)  [43b]
+  - _onDomRightSoundBtn()  [38b]
+  - _onRouteChanged()  [39b]
+  - _domRightMenuBtnClick()  [60b]
+  - _onDomMenuLinkContact()  [268b]
+  - _enableMenu(e)  [456b]
+  - _domRightMenuListMouseenter()  [49b]
+  - _domRightMenuListMouseleave()  [49b]
+  - _onWindowClick(e)  [117b]
+  - _onPageScrollTargetChange(e)  [223b]
+  - resize(e, t)  [682b]
+  - updateSoundWave(e)  [1221b]
+  - update(e)  [947b]
+  - _hexToRgb(e)  [138b]
+
+## ProjectDetailsData  (byte 907967, 1987 bytes)
+fields: id = ""; title = ""; desc = ""; ctaTitle = ""; ctaUrl = ""; colorBg = "#000"; colorBtnBg = "#000"; colorBtnBgHover = "#000"; colorBtnText = "#000"; colorBtnTextHover = "#000"; colorHighlight = "#000"; colorIconBg = "#000"; colorIconColor = "#000"; colorText = "#000"; shadow = 0; nextColorBg = "#000"; nextColorText = "#000"; nextId = ""; nextTitle = ""; nextShadow = 0; domServiceSideListItems; domLinkSideListItems; itemDataList = []
+  - constructor(e, t)  [1589b]
+
+## UfxTextMesh extends UfxMesh  (byte 909954, 1648 bytes)
+  - constructor(e={})  [211b]
+  - syncText()  [1402b]
+
+## ProjectDetailsItem  (byte 913692, 6251 bytes)
+  - constructor(e="image")  [1823b]
+  - activate(e)  [372b]
+  - deactivate()  [54b]
+  - _initVideo()  [730b]
+  - _initImage()  [699b]
+  - _initText()  [190b]
+  - _onMouseEnter()  [17b]
+  - _onMouseLeave()  [17b]
+  - _onClick()  [12b]
+  - resize(e, t, r)  [421b]
+  - syncDom()  [173b]
+  - playPauseVideo(e)  [183b]
+  - update(e)  [1534b]
+
+## ProjectDetailsItems  (byte 919943, 1159 bytes)
+fields: moveContainer; itemPool = []; imageItemPool = []; videoItemPool = []; textItemPool = []
+  - useItem(e)  [287b]
+  - deactivateAll()  [131b]
+  - pauseAllVideos()  [92b]
+  - resizeAll(e, t, r)  [261b]
+  - syncDoms()  [99b]
+  - update(e, t, r)  [186b]
+
+## ProjectDetailsSection  (byte 921184, 11206 bytes)
+fields: projectDetailsDatas = {}; projectDetailsData; domContainer; domHeaderInfo; domHeaderBackBtn; domTitle; domDesc; domCta; domSideListService; domSideListLinks; domDetailsItemsWrapper; domDetailsItemsMoveContainer; domPreview; domPreviewInner; domPreviewHeader; domPreviewTitle; domPreviewFooterBarInner; selectedId = ""; contentShowRatio = 0; nextProjectRatio = 0; overScrollRatio = 0; overScrollSize = 0; previewInnerOffsetFrom = 0; previewInnerOffsetTo = 0; titleCenterOffsetY = 0; previewTitleColorDefaultColorHex = "#c2c3c7"; previewTitleColorHex = "#000"; previewShadow = 0; scrollPane; isVertical = null; VERTICAL_BREAK_PIONT = 1e3; itemPool = []; imageItemPool = []; videoItemPool = []; textItemPool = []; projectDatas = {}; sharedUniforms = {u_opacity:{value:0},u_isVertical:{value:0},u_scro; domHeaderBackBtnHoverAnimation = {animating:!1,ratio:0}
+  - preInit(e)  [1687b]
+  - preInitContent(e)  [99b]
+  - _onModelLoad(e)  [17b]
+  - init()  [111b]
+  - show(e)  [300b]
+  - updatePreviewUI(e, t=!0)  [388b]
+  - _disposeLayout()  [264b]
+  - _initLayout(e)  [1579b]
+  - _onBackBtnClick()  [123b]
+  - _splitText()  [14b]
+  - hide(e, t, r)  [44b]
+  - resize(e, t)  [1706b]
+  - update(e, t=!1)  [3917b]
+  - _onWindowWheel()  [45b]
+
+## ProjectPageAudios  (byte 932444, 305 bytes)
+fields: hasInit = !1
+  - constructor()  [15b]
+  - init()  [226b]
+  - update()  [28b]
+
+## ProjectPage extends Page  (byte 932795, 2761 bytes)
+fields: path = /projects\/([^\/]+)$/; id = "project"; hasExtraPages = !1; bypassShowingLoading = !0; contentShowRatio = 0; nextProjectRatio = 0; prevNonProjectPath = null
+  - preInit()  [166b]
+  - preInitContent(e)  [58b]
+  - init()  [69b]
+  - show(e, t, r)  [921b]
+  - hide(e, t, r)  [846b]
+  - resize(e, t)  [67b]
+  - update(e)  [155b]
+  - _onContentShowComplete()  [56b]
+  - _onNextProjectComplete()  [248b]
+
+## HomePageAudios  (byte 935613, 1787 bytes)
+fields: hasInit = !1
+  - constructor()  [15b]
+  - init()  [882b]
+  - update()  [857b]
+
+## HomePage extends Page  (byte 937440, 2217 bytes)
+fields: path = ""; id = "home"; hasEndVisual = !1; updateAudio = !1; endSectionActiveThreshold = 2.5
+  - preInit()  [146b]
+  - init()  [116b]
+  - hasProject(e)  [71b]
+  - show(e, t, r)  [505b]
+  - hide(e, t, r)  [345b]
+  - resize(e, t)  [128b]
+  - update(e)  [798b]
+
+## AboutHeroLight  (byte 940189, 1290 bytes)
+fields: shadowMapSize = 1024; position = new Vector3(0,8,0); shadowRenderTarget = null; sharedUniforms = {u_lightPosition:{value:this.position},u_lightColo
+  - preInit()  [11b]
+  - init()  [337b]
+  - update(e)  [215b]
+  - renderMesh(e)  [206b]
+  - postUpdate(e)  [167b]
+
+## AboutHeroLightField  (byte 943684, 3480 bytes)
+fields: GRID_COUNT = new Vector3(64,64,64); VOLUME_SIZE = new Vector3(8,0,0); container = new Object3D; prevSliceRenderTarget = null; currSliceRenderTarget = null; drawnSliceRenderTarget = null; sliceTo3DMesh = null; sliceBlendMaterial; sliceColumnCount = 0; sliceRowCount = 0; gridSize = 0; SHOW_TEST_VOXELS = !1; sharedUniforms = {u_lightFieldTexture3D:{value:null},u_lightFieldMa
+  - preInit()  [11b]
+  - init()  [1656b]
+  - update(e)  [387b]
+  - renderMesh(e)  [210b]
+  - postUpdate(e)  [532b]
+
+## AboutHeroParticlesSimulation  (byte 951896, 2643 bytes)
+fields: SIM_TEXTURE_WIDTH = 128; SIM_TEXTURE_HEIGHT = browser$1.isMobile?128:192; currPositionRenderTarget = null; prevPositionRenderTarget = null; ORIGIN = new Vector3(0,8,0); isPlaying = !0; isFirstSim = !0; noiseSpeed = .4; _noise = new Simple1DNoise; noiseScaleTime = Math.random(); noiseStableFactorTime = Math.random(); noiseStableFactor = Math.random(); sharedUniforms = {u_simCurrPosLifeTexture:{value:null},u_simPrevPos
+  - preInit()  [1157b]
+  - init()  [8b]
+  - update(e)  [879b]
+
+## AboutHeroScatter  (byte 962469, 648 bytes)
+fields: sharedUniforms = {u_lightScatterDivider:{value:new Vector2(1.1,5.5)
+  - constructor()  [96b]
+  - init()  [54b]
+  - update(e)  [252b]
+
+## AboutPageHeroEfxPrepass extends PostEffect  (byte 964435, 2107 bytes)
+fields: isActive = !0; cacheRT = null; motionBlurRatio = 1; motionRT; motionTmpRT; useMotionBlur = !1; blurRatio = 0; scene = new Scene; needsRenderScene = !0; renderOrder = 5
+  - init(e)  [721b]
+  - needsRender()  [35b]
+  - setPostprocessing(e)  [117b]
+  - renderMotion(e, t, r, n)  [365b]
+  - render(e, t=!1)  [676b]
+
+## AboutHeroParticles  (byte 966600, 4044 bytes)
+fields: container = new Object3D; emissiveMesh = null; nonEmissiveMesh = null; lightFieldMesh = null; lodIds = ["l","m","s","xs"]; lodRefGeometries = []
+  - preInit()  [2819b]
+  - _onGeometryLoad(e, t)  [48b]
+  - init()  [8b]
+  - update(e)  [1015b]
+
+## AboutHeroRocks  (byte 975683, 3897 bytes)
+fields: ROCK_PIECE_COUNT = 16; FRAME_COUNT = 120; FPS = 60; COUNT = browser$1.isMobile?48:64; container = new Object3D; meshList = []; shadowMeshList = []; meshAnimationUniformList = []; meshInstanceUniformsList = []; meshInstanceAttributesList = []; time = 0; sharedUniforms = {u_texture:{value:null},u_animationTextureSize:{va
+  - preInit()  [1846b]
+  - loadRock(e)  [13b]
+  - _onRockLoad(e, t, r)  [555b]
+  - _onRockAnimationLoad(e, t)  [552b]
+  - init()  [64b]
+  - update(e)  [332b]
+
+## AboutHeroGround  (byte 985073, 2458 bytes)
+fields: container = new Object3D; geometry = null; mesh = null; texture = null; RADIUS = 12; SIZE = 768; sharedUniforms = {u_groundShadowTexture:{value:null}}; prevRenderTarget = null; currRenderTarget = null; blurCacheRenderTarget = null
+  - preInit()  [258b]
+  - init()  [1171b]
+  - update(e)  [804b]
+
+## AboutHeroLines  (byte 990477, 2112 bytes)
+fields: container = new Object3D; time = 0; sharedUniforms = {}
+  - preInit()  [116b]
+  - _onLineLoad(e)  [1907b]
+  - init()  [8b]
+  - update(e)  [11b]
+
+## aboutHeroPerson  (byte 995334, 3366 bytes)
+fields: BONE_COUNT = 54; FPS = 60; container = new Object3D; geometry = null; mesh = null; texture = null; shadowMesh = null; shadowTexture = null; time = 0; frameCount = 0; bonePosAnimationData; boneOrientAnimationData; bonePoses = new Float32Array(this.BONE_COUNT*3); boneOrients = new Float32Array(this.BONE_COUNT*4); sharedUniforms = {u_texture:{value:null},u_lightMixer:{value:new Ve
+  - preInit()  [630b]
+  - _onTextureLoad()  [553b]
+  - _onModelLoad(e)  [450b]
+  - _onAnimationLoad(e)  [198b]
+  - init()  [428b]
+  - update(e)  [729b]
+
+## AboutHeroFog  (byte 1004394, 2046 bytes)
+fields: container = new Object3D; geometry = null; material = null; mesh = null; texture = null; cacheRT = null; INSTANCES_COUNT = 32
+  - preInit()  [109b]
+  - init()  [1592b]
+  - onBeforeRender()  [170b]
+  - resize(e, t)  [38b]
+  - update(e)  [11b]
+
+## AboutHeroHalo  (byte 1007981, 540 bytes)
+fields: container = new Object3D; mesh = null
+  - preInit()  [113b]
+  - _onGeometryLoad(e)  [341b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - update(e)  [11b]
+
+## AboutHeroFaces  (byte 1014972, 4620 bytes)
+fields: container = new Object3D; faceContainer = new Object3D; isActive = !1; hasStartedLoads = {}; teamPosDataTextures = {}; teamNShadeDataTextures = {}; sharedUniforms = {u_mouse:{value:new Vector3},u_glitchOffset:{value; currId = ""; nextId = ""; transitionRatio = 0; showRatio = 0; activeRatio = 1; hideRatio = 0; meshArray = []
+  - preInit()  [11b]
+  - load(e)  [188b]
+  - _onModelLoaded(e, t)  [435b]
+  - init()  [1840b]
+  - resize(e, t)  [13b]
+  - update(e)  [1773b]
+
+## AboutPageHeroEfx extends PostEffect  (byte 1020608, 894 bytes)
+fields: colorBurn = new Color("#000"); colorDodge = new Color("#000"); hudRatio = 1; isActive = !0; renderOrder = 20; randSimplex1Ds = []
+  - init(e)  [287b]
+  - needsRender()  [35b]
+  - render(e, t=!1)  [416b]
+
+## AboutHeroLetters  (byte 1023429, 2674 bytes)
+fields: container = new Object3D; rt; blurRt; sharedUniforms = {}; mesh; meshList = []
+  - preInit()  [124b]
+  - _onGeometryLoad(e)  [1709b]
+  - init()  [8b]
+  - _onBeforeRender()  [730b]
+  - update(e)  [11b]
+
+## AboutHero extends Stage3D  (byte 1026200, 5866 bytes)
+fields: container = new Object3D; sceneContainer = new Object3D; hudContainer = new Object3D; cameraSplineGeo = null; cameraSplinePositions = null; cameraSplineOrientation = null; sceneRatio = 0; sceneHideRatio = 0; initialSplineRatio = 0; hudRatio = 0; introRatio = 0; outSectionRatio = 0; freezeRatio = 1; introTime = 0; scrollYRatio = 0; panningSplineRaito = 0; sharedUniforms = {u_sceneRatio:{value:0},u_sceneHideRatio:{value:0}
+  - constructor()  [334b]
+  - preInit()  [867b]
+  - init()  [971b]
+  - resize(e, t)  [90b]
+  - syncProperties(e)  [2044b]
+  - update(e)  [1029b]
+
+## AboutWhoLogo  (byte 1033904, 1266 bytes)
+fields: container = new Object3D; fromDom; toDom; mesh; toMesh; containerWidth = 0; hideRatio = 0
+  - preInit(e)  [322b]
+  - _onGeometryLoad(e)  [371b]
+  - init()  [8b]
+  - resize(e, t)  [26b]
+  - update(e, t, r, n, a)  [441b]
+
+## WhoSubsectionWeAre  (byte 1035206, 2323 bytes)
+fields: domContainer; domScroll; domLeftTexts; logoHideRatio = 0
+  - preInit(e)  [381b]
+  - init()  [27b]
+  - show()  [8b]
+  - hide()  [8b]
+  - resize(e, t)  [99b]
+  - update(e, t, r, n, a)  [1722b]
+
+## WhoSubsectionDetails  (byte 1037577, 2086 bytes)
+fields: domContainer; activeFaceId = -1; domTopWords; domBottomWords
+  - preInit(e)  [280b]
+  - _parseDomText(e)  [211b]
+  - init()  [8b]
+  - show()  [8b]
+  - hide()  [8b]
+  - resize(e, t)  [461b]
+  - update(e, t, r)  [1026b]
+
+## TextAnimationHelper  (byte 1039715, 886 bytes)
+  - setMatrixText(e, t, r=0, n=40, a=2, l=1/15)  [225b]
+  - resetMatrixTextTime(e)  [70b]
+  - updateMatrixText(e, t=properties.deltaTime)  [564b]
+
+## WhoSubsectionTeam  (byte 1041677, 11891 bytes)
+fields: domContainer; domProgress; domLeftTexts; domLeftNamePlaceholder; domLeftNameText; domLeftJobPlaceholder; domLeftJobText; domRight; domIndicator; domIndicatorInner; teamDataMap = {}; teamDataList = []; faceId = "edan"; targetActiveFaceIndex = 0; faceIndex = 0; _faceIndexTween; facesCount = 0; faceIndexTimer = 0; containerOffsetX = 0; itemActiveRatio = 0; isForward = !0; wasActive = null; isChangable = !1; canSwipe = !0; hasSwiped = !1; hasSwipedOnce = !1; _isAnimating = !1; timeBaseChangeSpeed = .2; lastSwipeTime = -1; domCursorDirection = -1; domCursorActive = !1; domCursorActiveRatio = 0; domCursorRotateRatio = 0; domCursorExtraRotationMotion = new SecondOrderDynamics(0,1,.8,1.2); faceRect = {x:0,y:0,width:0,height:0,offsetX:0,offsetY:0}; letterRect = {x:0,y:0,width:0,height:0,offsetX:0,offsetY:0}; domRightWidth = 0
+  - preInit(e)  [2394b]
+  - init()  [308b]
+  - onPageShow()  [204b]
+  - prev()  [261b]
+  - next()  [261b]
+  - _clearTween()  [63b]
+  - updateTeamNumberUI()  [149b]
+  - onTweenComplete()  [148b]
+  - reset()  [159b]
+  - resize(e, t)  [336b]
+  - _updateRect(e, t, r)  [254b]
+  - _changeFaceUIByIndex(e)  [375b]
+  - _createUIElements()  [1379b]
+  - syncContainerOffset()  [271b]
+  - _splitText()  [14b]
+  - preUpdate()  [75b]
+  - onSwipe()  [32b]
+  - update(e, t, r, n, a, l)  [4442b]
+
+## AboutWhoSection  (byte 1053614, 4684 bytes)
+fields: domContainer; activeFaceId = -1; scrollRatio = 0; subsectionContainerOffsetY = 0; subsectionContainerOffsetX = 0; RANGE_START_WAIT = 3.5; RANGE_PAGE_12 = 1.75; RANGE_PAGE_23 = 1.75; RANGE_PAGE_34 = 1.75; RANGE_END_WAIT = 2.5; PAGE_DISTANCE = 1.25; THRESHOLDS = []; MOBILE_THRESHOLDS = []
+  - preInit(e)  [709b]
+  - init()  [103b]
+  - resize(e, t)  [199b]
+  - show()  [63b]
+  - getMoveRatio()  [155b]
+  - getScrollRatio()  [369b]
+  - syncSubsectionContainerTransform()  [847b]
+  - update(e)  [1964b]
+
+## AboutClientSection  (byte 1058380, 3638 bytes)
+fields: _needsReset = !0; isSectionWasActive = !1
+  - preInit(e)  [483b]
+  - init()  [30b]
+  - resize(e, t)  [185b]
+  - update(e)  [1532b]
+  - _createCarousel()  [279b]
+  - _splitText()  [719b]
+  - _reset()  [347b]
+
+## SVGParser  (byte 1062066, 23495 bytes)
+  - parse(e)  [15065b]
+  - createShapes(e)  [3342b]
+  - getStrokeStyle(e, t, r, n, a)  [216b]
+  - pointsToStroke(e, t, r, n)  [320b]
+  - pointsToStrokeWithBuffers(e, t, r, n, a, l, c, u)  [4535b]
+
+## PostUfx extends Ufx  (byte 1087987, 42 bytes)
+fields: renderOrder = 100
+
+## AboutAwardSection  (byte 1088055, 5936 bytes)
+fields: domContainer; domTitle; domCapabilitySectionContainer; offsetY = 0; showItemPerSecond = 10; _needsReset = !0; isSectionWasActive = !1
+  - preInit(e)  [2167b]
+  - _generateEdgeIndices(e)  [788b]
+  - init()  [8b]
+  - show()  [8b]
+  - hide()  [8b]
+  - resize(e, t)  [230b]
+  - update(e)  [2092b]
+  - _splitText()  [14b]
+  - _reset()  [476b]
+
+## AboutCapabilitySection  (byte 1094055, 6241 bytes)
+fields: domContainer; domList; domLine1; domLine2; domCards; showItemPerSecond = 10; time = 0; _needsReset = !0
+  - preInit(e)  [851b]
+  - init()  [193b]
+  - resize(e, t)  [1212b]
+  - update(e)  [2899b]
+  - _splitText()  [574b]
+  - _reset()  [391b]
+
+## AboutPageAudios  (byte 1100352, 370 bytes)
+fields: hasInit = !1; bgFilterActive = !1; bgTrackName = "cinematic_0"
+  - constructor()  [15b]
+  - init()  [61b]
+  - update(e)  [216b]
+
+## AboutPage extends Page  (byte 1100781, 1309 bytes)
+fields: path = "about"; id = "about"; endVisualColor = properties.offWhiteColorHex
+  - preInit()  [154b]
+  - init()  [124b]
+  - resize(e, t)  [136b]
+  - show(e, t, r)  [76b]
+  - update(e)  [722b]
+
+## ProjectsMainSection  (byte 1102120, 2758 bytes)
+fields: domContainer; domTitle; projectItemList; time = 0; _needsReset = !0
+  - preInit(e)  [467b]
+  - init()  [8b]
+  - hasProject(e)  [56b]
+  - resize(e, t)  [63b]
+  - update(e)  [1037b]
+  - _reset()  [690b]
+  - _splitText()  [350b]
+
+## ProjectsPageAudios  (byte 1104928, 325 bytes)
+fields: hasInit = !1
+  - constructor()  [15b]
+  - init()  [245b]
+  - update()  [28b]
+
+## ProjectsPage extends Page  (byte 1105301, 1468 bytes)
+fields: path = "projects"; id = "projects"; endVisualUseTextured = !0
+  - preInit()  [65b]
+  - init()  [34b]
+  - hasProject(e)  [71b]
+  - show(e, t, r)  [461b]
+  - hide(e, t, r)  [302b]
+  - resize(e, t)  [44b]
+  - update(e)  [404b]
+
+## PlaygroundPage extends Page  (byte 1114174, 2671 bytes)
+fields: path = "playground"; id = "playground"; mesh = null; container = new Object3D; events = [{date:dayjs("2019-01-25")},{date:dayjs("2019-09-2; domEvents = []
+  - preInit()  [1018b]
+  - init()  [86b]
+  - resize(e, t)  [551b]
+  - update(e)  [400b]
+  - _onTunnelLoad(e)  [92b]
+  - _onDomTimelineClick(e)  [116b]
+  - _onDomDotMouseenter(e)  [100b]
+  - _onDomDotMouseleave(e)  [103b]
+
+## FlipSim  (byte 1117035, 11062 bytes)
+fields: addColliderRect = (e,t=0,r=0,n=0,a=0)=>{let l=this.fInvSpacing,c=thi
+  - constructor()  [149b]
+  - init(e, t, r, n, a, l)  [2218b]
+  - integrateParticles(e, t)  [215b]
+  - pushParticlesApart(e)  [1562b]
+  - handleParticleCollisions(e, t, r, n, a, l)  [1582b]
+  - updateParticleDensity()  [764b]
+  - transferVelocities(e, t)  [2047b]
+  - solveIncompressibility(e, t, r, n=!0)  [692b]
+  - resetParticles()  [18b]
+  - simulate(e, t, r, n, a, l, c, u, f, p, g, v, _)  [1258b]
+
+## FlipAnimation  (byte 1129699, 7441 bytes)
+fields: PRESSURE_ITERATION = 60; NUM_PARTICLES_ITERS = 4; OVER_RELAXATION = 1; FLIP_RATIO = 0; mesh; meshList = []; top = 0; height = 0; gravity = 0; isActive = !1; needsReset = !1; hasDown = !1; prevViewportWidth = 0; prevViewportHeight = 0; opacity = 1; colorHex; container = new Object3D; shapedContainer = new Object3D; texturedContainer = new Object3D; prevUseTextured = null; useTextured = !0; sharedUniforms = {u_tankOffset:{value:new Vector2},u_tankSize:{valu
+  - preInit()  [1444b]
+  - init()  [8b]
+  - reInitTank()  [2960b]
+  - resize()  [100b]
+  - convertDomRectToTankRect(e)  [163b]
+  - convertPixelSizeToTankSize(e, t)  [132b]
+  - convertPixelXYToTankXY(e, t)  [260b]
+  - update(e)  [1769b]
+
+## EndSection  (byte 1137178, 6085 bytes)
+fields: domContainer; offsetY = 0; _needsReset = !0; ROLLUP_ANIMATION_DURATION = 1; ROLLUP_ANIMATION_INTERVAL = 2; activeRatio = 0; hoverRatio = 0; time = 0; isHover = !1
+  - preInit()  [846b]
+  - init()  [224b]
+  - resize(e, t)  [124b]
+  - update(e)  [3095b]
+  - _splitText()  [1205b]
+  - _reset()  [354b]
+  - _onDomTitleMouseenter()  [40b]
+  - _onDomTitleMouseleave()  [40b]
+
+## ScrollNavSection  (byte 1143295, 1058 bytes)
+fields: domContainer; domText; overScrollRatio = 0; downWaitTime = 0; _needsReset = !0; path = ""
+  - preInit()  [197b]
+  - init()  [8b]
+  - resize(e, t)  [13b]
+  - update(e)  [739b]
+
+## PageExtraSections  (byte 1144397, 1308 bytes)
+fields: isActive = !0; domContainer; _needsResize = !1; preUfxContainer = new Object3D; postUfxContainer = new Object3D
+  - preInit()  [227b]
+  - init()  [70b]
+  - resize(e, t)  [416b]
+  - update(e)  [470b]
+
+## TransitionOverlay  (byte 1145945, 2829 bytes)
+fields: contentShowRatio = 0; contentHideRatio = 1; loadBarRatio = 0; lineTransformRatio = 0; showTextRatio = 0; waitTextRatio = 0; hideTextRatio = 1; pixelWidth = 0; needsShowText = !1; needsHideText = !1; loadingTextAnimation = 0; onShowTextCompleted = new MinSignal$2; onHideTextCompleted = new MinSignal$2
+  - init()  [103b]
+  - resize(e, t)  [211b]
+  - isReadyToHide()  [17b]
+  - get activeRatio()  [81b]
+  - update(e)  [2128b]
+
+## PageManager  (byte 1148820, 5947 bytes)
+fields: pages = {}; pageList = [homePage,aboutPage,projectPage,projectsPage,playg; scrollTargetPage = null; domContainer = null; domInner = null; prevRoute = null; currRoute = null; _defaultRoute; _pendingRoute; _isHiding = !1; _isShowing = !1; _hasPreloaded = !0; isFirstRoute = !0; _needsShowLoading = !1; onIdled = new MinSignal$2; onScrollTargetChanged = new MinSignal$2; NEEDS_LOG = !1
+  - constructor()  [488b]
+  - preInit()  [245b]
+  - get isIdle()  [98b]
+  - _onRouteChanged(e)  [1294b]
+  - _onShowTextComplete()  [65b]
+  - _onHideTextComplete()  [39b]
+  - _onTaskComplete()  [36b]
+  - init()  [24b]
+  - _initPage()  [316b]
+  - _onHideComplete()  [373b]
+  - resize(e, t)  [268b]
+  - start()  [25b]
+  - _showPage()  [805b]
+  - _onShowComplete()  [460b]
+  - update(e)  [1036b]
+  - _log(e)  [9b]
+
+## ScrollPane  (byte 1154802, 6235 bytes)
+fields: lockOnDirection = !0; isActive = !1; x; y; viewDom; contentDom; isVertical = !0; targetScrollPixel = 0; scrollViewDelta = 0; viewWidthPixel = 0; viewHeightPixel = 0; contentSize = 0; contentSizePixel = 0; scrollView = 0; progress = 0; minScrollPixel = .1; viewSizePixel = 1; scrollMultiplier = browser$1.isMobile,1; domRanges = new Map; useResizeObserver = !0; tick = -1; lastResizeTick = -1; resizeObserveTick = -1; hasResizeObserved = !1; autoScrollSpeed = 0; autoScrollRatio = 0; skipAutoScroll = !1; dragHistory = []; dragHistoryMaxTime = .1; isWheelScrolling = !1; frictionCoeffFrom = 2.1; frictionCoeffTo = 1.9; frictionCoeffWeightDivisor = 5; minVelocity = -1; wheelEaseCoeff = 12; scrollPixel = 0
+  - init(e={})  [662b]
+  - _onResizeObserve()  [78b]
+  - getDomRange(e, t=0, r=!1)  [176b]
+  - scrollTo(e, t=0, r=!1)  [153b]
+  - scrollToPixel(e=0, t=!1)  [260b]
+  - getEaseInOutOffset(e, t, r=0, n=.5)  [354b]
+  - resize(e, t)  [563b]
+  - _clampScrollPixel(e)  [66b]
+  - resetScroll(e)  [104b]
+  - update(e, t)  [2819b]
+  - syncDom()  [190b]
+  - get isMoveable()  [184b]
+
+## ScrollManager extends ScrollPane  (byte 1161037, 1538 bytes)
+fields: domScrollIndicator; domScrollIndicatorHeight = 1; domScrollIndicatorBar; scrollIndicatorActiveRatio = 0; lastMouseInteractiveTime = -1/0; isIndicatorActive = void 0; easedScrollStrength = 0; frameIdx = -1; MIN_BAR_SCALE_Y = 2/10
+  - init()  [207b]
+  - resize(e, t)  [115b]
+  - update(e)  [928b]
+  - get isMoveable()  [41b]
+
+## Postprocessing  (byte 1162623, 4470 bytes)
+fields: width = 1; height = 1; scene = null; camera = null; resolution = new Vector2(0,0); texelSize = new Vector2(0,0); aspect = new Vector2(1,1); onBeforeSceneRendered = new MinSignal$2; onAfterSceneRendered = new MinSignal$2; onAfterRendered = new MinSignal$2; sceneRenderTarget = null; fromRenderTarget = null; toRenderTarget = null; useDepthTexture = !0; depthTexture = null; fromTexture = null; toTexture = null; sceneTexture = null; mesh = null; queue = []; sharedUniforms = {}; geom; hasSizeChanged = !0
+  - init(e)  [1776b]
+  - swap()  [301b]
+  - setSize(e, t)  [355b]
+  - dispose()  [242b]
+  - _filterQueue(e)  [50b]
+  - renderMaterial(e, t)  [75b]
+  - checkSceneRt()  [223b]
+  - render(e, t, r)  [988b]
+
+## Smaa extends PostEffect  (byte 1174783, 2885 bytes)
+fields: edgesRenderTarget = null; weightsRenderTarget = null; edgesMaterial = null; weightsMaterial = null; renderOrder = 500
+  - init(e)  [1218b]
+  - setTextures(e, t)  [238b]
+  - updateTextures()  [129b]
+  - setPostprocessing(e)  [149b]
+  - dispose()  [128b]
+  - needsRender()  [114b]
+  - render(e, t)  [692b]
+  - _createTexture(e)  [82b]
+
+## Bloom extends PostEffect  (byte 1184327, 8209 bytes)
+fields: ITERATION = 5; USE_CONVOLUTION = !0; USE_HD = !0; USE_LENS_DIRT = !1; amount = 1; radius = 0; threshold = .1; smoothWidth = 1; highPassMultiplier = 1; haloWidth = .8; haloRGBShift = .03; haloStrength = .21; haloMaskInner = .3; haloMaskOuter = .5; highPassMaterial; highPassRenderTarget; fftHMaterial; fftVMaterial; srcMaterial; convolutionSrcFrag = convolutionSrcFrag; srcSize = 256; srcRT; fftCacheRT1; fftCacheRT2; fftSrcRT; fftBloomOutCacheMaterial; fftBloomOutCacheRT; convolutionMixMaterial; convolutionMixDownScale = 1; convolutionBuffer = .1; renderTargetsHorizontal = []; renderTargetsVertical = []; blurMaterials = []; saturation = 1; renderOrder = 10; directionX = new Vector2(1,0); directionY = new Vector2(0,1); fftSrcRT
+  - init(e)  [2867b]
+  - setDirtTexture(e)  [71b]
+  - setPostprocessing(e)  [919b]
+  - dispose()  [279b]
+  - needsRender()  [34b]
+  - renderFFT(e, t, r)  [506b]
+  - render(e, t=!1)  [2855b]
+
+## ScreenPaintDistortion extends PostEffect  (byte 1193397, 1333 bytes)
+fields: screenPaint = null; amount = 20; rgbShift = 1; multiplier = 1.25; colorMultiplier = 1; shade = 1.25; renderOrder = 75
+  - init(e)  [507b]
+  - needsRender(e)  [36b]
+  - syncCamera(e)  [333b]
+  - render(e, t=!1)  [311b]
+
+## Final extends PostEffect  (byte 1195910, 1203 bytes)
+fields: vignetteFrom = .6; vignetteTo = 1.6; vignetteAspect = new Vector2; vignetteColor = new Color; saturation = 1; contrast = 0; brightness = 1; tintColor = new Color; tintOpacity = 1; bgColor = new Color; opacity = 1; isActive = !1; renderOrder = 30
+  - init(e)  [479b]
+  - needsRender()  [35b]
+  - render(e, t=!1)  [449b]
+
+## (anon)  (byte 1202233, 1317 bytes)
+fields: sharpness = 1; _easuMaterial; _material; _inResolution = new Vector2; _outResolution = new Vector2; _cacheRenderTarget = null
+  - constructor()  [487b]
+  - render(e, t)  [710b]
+
+## Fsr extends PostEffect  (byte 1203551, 237 bytes)
+fields: sharpness = 1; fsr; renderOrder = 2e3
+  - init(e)  [62b]
+  - render(e, t=!1)  [113b]
+
+## BufItem extends XHRItem  (byte 1203837, 2115 bytes)
+  - constructor(e, t)  [60b]
+  - retrieve()  [20b]
+  - _onLoad()  [2004b]
+
+## EXRLoader extends DataTextureLoader  (byte 1210273, 20244 bytes, third-party)
+  - constructor(e)  [48b]
+  - parse(e)  [19939b]
+  - setDataType(e)  [39b]
+  - load(e, t, r, n)  [175b]
+
+## EXRItem extends AnyItem$2  (byte 1230568, 358 bytes)
+  - constructor(e, t)  [82b]
+  - retrieve()  [20b]
+  - _onLoad(e)  [46b]
+  - loadFunc()  [96b]
+  - _onGLTFLoading(e)  [81b]
+
+## TextureItem extends ImageItem  (byte 1231025, 1040 bytes)
+  - constructor(e, t)  [571b]
+  - retrieve()  [20b]
+  - load()  [95b]
+  - _onLoad()  [317b]
+
+## ThreeLoaderItem extends AnyItem$1  (byte 1232169, 444 bytes)
+  - constructor(e, t)  [209b]
+  - _loadFunc(e, t, r)  [104b]
+  - _onLoaderLoad(e, t)  [39b]
+  - _onLoaderLoading(e, t)  [51b]
+
+## GlPositionOffset  (byte 1232849, 248 bytes)
+fields: offset = new Vector2; sharedUniforms = {u_glPositionOffset:{value:null}}
+  - init()  [113b]
+  - setOffset(e, t)  [43b]
+
+## Support  (byte 1233141, 1312 bytes)
+  - isSupported()  [284b]
+  - checkSupportWebGL()  [1013b]
+
+## App  (byte 1236110, 6146 bytes)
+  - initEngine()  [2079b]
+  - preInit()  [92b]
+  - init()  [318b]
+  - start()  [24b]
+  - resize(e, t)  [538b]
+  - preUpdate(e=0)  [39b]
+  - update(e=0)  [3045b]
+
+## Preloader  (byte 1242274, 2195 bytes)
+fields: percentTarget = 0; percent = 0; percentToStart = 0; DELAY = 1.5; MIN_PRELOAD_DURATION = 1; PERCENT_BETWEEN_INIT_AND_START = .3; MIN_DURATION_BETWEEN_INIT_AND_START = .25; HIDE_DURATION = .5; isActive = !1; lineTransformTime = 0; digitsWidth = 0
+  - preInit()  [352b]
+  - init()  [8b]
+  - show(e, t)  [121b]
+  - hide()  [8b]
+  - resize(e, t, r)  [77b]
+  - update(e)  [1399b]
+
+## Links  (byte 1244499, 1684 bytes)
+fields: links = []
+  - preInit()  [479b]
+  - init()  [172b]
+  - resize()  [255b]
+  - update(e)  [586b]
+  - _onLinkMouseenter(e)  [85b]
+  - _onLinkMouseleave(e)  [85b]
+
+## UI  (byte 1246215, 885 bytes)
+fields: domSectionsContainer = document.querySelector("#page-container")
+  - preInit()  [187b]
+  - preload(e, t)  [33b]
+  - init()  [59b]
+  - start()  [39b]
+  - resize(e, t, r)  [352b]
+  - update(e)  [142b]
+
+## FontItem extends AnyItem  (byte 1247159, 1287 bytes)
+fields: static dom; _getTextWidth = (e,t,r,n)=>{let a=FontItem.dom;return a.style.font
+  - constructor(e, t)  [337b]
+  - static initDom()  [177b]
+  - _loadFunc(e, t, r)  [446b]
+  - _onLoaderLoad(e, t)  [39b]
+  - _onLoaderLoading(e, t)  [51b]

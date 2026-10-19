@@ -1,0 +1,1016 @@
+91	3638	var	REVISION :Literal | MOUSE :ObjectExpression | TOUCH :ObjectExpression | CullFaceNone :Literal | CullFaceBack :Literal | CullFaceFront :Literal | PCFShadowMap :Literal | PCFSoftShadowMap :Literal | VSMShadowMap :Literal | FrontSide :Literal | BackSide :Literal | DoubleSide :Literal | NoBlending :Literal | NormalBlending :Literal | AdditiveBlending :Literal | SubtractiveBlending :Literal | MultiplyBlending :Literal | CustomBlending :Literal | AddEquation :Literal | SubtractEquation :Literal | ReverseSubtractEquation :Literal | MinEquation :Literal | MaxEquation :Literal | ZeroFactor :Literal | OneFactor :Literal | SrcColorFactor :Literal | OneMinusSrcColorFactor :Literal | SrcAlphaFactor :Literal | OneMinusSrcAlphaFactor :Literal | DstAlphaFactor :Literal | OneMinusDstAlphaFactor :Literal | DstColorFactor :Literal | OneMinusDstColorFactor :Literal | SrcAlphaSaturateFactor :Literal | ConstantColorFactor :Literal | OneMinusConstantColorFactor :Literal | ConstantAlphaFactor :Literal | OneMinusConstantAlphaFactor :Literal | NeverDepth :Literal | AlwaysDepth :Literal | LessDepth :Literal | LessEqualDepth :Literal | EqualDepth :Literal | GreaterEqualDepth :Literal | GreaterDepth :Literal | NotEqualDepth :Literal | MultiplyOperation :Literal | MixOperation :Literal | AddOperation :Literal | NoToneMapping :Literal | LinearToneMapping :Literal | ReinhardToneMapping :Literal | CineonToneMapping :Literal | ACESFilmicToneMapping :Literal | CustomToneMapping :Literal | UVMapping :Literal | CubeReflectionMapping :Literal | CubeRefractionMapping :Literal | EquirectangularReflectionMapping :Literal | EquirectangularRefractionMapping :Literal | CubeUVReflectionMapping :Literal | RepeatWrapping :Literal | ClampToEdgeWrapping :Literal | MirroredRepeatWrapping :Literal | NearestFilter :Literal | NearestMipmapNearestFilter :Literal | NearestMipMapNearestFilter :Literal | NearestMipmapLinearFilter :Literal | NearestMipMapLinearFilter :Literal | LinearFilter :Literal | LinearMipmapNearestFilter :Literal | LinearMipMapNearestFilter :Literal | LinearMipmapLinearFilter :Literal | LinearMipMapLinearFilter :Literal | UnsignedByteType :Literal | ByteType :Literal | ShortType :Literal | UnsignedShortType :Literal | IntType :Literal | UnsignedIntType :Literal | FloatType :Literal | HalfFloatType :Literal | UnsignedShort4444Type :Literal | UnsignedShort5551Type :Literal | UnsignedInt248Type :Literal | AlphaFormat :Literal | RGBAFormat :Literal | LuminanceFormat :Literal | LuminanceAlphaFormat :Literal | DepthFormat :Literal | DepthStencilFormat :Literal | RedFormat :Literal | RedIntegerFormat :Literal | RGFormat :Literal | RGIntegerFormat :Literal | RGBAIntegerFormat :Literal | RGB_S3TC_DXT1_Format :Literal | RGBA_S3TC_DXT1_Format :Literal | RGBA_S3TC_DXT3_Format :Literal | RGBA_S3TC_DXT5_Format :Literal | RGB_PVRTC_4BPPV1_Format :Literal | RGB_PVRTC_2BPPV1_Format :Literal | RGBA_PVRTC_4BPPV1_Format :Literal | RGBA_PVRTC_2BPPV1_Format :Literal | RGB_ETC1_Format :Literal | RGB_ETC2_Format :Literal | RGBA_ETC2_EAC_Format :Literal | RGBA_ASTC_4x4_Format :Literal | RGBA_ASTC_5x4_Format :Literal | RGBA_ASTC_5x5_Format :Literal | RGBA_ASTC_6x5_Format :Literal | RGBA_ASTC_6x6_Format :Literal | RGBA_ASTC_8x5_Format :Literal | RGBA_ASTC_8x6_Format :Literal | RGBA_ASTC_8x8_Format :Literal | RGBA_ASTC_10x5_Format :Literal | RGBA_ASTC_10x6_Format :Literal | RGBA_ASTC_10x8_Format :Literal | RGBA_ASTC_10x10_Format :Literal | RGBA_ASTC_12x10_Format :Literal | RGBA_ASTC_12x12_Format :Literal | RGBA_BPTC_Format :Literal | RGB_BPTC_SIGNED_Format :Literal | RGB_BPTC_UNSIGNED_Format :Literal | RED_RGTC1_Format :Literal | SIGNED_RED_RGTC1_Format :Literal | RED_GREEN_RGTC2_Format :Literal | SIGNED_RED_GREEN_RGTC2_Format :Literal | LinearEncoding :Literal | sRGBEncoding :Literal | BasicDepthPacking :Literal | RGBADepthPacking :Literal | TangentSpaceNormalMap :Literal | ObjectSpaceNormalMap :Literal | NoColorSpace :Literal | SRGBColorSpace :Literal | LinearSRGBColorSpace :Literal | DisplayP3ColorSpace :Literal | LinearDisplayP3ColorSpace :Literal | LinearTransfer :Literal | SRGBTransfer :Literal | Rec709Primaries :Literal | P3Primaries :Literal | KeepStencilOp :Literal | AlwaysStencilFunc :Literal | NeverCompare :Literal | LessCompare :Literal | EqualCompare :Literal | LessEqualCompare :Literal | GreaterCompare :Literal | NotEqualCompare :Literal | GreaterEqualCompare :Literal | AlwaysCompare :Literal | StaticDrawUsage :Literal | DynamicDrawUsage :Literal | GLSL1 :Literal | GLSL3 :Literal | _SRGBAFormat :Literal | WebGLCoordinateSystem :Literal | WebGPUCoordinateSystem :Literal
+3729	644	class	EventDispatcher
+4373	1293	var	_lut :ArrayExpression
+5666	18	var	_seed :Literal
+5684	46	var	DEG2RAD :BinaryExpression | RAD2DEG :BinaryExpression
+5730	425	function()	generateUUID
+6155	57	function(o,e,t)	clamp$1
+6212	46	function(o,e)	euclideanModulo
+6258	57	function(o,e,t,r,n)	mapLinear
+6315	55	function(o,e,t)	inverseLerp
+6370	39	function(o,e,t)	lerp
+6409	57	function(o,e,t,r)	damp
+6466	69	function(o,e=1)	pingpong
+6535	76	function(o,e,t)	smoothstep
+6611	88	function(o,e,t)	smootherstep
+6699	65	function(o,e)	randInt
+6764	53	function(o,e)	randFloat
+6817	56	function(o)	randFloatSpread
+6873	161	function(o)	seededRandom
+7034	38	function(o)	degToRad
+7072	38	function(o)	radToDeg
+7110	50	function(o)	isPowerOfTwo
+7160	78	function(o)	ceilPowerOfTwo
+7238	80	function(o)	floorPowerOfTwo
+7318	524	function(o,e,t,r,n)	setQuaternionFromProperEuler
+7842	359	function(o,e)	denormalize
+8201	390	function(o,e)	normalize
+8591	304	var	MathUtils$1 :ObjectExpression
+8895	3493	class	Vector2
+12388	3075	class	Matrix3
+15463	22	var	_m3 :new Matrix3
+15485	92	function(o)	arrayNeedsUint32
+15577	94	function(o)	createElementNS
+15671	98	function()	createCanvasElement
+15769	16	var	_cache :ObjectExpression
+15785	65	function(o)	warnOnce
+15850	2066	var	LINEAR_SRGB_TO_LINEAR_DISPLAY_P3 :CallExpression | LINEAR_DISPLAY_P3_TO_LINEAR_SRGB :CallExpression | COLOR_SPACES :ObjectExpression | SUPPORTED_WORKING_COLOR_SPACES :new Set | ColorManagement :ObjectExpression
+17916	95	function(o)	SRGBToLinear
+18011	81	function(o)	LinearToSRGB
+18092	12	var	_canvas :
+18104	1396	class	ImageUtils
+19500	16	var	_sourceId :Literal
+19516	582	class	Source
+20098	387	function(o)	serializeImage
+20485	17	var	_textureId :Literal
+20502	4017	class extends EventDispatcher	Texture
+24519	27	expr	Texture.DEFAULT_IMAGE=null;
+24546	34	expr	Texture.DEFAULT_MAPPING=UVMapping;
+24580	29	expr	Texture.DEFAULT_ANISOTROPY=1;
+24609	5335	class	Vector4
+29944	1811	class extends EventDispatcher	RenderTarget
+31755	113	class extends RenderTarget	WebGLRenderTarget
+31868	306	class extends Texture	DataArrayTexture
+32174	300	class extends Texture	Data3DTexture
+32474	5840	class	Quaternion
+38314	6575	class	Vector3
+44889	57	var	_vector$b :new Vector3 | _quaternion$4 :new Quaternion
+44946	5008	class	Box3
+49954	345	var	_points :ArrayExpression | _vector$a :new Vector3 | _box$3 :new Box3 | _v0$2$1 :new Vector3 | _v1$7 :new Vector3 | _v2$4 :new Vector3 | _f0 :new Vector3 | _f1 :new Vector3 | _f2 :new Vector3 | _center :new Vector3 | _extents :new Vector3 | _triangleNormal :new Vector3 | _testAxis :new Vector3
+50299	301	function(o,e,t,r,n)	satForAxes
+50600	60	var	_box$2 :new Box3 | _v1$6$1 :new Vector3 | _v2$3 :new Vector3
+50660	2053	class	Sphere
+52713	149	var	_vector$9 :new Vector3 | _segCenter :new Vector3 | _segDir :new Vector3 | _diff :new Vector3 | _edge1 :new Vector3 | _edge2 :new Vector3 | _normal$1 :new Vector3
+52862	3784	class	Ray
+56646	8991	class	Matrix4
+65637	187	var	_v1$5$1 :new Vector3 | _m1$2 :new Matrix4 | _zero :new Vector3 | _one :new Vector3 | _x :new Vector3 | _y :new Vector3 | _z :new Vector3 | _matrix :new Matrix4 | _quaternion$3 :new Quaternion
+65824	2655	class	Euler
+68479	26	expr	Euler.DEFAULT_ORDER="XYZ";
+68505	289	class	Layers
+68794	18	var	_object3DId :Literal
+68812	295	var	_v1$4$1 :new Vector3 | _q1$3 :new Quaternion | _m1$1 :new Matrix4 | _target :new Vector3 | _position$3 :new Vector3 | _scale$2 :new Vector3 | _quaternion$2 :new Quaternion | _xAxis :new Vector3 | _yAxis :new Vector3 | _zAxis :new Vector3 | _addedEvent :ObjectExpression | _removedEvent :ObjectExpression
+69107	9529	class extends EventDispatcher	Object3D
+78636	39	expr	Object3D.DEFAULT_UP=new Vector3(0,1,0);
+78675	39	expr	Object3D.DEFAULT_MATRIX_AUTO_UPDATE=!0;
+78714	45	expr	Object3D.DEFAULT_MATRIX_WORLD_AUTO_UPDATE=!0;
+78759	184	var	_v0$1$1 :new Vector3 | _v1$3$1 :new Vector3 | _v2$2 :new Vector3 | _v3$1 :new Vector3 | _vab :new Vector3 | _vac :new Vector3 | _vbc :new Vector3 | _vap :new Vector3 | _vbp :new Vector3 | _vcp :new Vector3
+78943	19	var	warnedGetUV :UnaryExpression
+78962	3387	class	Triangle
+82349	2758	var	_colorKeywords :ObjectExpression | _hslA :ObjectExpression | _hslB :ObjectExpression
+85107	107	function(o,e,t)	hue2rgb
+85214	5452	class	Color
+90666	25	var	_color$1 :new Color
+90691	27	expr	Color.NAMES=_colorKeywords;
+90718	18	var	_materialId :Literal
+90736	11371	class extends EventDispatcher	Material
+102107	1060	class extends Material	MeshBasicMaterial
+103167	32	var	_tables :CallExpression
+103199	989	function()	_generateTables
+104188	266	function(o)	toHalfFloat
+104454	170	function(o)	fromHalfFloat
+104624	89	var	DataUtils :ObjectExpression | _vector$8 :new Vector3 | _vector2$1 :new Vector2
+104713	3819	class	BufferAttribute
+108532	102	class extends BufferAttribute	Uint16BufferAttribute
+108634	102	class extends BufferAttribute	Uint32BufferAttribute
+108736	104	class extends BufferAttribute	Float32BufferAttribute
+108840	12	var	_id$2 :Literal
+108852	124	var	_m1 :new Matrix4 | _obj :new Object3D | _offset :new Vector3 | _box$1 :new Box3 | _boxMorphTargets :new Box3 | _vector$7 :new Vector3
+108976	10606	class extends EventDispatcher	BufferGeometry
+119582	376	var	_inverseMatrix$3 :new Matrix4 | _ray$3 :new Ray | _sphere$5 :new Sphere | _sphereHitAt :new Vector3 | _vA$1 :new Vector3 | _vB$1 :new Vector3 | _vC$1 :new Vector3 | _tempA :new Vector3 | _morphA :new Vector3 | _uvA$1 :new Vector2 | _uvB$1 :new Vector2 | _uvC$1 :new Vector2 | _normalA :new Vector3 | _normalB :new Vector3 | _normalC :new Vector3 | _intersectionPoint :new Vector3 | _intersectionPointWorld :new Vector3
+119958	3239	class extends Object3D	Mesh
+123197	407	function(o,e,t,r,n,a,l,c)	checkIntersection
+123604	1038	function(o,e,t,r,n,a,l,c,u,f)	checkGeometryIntersection
+124642	1417	class extends BufferGeometry	BoxGeometry
+126059	436	function(o)	cloneUniforms
+126495	129	function(o)	mergeUniforms
+126624	100	function(o)	cloneUniformsGroups
+126724	125	function(o)	getUnlitUniformColorSpace
+126849	62	var	UniformsUtils :ObjectExpression
+126911	191	var	default_vertex :TemplateLiteral | default_fragment :TemplateLiteral
+127102	1960	class extends Material	ShaderMaterial
+129062	807	class extends Object3D	Camera
+129869	2173	class extends Camera	PerspectiveCamera
+132042	23	var	fov :UnaryExpression | aspect :Literal
+132065	2120	class extends Object3D	CubeCamera
+134185	244	class extends Texture	CubeTexture
+134429	2127	class extends WebGLRenderTarget	WebGLCubeRenderTarget
+136556	74	var	_vector1 :new Vector3 | _vector2 :new Vector3 | _normalMatrix :new Matrix3
+136630	1838	class	Plane
+138468	49	var	_sphere$4 :new Sphere | _vector$6 :new Vector3
+138517	2064	class	Frustum
+140581	298	function()	WebGLAnimation
+140879	1710	function(o,e)	WebGLAttributes
+142589	885	class extends BufferGeometry	PlaneGeometry
+143474	97168	var	alphahash_fragment :TemplateLiteral | alphahash_pars_fragment :TemplateLiteral | alphamap_fragment :TemplateLiteral | alphamap_pars_fragment :TemplateLiteral | alphatest_fragment :TemplateLiteral | alphatest_pars_fragment :TemplateLiteral | aomap_fragment :TemplateLiteral | aomap_pars_fragment :TemplateLiteral | begin_vertex :TemplateLiteral | beginnormal_vertex :TemplateLiteral | bsdfs :TemplateLiteral | iridescence_fragment :TemplateLiteral | bumpmap_pars_fragment :TemplateLiteral | clipping_planes_fragment :TemplateLiteral | clipping_planes_pars_fragment :TemplateLiteral | clipping_planes_pars_vertex :TemplateLiteral | clipping_planes_vertex :TemplateLiteral | color_fragment :TemplateLiteral | color_pars_fragment :TemplateLiteral | color_pars_vertex :TemplateLiteral | color_vertex :TemplateLiteral | common :TemplateLiteral | cube_uv_reflection_fragment :TemplateLiteral | defaultnormal_vertex :TemplateLiteral | displacementmap_pars_vertex :TemplateLiteral | displacementmap_vertex :TemplateLiteral | emissivemap_fragment :TemplateLiteral | emissivemap_pars_fragment :TemplateLiteral | colorspace_fragment :Literal | colorspace_pars_fragment :TemplateLiteral | envmap_fragment :TemplateLiteral | envmap_common_pars_fragment :TemplateLiteral | envmap_pars_fragment :TemplateLiteral | envmap_pars_vertex :TemplateLiteral | envmap_vertex :TemplateLiteral | fog_vertex :TemplateLiteral | fog_pars_vertex :TemplateLiteral | fog_fragment :TemplateLiteral | fog_pars_fragment :TemplateLiteral | gradientmap_pars_fragment :TemplateLiteral | lightmap_fragment :TemplateLiteral | lightmap_pars_fragment :TemplateLiteral | lights_lambert_fragment :TemplateLiteral | lights_lambert_pars_fragment :TemplateLiteral | lights_pars_begin :TemplateLiteral | envmap_physical_pars_fragment :TemplateLiteral | lights_toon_fragment :TemplateLiteral | lights_toon_pars_fragment :TemplateLiteral | lights_phong_fragment :TemplateLiteral | lights_phong_pars_fragment :TemplateLiteral | lights_physical_fragment :TemplateLiteral | lights_physical_pars_fragment :TemplateLiteral | lights_fragment_begin :TemplateLiteral | lights_fragment_maps :TemplateLiteral | lights_fragment_end :TemplateLiteral | logdepthbuf_fragment :TemplateLiteral | logdepthbuf_pars_fragment :TemplateLiteral | logdepthbuf_pars_vertex :TemplateLiteral | logdepthbuf_vertex :TemplateLiteral | map_fragment :TemplateLiteral | map_pars_fragment :TemplateLiteral | map_particle_fragment :TemplateLiteral | map_particle_pars_fragment :TemplateLiteral | metalnessmap_fragment :TemplateLiteral | metalnessmap_pars_fragment :TemplateLiteral | morphcolor_vertex :TemplateLiteral | morphnormal_vertex :TemplateLiteral | morphtarget_pars_vertex :TemplateLiteral | morphtarget_vertex :TemplateLiteral | normal_fragment_begin :TemplateLiteral | normal_fragment_maps :TemplateLiteral | normal_pars_fragment :TemplateLiteral | normal_pars_vertex :TemplateLiteral | normal_vertex :TemplateLiteral | normalmap_pars_fragment :TemplateLiteral | clearcoat_normal_fragment_begin :TemplateLiteral | clearcoat_normal_fragment_maps :TemplateLiteral | clearcoat_pars_fragment :TemplateLiteral | iridescence_pars_fragment :TemplateLiteral | opaque_fragment :TemplateLiteral | packing :TemplateLiteral | premultiplied_alpha_fragment :TemplateLiteral | project_vertex :TemplateLiteral | dithering_fragment :TemplateLiteral | dithering_pars_fragment :TemplateLiteral | roughnessmap_fragment :TemplateLiteral | roughnessmap_pars_fragment :TemplateLiteral | shadowmap_pars_fragment :TemplateLiteral | shadowmap_pars_vertex :TemplateLiteral | shadowmap_vertex :TemplateLiteral | shadowmask_pars_fragment :TemplateLiteral | skinbase_vertex :TemplateLiteral | skinning_pars_vertex :TemplateLiteral | skinning_vertex :TemplateLiteral | skinnormal_vertex :TemplateLiteral | specularmap_fragment :TemplateLiteral | specularmap_pars_fragment :TemplateLiteral | tonemapping_fragment :TemplateLiteral | tonemapping_pars_fragment :TemplateLiteral | transmission_fragment :TemplateLiteral | transmission_pars_fragment :TemplateLiteral | uv_pars_fragment :TemplateLiteral | uv_pars_vertex :TemplateLiteral | uv_vertex :TemplateLiteral | worldpos_vertex :TemplateLiteral
+240642	42540	var	vertex$h :TemplateLiteral | fragment$h :TemplateLiteral | vertex$g :TemplateLiteral | fragment$g :TemplateLiteral | vertex$f :TemplateLiteral | fragment$f :TemplateLiteral | vertex$e :TemplateLiteral | fragment$e :TemplateLiteral | vertex$d :TemplateLiteral | fragment$d :TemplateLiteral | vertex$c :TemplateLiteral | fragment$c :TemplateLiteral | vertex$b :TemplateLiteral | fragment$b :TemplateLiteral | vertex$a :TemplateLiteral | fragment$a :TemplateLiteral | vertex$9 :TemplateLiteral | fragment$9 :TemplateLiteral | vertex$8 :TemplateLiteral | fragment$8 :TemplateLiteral | vertex$7 :TemplateLiteral | fragment$7 :TemplateLiteral | vertex$6 :TemplateLiteral | fragment$6 :TemplateLiteral | vertex$5 :TemplateLiteral | fragment$5 :TemplateLiteral | vertex$4 :TemplateLiteral | fragment$4 :TemplateLiteral | vertex$3 :TemplateLiteral | fragment$3 :TemplateLiteral | vertex$2 :TemplateLiteral | fragment$2 :TemplateLiteral | vertex$1 :TemplateLiteral | fragment$1 :TemplateLiteral | ShaderChunk :ObjectExpression | UniformsLib :ObjectExpression | ShaderLib :ObjectExpression
+283182	1673	expr	ShaderLib.physical={uniforms:mergeUniforms([ShaderLib.standard.uniforms,{clearco
+284855	25	var	_rgb :ObjectExpression
+284880	2807	function(o,e,t,r,n,a,l)	WebGLBackground
+287687	5154	function(o,e,t,r)	WebGLBindingStates
+292841	522	function(o,e,t,r)	WebGLBufferRenderer
+293363	1691	function(o,e,t)	WebGLCapabilities
+295054	1195	function(o)	WebGLClipping
+296249	820	function(o)	WebGLCubeMaps
+297069	1757	class extends Camera	OrthographicCamera
+298826	135	var	LOD_MIN :Literal | EXTRA_LOD_SIGMA :ArrayExpression | MAX_SAMPLES :Literal | _flatCamera :new OrthographicCamera | _clearColor :new Color
+298961	65	var	_oldTarget :Literal | _oldActiveCubeFace :Literal | _oldActiveMipmapLevel :Literal
+299026	306	var	PHI :BinaryExpression | INV_PHI :BinaryExpression | _axisDirections :ArrayExpression
+299332	5683	class	PMREMGenerator
+305015	800	function(o)	_createPlanes
+305815	171	function(o,e,t)	_createRenderTarget
+305986	80	function(o,e,t,r,n)	_setViewport
+306066	1853	function(o,e,t)	_getBlurShader
+307919	562	function()	_getEquirectMaterial
+308481	523	function()	_getCubemapMaterial
+309004	1055	function()	_getCommonVertexShader
+310059	1002	function(o)	WebGLCubeUVMaps
+311061	1411	function(o)	WebGLExtensions
+312472	1438	function(o,e,t,r)	WebGLGeometries
+313910	617	function(o,e,t,r)	WebGLIndexedBufferRenderer
+314527	532	function(o)	WebGLInfo
+315059	45	function(o,e)	numericalSort
+315104	68	function(o,e)	absNumericalSort
+315172	2780	function(o,e,t)	WebGLMorphtargets
+317952	659	function(o,e,t,r)	WebGLObjects
+318611	261	var	emptyTexture :new Texture | emptyArrayTexture :new DataArrayTexture | empty3dTexture :new Data3DTexture | emptyCubeTexture :new CubeTexture | arrayCacheF32 :ArrayExpression | arrayCacheI32 :ArrayExpression | mat4array :new Float32Array | mat3array :new Float32Array | mat2array :new Float32Array
+318872	232	function(o,e,t)	flatten
+319104	122	function(o,e)	arraysEqual
+319226	65	function(o,e)	copyArray
+319291	164	function(o,e)	allocTexUnits
+319455	89	function(o,e)	setValueV1f
+319544	212	function(o,e)	setValueV2f
+319756	360	function(o,e)	setValueV3f
+320116	262	function(o,e)	setValueV4f
+320378	257	function(o,e)	setValueM2
+320635	257	function(o,e)	setValueM3
+320892	257	function(o,e)	setValueM4
+321149	89	function(o,e)	setValueV1i
+321238	212	function(o,e)	setValueV2i
+321450	237	function(o,e)	setValueV3i
+321687	262	function(o,e)	setValueV4i
+321949	91	function(o,e)	setValueV1ui
+322040	215	function(o,e)	setValueV2ui
+322255	240	function(o,e)	setValueV3ui
+322495	265	function(o,e)	setValueV4ui
+322760	150	function(o,e,t)	setValueT1
+322910	154	function(o,e,t)	setValueT3D1
+323064	156	function(o,e,t)	setValueT6
+323220	167	function(o,e,t)	setValueT2DArray1
+323387	790	function(o)	getSingularSetter
+324177	57	function(o,e)	setValueV1fArray
+324234	88	function(o,e)	setValueV2fArray
+324322	88	function(o,e)	setValueV3fArray
+324410	88	function(o,e)	setValueV4fArray
+324498	96	function(o,e)	setValueM2Array
+324594	96	function(o,e)	setValueM3Array
+324690	97	function(o,e)	setValueM4Array
+324787	57	function(o,e)	setValueV1iArray
+324844	57	function(o,e)	setValueV2iArray
+324901	57	function(o,e)	setValueV3iArray
+324958	57	function(o,e)	setValueV4iArray
+325015	59	function(o,e)	setValueV1uiArray
+325074	59	function(o,e)	setValueV2uiArray
+325133	59	function(o,e)	setValueV3uiArray
+325192	59	function(o,e)	setValueV4uiArray
+325251	206	function(o,e,t)	setValueT1Array
+325457	209	function(o,e,t)	setValueT3DArray
+325666	212	function(o,e,t)	setValueT6Array
+325878	222	function(o,e,t)	setValueT2DArrayArray
+326100	884	function(o)	getPureArraySetter
+326984	116	class	SingleUniform
+327100	137	class	PureArrayUniform
+327237	179	class	StructuredUniform
+327416	39	var	RePathPart :Literal
+327455	53	function(o,e)	addUniform
+327508	383	function(o,e,t)	parseUniform
+327891	594	class	WebGLUniforms
+328485	102	function(o,e,t)	WebGLShader
+328587	34	var	COMPLETION_STATUS_KHR :Literal
+328621	21	var	programIdCount :Literal
+328642	189	function(o,e)	handleSource
+328831	574	function(o)	getEncodingComponents
+329405	282	function(o,e,t)	getShaderErrors
+329687	144	function(o,e)	getTexelEncodingFunction
+329831	427	function(o,e)	getToneMappingFunction
+330258	636	function(o)	generateExtensions
+330894	124	function(o)	generateDefines
+331018	329	function(o,e)	fetchAttributeLocations
+331347	42	function(o)	filterEmptyLine
+331389	681	function(o,e)	replaceLightNums
+332070	176	function(o,e)	replaceClippingPlaneNums
+332246	56	var	includePattern :Literal
+332302	77	function(o)	resolveIncludes
+332379	170	var	shaderChunkMap :new Map
+332549	308	function(o,e)	includeReplacer
+332857	167	var	unrollLoopPattern :Literal
+333024	73	function(o)	unrollLoops
+333097	164	function(o,e,t,r)	loopReplacer
+333261	269	function(o)	generatePrecision
+333530	252	function(o)	generateShadowMapTypeDefine
+333782	244	function(o)	generateEnvMapTypeDefine
+334026	170	function(o)	generateEnvMapModeDefine
+334196	263	function(o)	generateEnvMapBlendingDefine
+334459	190	function(o)	generateCubeUVSize
+334649	12498	function(o,e,t,r)	WebGLProgram
+347147	12	var	_id$1 :Literal
+347159	925	class	WebGLShaderCache
+348084	84	class	WebGLShaderStage
+348168	10107	function(o,e,t,r,n,a,l)	WebGLPrograms
+358275	240	function()	WebGLProperties
+358515	237	function(o,e)	painterSortStable
+358752	186	function(o,e)	reversePainterSortStable
+358938	1010	function()	WebGLRenderList
+359948	246	function()	WebGLRenderLists
+360194	625	function()	UniformsCache
+360819	486	function()	ShadowUniformsCache
+361305	18	var	nextVersion :Literal
+361323	119	function(o,e)	shadowCastingAndTexturingLightsFirst
+361442	5448	function(o,e)	WebGLLights
+366890	329	function(o,e)	WebGLRenderState
+367219	264	function(o,e)	WebGLRenderStates
+367483	631	class extends Material	MeshDepthMaterial
+368114	455	class extends Material	MeshDistanceMaterial
+368569	1137	var	vertex :TemplateLiteral | fragment :TemplateLiteral
+369706	4544	function(o,e,t)	WebGLShadowMap
+374250	11357	function(o,e,t)	WebGLState
+385607	27734	function(o,e,t,r,n,a,l)	WebGLTextures
+413341	6151	function(o,e,t)	WebGLUtils
+419492	108	class extends PerspectiveCamera	ArrayCamera
+419600	86	class extends Object3D	Group
+419686	31	var	_moveEvent :ObjectExpression
+419717	3334	class	WebXRController
+423051	762	class extends Texture	DepthTexture
+423813	7534	class extends EventDispatcher	WebXRManager
+431347	6475	function(o,e)	WebGLMaterials
+437822	3341	function(o,e,t,r)	WebGLUniformsGroups
+441163	29299	class	WebGLRenderer
+470462	44	class extends WebGLRenderer	WebGL1Renderer
+470506	45	expr	WebGL1Renderer.prototype.isWebGL1Renderer=!0;
+470551	1012	class extends Object3D	Scene
+471563	1435	class	InterleavedBuffer
+472998	28	var	_vector$5 :new Vector3
+473026	3833	class	InterleavedBufferAttribute
+476859	259	class extends Texture	DataTexture
+477118	340	class extends BufferAttribute	InstancedBufferAttribute
+477458	422	class extends Material	LineBasicMaterial
+477880	111	var	_start$1 :new Vector3 | _end$1 :new Vector3 | _inverseMatrix$1 :new Matrix4 | _ray$1 :new Ray | _sphere$1 :new Sphere
+477991	2453	var	Line$1 :class extends Object3D
+480444	42	var	_start :new Vector3 | _end :new Vector3
+480486	559	class extends Line$1	LineSegments
+481045	414	class extends Material	PointsMaterial
+481459	89	var	_inverseMatrix :new Matrix4 | _ray :new Ray | _sphere :new Sphere | _position$2 :new Vector3
+481548	1439	class extends Object3D	Points
+482987	291	function(o,e,t,r,n,a,l)	testPoint
+483278	541	class extends Texture	VideoTexture
+483819	2659	class	Curve
+486478	1431	class extends Curve	EllipseCurve
+487909	123	class extends EllipseCurve	ArcCurve
+488032	359	function()	CubicPoly
+488391	73	var	tmp :new Vector3 | px :new CubicPoly | py :new CubicPoly | pz :new CubicPoly
+488464	1893	class extends Curve	CatmullRomCurve3
+490357	118	function(o,e,t,r,n)	CatmullRom
+490475	57	function(o,e)	QuadraticBezierP0
+490532	51	function(o,e)	QuadraticBezierP1
+490583	45	function(o,e)	QuadraticBezierP2
+490628	110	function(o,e,t,r)	QuadraticBezier
+490738	55	function(o,e)	CubicBezierP0
+490793	57	function(o,e)	CubicBezierP1
+490850	49	function(o,e)	CubicBezierP2
+490899	43	function(o,e)	CubicBezierP3
+490942	115	function(o,e,t,r,n)	CubicBezier
+491057	746	class extends Curve	CubicBezierCurve
+491803	780	class extends Curve	CubicBezierCurve3
+492583	687	class extends Curve	LineCurve
+493270	690	class extends Curve	LineCurve3
+493960	658	class extends Curve	QuadraticBezierCurve
+494618	692	class extends Curve	QuadraticBezierCurve3
+495310	816	class extends Curve	SplineCurve
+496126	193	var	Curves :CallExpression
+496319	1940	class extends Curve	CurvePath
+498259	1735	class extends CurvePath	Path
+499994	870	class extends BufferGeometry	CircleGeometry
+500864	754	class extends Path	Shape
+501618	399	var	Earcut :ObjectExpression
+502017	225	function(o,e,t,r,n)	linkedList
+502242	220	function(o,e)	filterPoints
+502462	435	function(o,e,t,r,n,a,l)	earcutLinked
+502897	354	function(o)	isEar
+503251	865	function(o,e,t,r)	isEarHashed
+504116	293	function(o,e,t)	cureLocalIntersections
+504409	285	function(o,e,t,r,n,a)	splitEarcut
+504694	268	function(o,e,t,r)	eliminateHoles
+504962	38	function(o,e)	compareX
+505000	150	function(o,e)	eliminateHole
+505150	524	function(o,e)	findHoleBridge
+505674	91	function(o,e)	sectorContainsSector
+505765	175	function(o,e,t,r)	indexCurve
+505940	292	function(o)	sortLinked
+506232	233	function(o,e,t,r,n)	zOrder
+506465	106	function(o)	getLeftmost
+506571	125	function(o,e,t,r,n,a,l,c)	pointInTriangle
+506696	260	function(o,e)	isValidDiagonal
+506956	67	function(o,e,t)	area
+507023	49	function(o,e)	equals
+507072	238	function(o,e,t,r)	intersects
+507310	128	function(o,e,t)	onSegment
+507438	39	function(o)	sign
+507477	165	function(o,e)	intersectsPolygon
+507642	139	function(o,e)	locallyInside
+507781	195	function(o,e)	middleInside
+507976	180	function(o,e)	splitPolygon
+508156	132	function(o,e,t,r)	insertNode
+508288	127	function(o)	removeNode
+508415	135	function(o,e,t)	Node
+508550	108	function(o,e,t,r)	signedArea
+508658	469	class	ShapeUtils
+509127	79	function(o)	removeDupEndPts
+509206	82	function(o,e)	addContour
+509288	1365	class extends BufferGeometry	ShapeGeometry
+510653	156	function(o,e)	toJSON
+510809	1303	class extends BufferGeometry	SphereGeometry
+512112	130	class extends ShaderMaterial	RawShaderMaterial
+512242	822	class extends Material	MeshNormalMaterial
+513064	222	var	Cache :ObjectExpression
+513286	791	class	LoadingManager
+514077	47	var	DefaultLoadingManager :new LoadingManager
+514124	527	class	Loader
+514651	41	expr	Loader.DEFAULT_MATERIAL_NAME="__DEFAULT";
+514692	17	var	loading :ObjectExpression
+514709	73	class extends Error	HttpError
+514782	2204	class extends Loader	FileLoader
+516986	1199	class extends Loader	DataTextureLoader
+518185	345	class extends BufferGeometry	InstancedBufferGeometry
+518530	13	var	_context :
+518543	170	class	AudioContext
+518713	499	class	Clock
+519212	69	function()	now
+519281	107	var	_position$1 :new Vector3 | _quaternion$1 :new Quaternion | _scale$1 :new Vector3 | _orientation$1 :new Vector3
+519388	1809	class extends Object3D	AudioListener
+521197	4202	var	Audio$1 :class extends Object3D
+525399	99	var	_position :new Vector3 | _quaternion :new Quaternion | _scale :new Vector3 | _orientation :new Vector3
+525498	1630	class extends Audio$1	PositionalAudio
+527128	428	class extends InterleavedBuffer	InstancedInterleavedBuffer
+527556	618	class	Spherical
+528174	28	var	_vector$4 :new Vector2
+528202	1839	class	Box2
+530041	1889	class	ShapePath
+531930	122	expr	typeof __THREE_DEVTOOLS__<"u"&&__THREE_DEVTOOLS__.dispatchEvent(new CustomEvent(
+532052	136	expr	typeof window<"u"&&(window.__THREE__?console.warn("WARNING: Multiple instances o
+532188	2818	class	MathUtils
+535006	162	function(o,e,t,r)	_sfc32
+535168	25	var	math :new MathUtils
+535193	3605	var	isSSR :BinaryExpression | DetectUA :CallExpression
+538798	27	expr	ColorManagement.enabled=!1;
+538825	166	var	detectUA :new DetectUA | userAgent :CallExpression | browserName :MemberExpression | audioElem :CallExpression
+538991	845	class	Browser
+539836	28	var	browser$1 :new Browser
+539864	16	var	CDN_PATH :Literal
+539880	71	expr	window.location.hostname=="lusion.co"&&(CDN_PATH="https://lusion.dev");
+539951	131	expr	window.location.hostname=="lusion.dev"&&(window.location.href="https://lusion.co
+540082	1322	class	Settings
+541404	28	var	settings :new Settings
+541432	128	var	commonjsGlobal$1 :ConditionalExpression
+541560	122	function(o)	getDefaultExportFromCjs
+541682	29	var	minSignal$1 :ObjectExpression
+541711	1151	expr	(function(o){(function(e){function t(){this._listeners=[],this.dispatchCount=0}v
+542862	43	var	minSignalExports$1 :MemberExpression
+542905	62	var	MinSignal$2 :CallExpression
+542967	54	var	quickLoader$b :ObjectExpression | minSignal :ObjectExpression
+543021	1149	expr	(function(o){(function(e){function t(){this._listeners=[],this.dispatchCount=0}v
+544170	76	var	minSignalExports :MemberExpression | MinSignal$1 :Identifier | undef$3 :
+544246	228	function()	QuickLoader
+544474	31	var	_p$9 :MemberExpression
+544505	23	expr	_p$9.addChunk=addChunk;
+544528	35	expr	_p$9.setCrossOrigin=setCrossOrigin;
+544563	13	expr	_p$9.add=add;
+544576	17	expr	_p$9.load=load$7;
+544593	19	expr	_p$9.start=start$1;
+544612	23	expr	_p$9.loadNext=loadNext;
+544635	29	expr	_p$9._createItem=_createItem;
+544664	29	expr	_p$9._onLoading=_onLoading$1;
+544693	22	expr	_p$9.VERSION="0.1.17";
+544715	23	expr	_p$9.register=register;
+544738	29	expr	_p$9.retrieveAll=retrieveAll;
+544767	23	expr	_p$9.retrieve=retrieve;
+544790	35	expr	_p$9.testExtensions=testExtensions;
+544825	19	expr	_p$9.create=create;
+544844	17	expr	_p$9.check=check;
+544861	140	var	addedItems :AssignmentExpression | loadedItems :AssignmentExpression | ITEM_CLASS_LIST :AssignmentExpression | ITEM_CLASSES :AssignmentExpression
+545001	31	expr	quickLoader$b.exports=create();
+545032	54	function(o,e)	setCrossOrigin
+545086	167	function(o,e)	addChunk
+545253	240	function(o,e)	add
+545493	209	function(o,e)	load$7
+545702	526	function(o)	start$1
+546228	163	function()	loadNext
+546391	210	function(o,e,t,r,n)	_onLoading$1
+546601	94	function(o)	_getLoadedWeight
+546695	482	function(o,e,t)	_onItemLoad
+547177	104	function(o)	_removeItemCache
+547281	185	function(o,e,t)	_createItem
+547466	92	function(o)	register
+547558	178	function(o,e)	retrieveAll
+547736	353	function(o,e)	retrieve
+548089	124	function(o,e)	testExtensions
+548213	69	function(o)	_getExtension
+548282	41	function()	create
+548323	138	function()	check
+548461	105	var	quickLoaderExports :MemberExpression | MinSignal :Identifier | quickLoader$a :Identifier
+548566	610	function(o,e)	AbstractItem$6
+549176	64	var	AbstractItem_1 :Identifier | _p$8 :MemberExpression
+549240	17	expr	_p$8.load=load$6;
+549257	23	expr	_p$8._onLoad=_onLoad$6;
+549280	27	expr	_p$8._onLoading=_onLoading;
+549307	35	expr	_p$8._onPostLoading=_onPostLoading;
+549342	37	expr	_p$8._onLoadComplete=_onLoadComplete;
+549379	43	expr	_p$8.getCombinedPercent=getCombinedPercent;
+549422	23	expr	_p$8.dispatch=dispatch;
+549445	29	expr	AbstractItem$6.extensions=[];
+549474	45	expr	AbstractItem$6.retrieve=function(){return!1};
+549519	40	function()	load$6
+549559	117	function()	_onLoad$6
+549676	124	function(o)	_onPostLoading
+549800	152	function()	_onLoadComplete
+549952	103	function(o)	getCombinedPercent
+550055	80	function(o)	_onLoading
+550135	102	function()	dispatch
+550237	67	var	AbstractItem$5 :Identifier | quickLoader$9 :Identifier
+550304	88	function()	__generateFuncName
+550392	68	function(o)	JSONPItem
+550460	23	expr	JSONPItem.type="jsonp";
+550483	24	expr	JSONPItem.extensions=[];
+550507	34	expr	quickLoader$9.register(JSONPItem);
+550541	84	expr	JSONPItem.retrieve=function(o){return typeof o=="string"&&o.indexOf("=")>-1?[o]:
+550625	82	var	_super$7 :MemberExpression | _p$7 :AssignmentExpression
+550707	27	expr	_p$7.constructor=JSONPItem;
+550734	17	expr	_p$7.load=load$5;
+550751	467	function(o)	load$5
+551218	127	var	AbstractItem$4 :Identifier | quickLoader$8 :Identifier | undef$2 : | IS_SUPPORT_XML_HTTP_REQUEST :UnaryExpression
+551345	141	function(o)	XHRItem$2
+551486	24	var	XHRItem_1 :Identifier
+551510	21	expr	XHRItem$2.type="xhr";
+551531	24	expr	XHRItem$2.extensions=[];
+551555	34	expr	quickLoader$8.register(XHRItem$2);
+551589	40	expr	XHRItem$2.retrieve=function(){return!1};
+551629	82	var	_super$6 :MemberExpression | _p$6 :AssignmentExpression
+551711	27	expr	_p$6.constructor=XHRItem$2;
+551738	17	expr	_p$6.load=load$4;
+551755	39	expr	_p$6._onXmlHttpChange=_onXmlHttpChange;
+551794	43	expr	_p$6._onXmlHttpProgress=_onXmlHttpProgress;
+551837	23	expr	_p$6._onLoad=_onLoad$5;
+551860	432	function()	load$4
+552292	77	function(o)	_onXmlHttpProgress
+552369	111	function()	_onXmlHttpChange
+552480	121	function()	_onLoad$5
+552601	57	var	XHRItem$1 :Identifier | quickLoader$7 :Identifier
+552658	95	function(o,e)	TextItem$1
+552753	26	var	TextItem_1 :Identifier
+552779	23	expr	TextItem$1.type="text";
+552802	43	expr	TextItem$1.extensions=["html","txt","svg"];
+552845	35	expr	quickLoader$7.register(TextItem$1);
+552880	41	expr	TextItem$1.retrieve=function(){return!1};
+552921	73	var	_super$5 :MemberExpression | _p$5 :AssignmentExpression
+552994	28	expr	_p$5.constructor=TextItem$1;
+553022	23	expr	_p$5._onLoad=_onLoad$4;
+553045	115	function()	_onLoad$4
+553160	57	var	TextItem :Identifier | quickLoader$6 :Identifier
+553217	67	function(o)	JSONItem
+553284	21	expr	JSONItem.type="json";
+553305	29	expr	JSONItem.extensions=["json"];
+553334	33	expr	quickLoader$6.register(JSONItem);
+553367	39	expr	JSONItem.retrieve=function(){return!1};
+553406	69	var	_super$4 :MemberExpression | _p$4 :AssignmentExpression
+553475	26	expr	_p$4.constructor=JSONItem;
+553501	23	expr	_p$4._onLoad=_onLoad$3;
+553524	201	function()	_onLoad$3
+553725	75	var	AbstractItem$3 :Identifier | quickLoader$5 :Identifier | undef$1 :
+553800	306	function(o,e)	AudioItem$1
+554106	25	expr	AudioItem$1.type="audio";
+554131	37	expr	AudioItem$1.extensions=["mp3","ogg"];
+554168	36	expr	quickLoader$5.register(AudioItem$1);
+554204	43	expr	AudioItem$1.retrieve=function(o){return!1};
+554247	84	var	_super$3 :MemberExpression | _p$3 :AssignmentExpression
+554331	29	expr	_p$3.constructor=AudioItem$1;
+554360	17	expr	_p$3.load=load$3;
+554377	23	expr	_p$3._onLoad=_onLoad$2;
+554400	225	function()	load$3
+554625	200	function()	_onLoad$2
+554825	73	var	AbstractItem$2 :Identifier | quickLoader$4 :Identifier | undef :
+554898	302	function(o,e)	VideoItem
+555200	23	expr	VideoItem.type="video";
+555223	42	expr	VideoItem.extensions=["mp4","webm","ogv"];
+555265	34	expr	quickLoader$4.register(VideoItem);
+555299	41	expr	VideoItem.retrieve=function(o){return!1};
+555340	82	var	_super$2 :MemberExpression | _p$2 :AssignmentExpression
+555422	27	expr	_p$2.constructor=VideoItem;
+555449	17	expr	_p$2.load=load$2;
+555466	23	expr	_p$2._onLoad=_onLoad$1;
+555489	238	function()	load$2
+555727	194	function()	_onLoad$1
+555921	67	var	AbstractItem$1 :Identifier | quickLoader$3 :Identifier
+555988	168	function(o,e)	AnyItem$3
+556156	21	expr	AnyItem$3.type="any";
+556177	24	expr	AnyItem$3.extensions=[];
+556201	34	expr	quickLoader$3.register(AnyItem$3);
+556235	40	expr	AnyItem$3.retrieve=function(){return!1};
+556275	82	var	_super$1 :MemberExpression | _p$1 :AssignmentExpression
+556357	27	expr	_p$1.constructor=AnyItem$3;
+556384	17	expr	_p$1.load=load$1;
+556401	122	function()	load$1
+556523	158	function(o,e,t,r)	computedStyle$2
+556681	143	var	computedStyle_commonjs :Identifier | AbstractItem :Identifier | computedStyle$1 :Identifier | quickLoader$2 :Identifier
+556824	171	function(o,e)	ImageItem$1
+556995	76	var	_super :MemberExpression | _p :AssignmentExpression
+557071	27	expr	_p.constructor=ImageItem$1;
+557098	13	expr	_p.load=load;
+557111	19	expr	_p._onLoad=_onLoad;
+557130	363	expr	ImageItem$1.retrieve=function(o){if(o.nodeType&&o.style){var e=[];o.nodeName.toL
+557493	25	expr	ImageItem$1.type="image";
+557518	43	expr	ImageItem$1.extensions=["jpg","gif","png"];
+557561	36	expr	quickLoader$2.register(ImageItem$1);
+557597	110	function()	load
+557707	134	function()	_onLoad
+557841	53	function(o)	_isNotData
+557894	35	var	quickLoader :Identifier
+557929	57	var	quickLoader$1 :CallExpression
+557986	61	var	computedStyle :CallExpression
+558047	3113	class	Properties
+561160	32	var	properties :new Properties
+561192	138	var	_populated :UnaryExpression | _ie : | _firefox : | _opera : | _webkit : | _chrome : | _ie_real_version : | _osx : | _windows : | _linux : | _android : | _win64 : | _iphone : | _ipad : | _native : | _mobile :
+561330	1104	function()	_populate
+562434	1109	var	UserAgent_DEPRECATED$1 :ObjectExpression | UserAgent_DEPRECATED_1 :Identifier | canUseDOM :UnaryExpression | ExecutionEnvironment$1 :ObjectExpression | ExecutionEnvironment_1 :Identifier | ExecutionEnvironment :Identifier | useHasFeature :
+563543	156	expr	ExecutionEnvironment.canUseDOM&&(useHasFeature=document.implementation&&document
+564186	341	function(o,e)	isEventSupported$1
+564527	167	var	isEventSupported_1 :Identifier | UserAgent_DEPRECATED :Identifier | isEventSupported :Identifier | PIXEL_STEP :Literal | LINE_HEIGHT :Literal | PAGE_HEIGHT :Literal
+564694	518	function(o)	normalizeWheel$2
+565212	144	expr	normalizeWheel$2.getEventType=function(){return UserAgent_DEPRECATED.firefox()?"
+565356	70	var	normalizeWheel_1 :Identifier | normalizeWheel :Identifier
+565426	63	var	normalizeWheel$1 :CallExpression
+565489	2375	class	SecondOrderDynamics
+567864	6335	class	Input
+574199	22	var	input :new Input
+574221	1249	class	ScrollDomRange
+575470	17	var	instances :ArrayExpression
+575487	852	class	Tween
+576339	733	var	blitVert :TemplateLiteral | blitFrag :TemplateLiteral | uvBlitVert :TemplateLiteral | clearFrag :TemplateLiteral | debugVert :TemplateLiteral
+577072	7267	class	FboHelper
+584339	30	var	fboHelper :new FboHelper
+584369	1211	class	Task
+585580	660	class	TaskManager
+586240	34	var	taskManager :new TaskManager
+586274	1248	class	Page
+587522	11	var	self$1 :
+587533	3253	class	Ease
+590786	16	expr	self$1=new Ease;
+590802	10362	var	ease :Identifier | vert$l :TemplateLiteral | frag$p :TemplateLiteral | prePassVert :TemplateLiteral | prePassFrag :TemplateLiteral
+601164	266	class extends Scene	Stage3D
+601430	1537	var	blur9VaryingVertexShader :TemplateLiteral | blur9VaryingFragmentShader :TemplateLiteral | blur9FragmentShader :TemplateLiteral
+602967	1015	class	Blur
+603982	20	var	blur :new Blur
+604002	476	class	ShaderHelper
+604478	410	var	shaderHelper :new ShaderHelper | getBlueNoiseShader :TemplateLiteral
+604888	924	class	BlueNoise
+605812	255	var	blueNoise :new BlueNoise | COLORS$1 :ConditionalExpression | colorIndex :CallExpression | fancyColor :MemberExpression | _c$1 :new Color
+606067	23	expr	_c$1.offsetHSL(0,0,.5);
+606090	42	var	SOFT_PLASTIC : | HARD_PLASTIC : | GLASS : | STONE :
+606132	76	expr	SOFT_PLASTIC=HARD_PLASTIC=GLASS=STONE={density:1,friction:2,restitution:.8};
+606208	2729	var	sphereData :ArrayExpression
+608937	286	expr	browser$1.isMobile||sphereData.push({color:"#fff",sss:0,sssColor:"#111",isSemitr
+609223	2894	var	SPHERES_DATA :Identifier | vert$k :TemplateLiteral | frag$o :TemplateLiteral | frag$n :TemplateLiteral
+612117	21	var	_v$4 :new Vector2
+612138	4150	class	ScreenPaint
+616288	34	var	screenPaint :new ScreenPaint
+616322	1569	class	HomeBalloonsBackground
+617891	56	var	homeBalloonsBackground :new HomeBalloonsBackground
+617947	50	var	random :CallExpression
+617997	24	var	GRAVITY_FACTOR :Literal
+618021	1621	class	HomeBalloonsBody
+619642	225	var	_mouse :new Vector3 | _mousePrev :new Vector3 | _vel :new Vector3 | _pos :new Vector3 | _v0$3 :new Vector3 | _v1$6 :new Vector3 | _p1$1 :new Vector3 | _normal :new Vector3 | _q$2 :new Quaternion | _mousePushForce :new Vector3 | _mouseBA :new Vector3
+619867	2557	class	HomeBalloonsPhysics
+622424	50	var	homeBalloonsPhysics :new HomeBalloonsPhysics
+622474	58	var	_v$3 :new Vector3 | _color :new Color | _blackWhiteToggle :Literal
+622532	10193	class extends Stage3D	HomeBalloons
+632725	36	var	homeBalloons :new HomeBalloons
+632761	647	class	Visuals
+633408	1267	var	visuals :new Visuals | frameVert :TemplateLiteral | frameFrag :TemplateLiteral
+634675	1014	expr	(function(){function o(){for(var r=arguments.length,n=0;n<r;n++){var a=n<0||argu
+635689	108	function(o,e)	_classCallCheck
+635797	182	function(o,e)	_defineProperties
+635979	100	function(o,e,t)	_createClass
+636079	134	function(o,e,t)	_defineProperty
+636213	226	function(o,e)	ownKeys
+636439	388	function(o)	_objectSpread2
+636827	137	function(o,e)	_slicedToArray
+636964	135	function(o)	_toConsumableArray
+637099	79	function(o)	_arrayWithoutHoles
+637178	57	function(o)	_arrayWithHoles
+637235	101	function(o)	_iterableToArray
+637336	320	function(o,e)	_iterableToArrayLimit
+637656	351	function(o,e)	_unsupportedIterableToArray
+638007	122	function(o,e)	_arrayLikeToArray
+638129	185	function()	_nonIterableSpread
+638314	188	function()	_nonIterableRest
+638502	229	function(o,e)	extend
+638731	47	function(o)	isString
+638778	44	function(o)	isArray
+638822	423	function()	parseSettings
+639245	148	function(o)	parseTypes
+639393	57	function(o)	isObject
+639450	71	function(o)	isNode$1
+639521	62	function(o)	isLength
+639583	63	function(o)	isArrayLike
+639646	100	function(o)	toArray
+639746	291	function(o)	getTargetElements
+640037	63	var	entries :MemberExpression | expando :Literal | cache :ObjectExpression | uid :Literal
+640100	300	function(o,e,t)	set
+640400	79	function(o,e)	get
+640479	72	function(o)	remove
+640551	74	function()	clear
+640625	161	function()	cleanup
+640786	147	function(o)	toWords
+640933	1073	var	rsAstralRange :Literal | rsComboMarksRange :Literal | rsComboSymbolsRange :Literal | rsVarRange :Literal | rsAstral :CallExpression | rsCombo :CallExpression | rsFitz :Literal | rsModifier :CallExpression | rsNonAstral :CallExpression | rsRegional :Literal | rsSurrPair :Literal | rsZWJ :Literal | reOptMod :CallExpression | rsOptVar :CallExpression | rsOptJoin :BinaryExpression | rsSeq :BinaryExpression | rsSymbol :CallExpression | reUnicode :CallExpression | unicodeRange :ArrayExpression | reHasUnicode :CallExpression
+642006	44	function(o)	asciiToArray
+642050	51	function(o)	hasUnicode
+642101	57	function(o)	unicodeToArray
+642158	81	function(o)	stringToArray
+642239	49	function(o)	toString
+642288	167	function(o)	toChars
+642455	249	function(o,e)	createElement
+642704	138	var	defaults :ObjectExpression
+642842	894	function(o,e)	splitWordsAndChars
+643736	699	function(o,e)	split
+644435	333	function(o,e,t,r)	getPosition
+644768	172	function(o)	unSplitWords
+644940	74	var	createFragment :FunctionExpression
+645014	1762	function(o,e,t)	repositionAfterSplit
+646776	1755	var	_defaults :CallExpression | SplitType :CallExpression
+648531	1106	var	AUDIO_DATA :ObjectExpression
+649637	374	class	AudioGroup
+650011	39	var	LOW_PASS_FREQ :Literal | MAX_FREQ :Literal
+650050	3871	class	AudioItem
+653921	1647	class	GlobalAudios
+655568	36	var	globalAudios :new GlobalAudios
+655604	35	var	SKIP_AUDIO :UnaryExpression
+655639	2358	class	Audios
+657997	24	var	audios :new Audios
+658021	3948	class	HomeHeroSection
+661969	1553	var	homeHeroSection :new HomeHeroSection | ufxVert :TemplateLiteral | quadVert :TemplateLiteral | quadFrag :TemplateLiteral
+663522	28	expr	ShaderChunk.ufxVert=ufxVert;
+663550	12	expr	new Vector3;
+663562	12	expr	new Vector3;
+663574	12	expr	new Matrix4;
+663586	2647	class extends Mesh	UfxMesh
+666233	7022	var	videoVert :TemplateLiteral | videoFrag :TemplateLiteral | vert$j :TemplateLiteral | frag$m :TemplateLiteral | lineEndVert :TemplateLiteral | lineEndFrag :TemplateLiteral | _v0$2 :new Vector3 | _v1$5 :new Vector3 | _box :new Box3 | LINES_DATA_LIST :ArrayExpression
+673255	3720	class	Line
+677071	259	var	isNode :LogicalExpression | isBun :BinaryExpression | isDeno :BinaryExpression | isCloudflareWorker :LogicalExpression | isServerRuntime :LogicalExpression
+677330	133	function(o,e)	getMethodName
+677463	115	function(o)	isDomElement
+677578	81	function(o)	isInteger
+677659	153	function(o)	isVimeoUrl
+677812	135	function(o)	isVimeoEmbed
+677947	229	function(o)	getOembedDomain
+678176	452	function()	getVimeoUrl
+678628	295	var	subscribe :FunctionExpression
+678923	288	function(o)	findIframeBySourceWindow
+679211	129	var	arrayIndexOfSupport :BinaryExpression | postMessageSupport :LogicalExpression
+679340	146	IfStatement	IfStatement
+679486	126	var	commonjsGlobal :ConditionalExpression
+679612	82	function(o,e)	createCommonjsModule
+679901	1406	expr	(function(o){if(o.WeakMap)return;var e=Object.prototype.hasOwnProperty,t=Object.
+681307	3507	var	npo_src :CallExpression
+684814	30	var	callbackMap :new WeakMap
+684844	129	function(o,e,t)	storeCallback
+684973	73	function(o,e)	getCallbacks
+685046	248	function(o,e,t)	removeCallback
+685294	127	function(o,e)	shiftCallbacks
+685421	98	function(o,e)	swapCallbacks
+685519	115	function(o)	parseMessageData
+685634	311	function(o,e,t)	postMessage
+685945	441	function(o,e)	processData
+686386	649	var	oEmbedParameters :ArrayExpression
+687035	220	function(o)	getOEmbedParameters
+687255	342	function(o,e)	createEmbed
+687597	937	function(o)	getOEmbedData
+688534	470	function()	initializeEmbeds
+689004	433	function()	resizeEmbeds
+689437	481	function()	initAppendVideoMetadata
+689918	700	function()	checkUrlTimeParam
+690618	564	function()	updateDRMEmbeds
+691182	1772	function()	initializeScreenfull
+692954	148	var	defaultOptions :ObjectExpression
+693102	2427	class extends EventTarget	TimingSrcConnector
+695529	49	var	playerMap :new WeakMap | readyMap :new WeakMap
+695578	18	var	screenfull :ObjectExpression
+695596	8597	class	Player
+704193	151	expr	isServerRuntime||(screenfull=initializeScreenfull(),initializeEmbeds(),resizeEmb
+704344	45	var	VIDEO_LIST :ObjectExpression
+704389	7257	class	VideoOverlay
+711646	36	var	videoOverlay :new VideoOverlay
+711682	18004	class	HomeReelSection
+729686	42	var	homeReelSection :new HomeReelSection
+729728	42	var	wrapper :CallExpression
+729770	730	class	DomHelper
+730500	3531	var	domHelper :new DomHelper | vert$i :TemplateLiteral | frag$l :TemplateLiteral
+734031	65	var	TEXT_STAGGER :Literal | LETTER_PER_SECOND :Literal | MAX_RAND_LETTER_COUNT :Literal
+734096	6624	class	ProjectItem
+740720	2708	class	ProjectItemList
+743428	3219	class	HomeFeaturedSection
+746647	427	var	homeFeaturedSection :new HomeFeaturedSection | channelMixerFrag :TemplateLiteral
+747074	1621	class	TextureHelper
+748695	38	var	textureHelper :new TextureHelper
+748733	668	class	Simple1DNoise
+749401	23	var	_v$2 :new Vector3
+749424	2044	class	BrownianMotion
+751468	5722	var	vert$h :TemplateLiteral | frag$k :TemplateLiteral | goalBlackTunnelTransformShader :TemplateLiteral
+757190	413	class	PostEffect
+757603	890	var	fragmentShader$4 :TemplateLiteral
+758493	2323	class extends PostEffect	GoalTunnelEfx
+760816	170	var	goalTunnelEfx :new GoalTunnelEfx | _c1$3 :new Color | _c2$2 :new Color | COLOR_1 :ArrayExpression | COLOR_2 :ArrayExpression
+760986	5378	class	GoalBlackTunnel
+766364	121	var	goalBlackTunnel :new GoalBlackTunnel | _changeEvent :ObjectExpression | _startEvent :ObjectExpression | _endEvent :ObjectExpression
+766485	10853	class extends EventDispatcher	OrbitControls
+777338	2143	class	DeviceOrientationControls
+779481	4816	class	CameraControls
+784297	13237	var	cameraControls :new CameraControls | vert$g :TemplateLiteral | fragWhite :TemplateLiteral | fragCard :TemplateLiteral | fragBlack :TemplateLiteral | astronautCommon :TemplateLiteral | astronautCommonPars :TemplateLiteral
+797534	278	var	_m0 :new Matrix4 | _v0$1 :new Vector3 | _v1$4 :new Vector3 | _p0 :new Vector3 | _p1 :new Vector3 | _e0 :new Euler | _q0$1 :new Quaternion | _q1$2 :new Quaternion | _matrixWorld$1 :new Matrix4 | _matrixWorldInverse$1 :new Matrix4 | _projectionMatrix$1 :new Matrix4 | _perspectiveCamera :new PerspectiveCamera
+797812	19352	class	GoalTunnelAstronauts
+817164	4094	var	goalTunnelAstronauts :new GoalTunnelAstronauts | blockVert :TemplateLiteral | blockFrag :TemplateLiteral
+821258	2244	class	GoalWhiteTunnel
+823502	2030	var	goalWhiteTunnel :new GoalWhiteTunnel | vert$f :TemplateLiteral | frag$j :TemplateLiteral
+825532	929	class extends PostEffect	Ufx
+826461	40	class extends Ufx	PreUfx
+826501	24	var	preUfx :new PreUfx
+826525	129	var	_matrixWorld :new Matrix4 | _matrixWorldInverse :new Matrix4 | _projectionMatrix :new Matrix4 | _q$1 :new Quaternion | _v1$3 :new Vector3
+826654	3331	class	GoalTunnelGlass
+829985	224	var	goalTunnelGlass :new GoalTunnelGlass | validateEmail :ArrowFunctionExpression
+830209	35	var	toQuerystring_min :ObjectExpression
+830244	1488	expr	(function(o,e){(function(t,r){o.exports=r()})(commonjsGlobal$1,function(){return
+831732	55	var	toQuerystring_minExports :MemberExpression
+831787	70	var	toQueryString :CallExpression
+831857	328	var	browser :ObjectExpression | debug$1 :ObjectExpression | s :Literal | m :BinaryExpression | h :BinaryExpression | d :BinaryExpression | y :BinaryExpression | ms :FunctionExpression
+832185	644	function(o)	parse
+832829	135	function(o)	fmtShort
+832964	118	function(o)	fmtLong
+833082	95	function(o,e,t)	plural
+833177	1411	expr	(function(o,e){e=o.exports=n.debug=n.default=n,e.coerce=u,e.disable=l,e.enable=a
+834588	33	var	debugExports :MemberExpression
+834621	1651	expr	(function(o,e){var t={};e=o.exports=debugExports,e.log=a,e.formatArgs=n,e.save=l
+836272	87	var	browserExports :MemberExpression | debug :CallExpression | jsonp_1 :Identifier | count :Literal
+836359	17	function()	noop
+836376	660	function(o,e,t)	jsonp
+837036	242	var	jsonp$1 :CallExpression | MAILCHIMP_URL :Literal | getAjaxUrl :ArrowFunctionExpression
+837278	1285	class	NewletterForm
+838563	6697	class	FooterSection
+845260	38	var	footerSection :new FooterSection
+845298	3549	class	GoalSectionRanges
+848847	1255	var	homeGoalSectionRanges :new GoalSectionRanges | vert$e :TemplateLiteral | frag$i :TemplateLiteral
+850102	1072	class	GoalTunnelsBackground
+851174	3719	var	goalTunnelsBackground :new GoalTunnelsBackground | vert$d :TemplateLiteral | frag$h :TemplateLiteral | _v$1 :new Vector3
+854893	2676	class	GoalWhiteTunnelParticles
+857569	2405	var	goalWhiteTunnelParticles :new GoalWhiteTunnelParticles | vert$c :TemplateLiteral | frag$g :TemplateLiteral | goalWhiteTunnelStickerData :ArrayExpression
+859974	12	expr	new Vector3;
+859986	2136	class	GoalWhiteTunnelStickers
+862122	58	var	goalWhiteTunnelStickers :new GoalWhiteTunnelStickers
+862180	6317	class extends Stage3D	GoalTunnels
+868497	2498	var	goalTunnels :new GoalTunnels | frameBgVert :TemplateLiteral | frameBgFrag :TemplateLiteral
+870995	2066	class	HomeGoalSectionTunnelTitle
+873061	98	var	homeGoalSectionTunnelTitle :new HomeGoalSectionTunnelTitle | TITLE_STAGGER$1 :Literal | TITLE_DELAY :Literal
+873159	66	var	_m$1 :new Matrix4 | _q :new Quaternion | _e :new Euler | _c0 :new Color
+873225	9951	class	GoalSection
+883176	6662	var	homeGoalSection :new GoalSection | vertexShader :TemplateLiteral | fragmentShader$3 :TemplateLiteral | vert$b :TemplateLiteral | frag$f :TemplateLiteral | _v3 :new Vector3
+889838	20	var	_c1$2 :new Color
+889858	10	expr	new Color;
+889868	6837	class	ProjectDetailsScreen
+896705	52	var	projectDetailsScreen :new ProjectDetailsScreen
+896757	520	class	Route
+897277	115	var	loc :MemberExpression | ORIGIN :MemberExpression | URL_PREFIX_REGEX :new RegExp
+897392	2614	class	RouteManager
+900006	36	var	routeManager :new RouteManager
+900042	36	var	_c1$1 :new Color | _c2$1 :new Color
+900078	7865	class	Header
+907943	24	var	header :new Header
+907967	1987	class	ProjectDetailsData
+909954	1648	class extends UfxMesh	UfxTextMesh
+911602	2080	var	vert$a :TemplateLiteral | frag$e :TemplateLiteral
+913682	10	var	idx :Literal
+913692	6251	class	ProjectDetailsItem
+919943	1159	class	ProjectDetailsItems
+921102	50	var	projectDetailsItems :new ProjectDetailsItems
+921152	32	var	_c1 :new Color | _c2 :new Color
+921184	11206	class	ProjectDetailsSection
+932390	54	var	projectDetailsSection :new ProjectDetailsSection
+932444	305	class	ProjectPageAudios
+932749	46	var	projectPageAudios :new ProjectPageAudios
+932795	2761	class extends Page	ProjectPage
+935556	34	var	projectPage :new ProjectPage
+935590	23	var	_brokenGlassStep :Literal
+935613	1787	class	HomePageAudios
+937400	40	var	homePageAudios :new HomePageAudios
+937440	2217	class extends Page	HomePage
+939657	532	var	homePage :new HomePage | getLightUvShader :TemplateLiteral
+940189	1290	class	AboutHeroLight
+941479	2205	var	light :new AboutHeroLight | sliceShader :TemplateLiteral | sliceBlendFrag :TemplateLiteral
+943684	3480	class	AboutHeroLightField
+947164	4720	var	lightField :new AboutHeroLightField | fragSim :TemplateLiteral
+951884	12	expr	new Vector3;
+951896	2643	class	AboutHeroParticlesSimulation
+954539	7930	var	sim :new AboutHeroParticlesSimulation | vert$9 :TemplateLiteral | frag$d :TemplateLiteral | lightFieldVert :TemplateLiteral | lightFieldFrag :TemplateLiteral | motionVert :TemplateLiteral | motionFrag :TemplateLiteral | getScatter :TemplateLiteral
+962469	648	class	AboutHeroScatter
+963117	1318	var	aboutHeroScatter :new AboutHeroScatter | fragmentShader$2 :TemplateLiteral | motionBlurFragmentShader :TemplateLiteral | blurFragmentShader :TemplateLiteral
+964435	2107	class extends PostEffect	AboutPageHeroEfxPrepass
+966542	58	var	aboutPageHeroEfxPrepass :new AboutPageHeroEfxPrepass
+966600	4044	class	AboutHeroParticles
+970644	5039	var	aboutHeroParticles :new AboutHeroParticles | vert$8 :TemplateLiteral | frag$c :TemplateLiteral | lightShadowMapFrag :TemplateLiteral
+975683	3897	class	AboutHeroRocks
+979580	5493	var	aboutHeroRocks :new AboutHeroRocks | frag$b :TemplateLiteral | groundVert :TemplateLiteral | groundFrag :TemplateLiteral
+985073	2458	class	AboutHeroGround
+987531	2663	var	aboutHeroGround :new AboutHeroGround | vert$7 :TemplateLiteral | frag$a :TemplateLiteral
+990194	259	var	SEGMENT_COUNT :Literal | THREHSOLDS :ArrayExpression | v0 :new Vector3
+990453	12	expr	new Vector3;
+990465	12	expr	new Vector3;
+990477	2112	class	AboutHeroLines
+992589	2665	var	aboutHeroLines :new AboutHeroLines | vert$6 :TemplateLiteral | frag$9 :TemplateLiteral | shadowVert :TemplateLiteral | shadowFrag :TemplateLiteral
+995254	80	var	_v1$2 :new Vector3 | _v2$1 :new Vector3 | _q1$1 :new Quaternion | _q2 :new Quaternion
+995334	3366	class	aboutHeroPerson
+998700	5694	var	aboutHeroPerson$1 :new aboutHeroPerson | aboutHeroVisualFinalVert :TemplateLiteral | aboutHeroVisualFinalFrag :TemplateLiteral | vert$5 :TemplateLiteral | frag$8 :TemplateLiteral
+1004394	2046	class	AboutHeroFog
+1006440	1541	var	aboutHeroFog :new AboutHeroFog | vert$4 :TemplateLiteral | frag$7 :TemplateLiteral
+1007981	540	class	AboutHeroHalo
+1008521	6398	var	aboutHeroHalo :new AboutHeroHalo | vert$3 :TemplateLiteral | frag$6 :TemplateLiteral | PARTICLE_COUNT :Literal | SIM_TEXTURE_WIDTH :Literal | SIM_TEXTURE_HEIGHT :Literal | MAX_FACE_NUM :Literal
+1014919	22	var	_v1$1 :new Vector3
+1014941	12	expr	new Vector3;
+1014953	19	var	_m :new Matrix4
+1014972	4620	class	AboutHeroFaces
+1019592	771	var	aboutHeroFaces :new AboutHeroFaces | fragmentShader$1 :TemplateLiteral
+1020363	245	var	_sceneColorBurn :new Color | _sceneColorDodge :new Color | _sceneColorBurnAlpha :Literal | _sceneColorDodgeAlpha :Literal | _hudColorBurn :new Color | _hudColorDodge :new Color | _hudColorBurnAlpha :Literal | _hudColorDodgeAlpha :Literal
+1020608	894	class extends PostEffect	AboutPageHeroEfx
+1021502	1927	var	aboutPageHeroEfx :new AboutPageHeroEfx | vert$2 :TemplateLiteral | frag$5 :TemplateLiteral
+1023429	2674	class	AboutHeroLetters
+1026103	97	var	aboutHeroLetters :new AboutHeroLetters | _v :new Vector3 | _q0 :new Quaternion | _q1 :new Quaternion
+1026200	5866	class extends Stage3D	AboutHero
+1032066	1820	var	aboutHero :new AboutHero | vert$1 :TemplateLiteral | frag$4 :TemplateLiteral
+1033886	18	var	_needsSync :UnaryExpression
+1033904	1266	class	AboutWhoLogo
+1035170	36	var	aboutWhoLogo :new AboutWhoLogo
+1035206	2323	class	WhoSubsectionWeAre
+1037529	48	var	whoSubsectionWeAre :new WhoSubsectionWeAre
+1037577	2086	class	WhoSubsectionDetails
+1039663	52	var	whoSubsectionDetails :new WhoSubsectionDetails
+1039715	886	class	TextAnimationHelper
+1040601	1076	var	textAnimationHelper :new TextAnimationHelper | letterVert :TemplateLiteral | letterFrag :TemplateLiteral
+1041677	11891	class	WhoSubsectionTeam
+1053568	46	var	whoSubsectionTeam :new WhoSubsectionTeam
+1053614	4684	class	AboutWhoSection
+1058298	82	var	aboutWhoSection :new AboutWhoSection | TITLE_STAGGER :Literal | DESCRIPTION_STAGGER :Literal
+1058380	3638	class	AboutClientSection
+1062018	48	var	aboutClientSection :new AboutClientSection
+1062066	23495	class	SVGParser
+1085561	2426	var	svgParser :new SVGParser | titleVert :TemplateLiteral | titleFrag :TemplateLiteral
+1087987	42	class extends Ufx	PostUfx
+1088029	26	var	postUfx :new PostUfx
+1088055	5936	class	AboutAwardSection
+1093991	64	var	aboutAwardSection :new AboutAwardSection | NUMBER_OF_CARDS :Literal
+1094055	6241	class	AboutCapabilitySection
+1100296	56	var	aboutCapabilitySection :new AboutCapabilitySection
+1100352	370	class	AboutPageAudios
+1100722	42	var	aboutPageAudios :new AboutPageAudios
+1100764	17	var	_c :new Color
+1100781	1309	class extends Page	AboutPage
+1102090	30	var	aboutPage :new AboutPage
+1102120	2758	class	ProjectsMainSection
+1104878	50	var	projectsMainSection :new ProjectsMainSection
+1104928	325	class	ProjectsPageAudios
+1105253	48	var	projectsPageAudios :new ProjectsPageAudios
+1105301	1468	class extends Page	ProjectsPage
+1106769	36	var	projectsPage :new ProjectsPage
+1106805	27	var	dayjs_min :ObjectExpression
+1106832	7249	expr	(function(o,e){(function(t,r){o.exports=r()})(commonjsGlobal$1,function(){var t=
+1114081	39	var	dayjs_minExports :MemberExpression
+1114120	54	var	dayjs :CallExpression
+1114174	2671	class extends Page	PlaygroundPage
+1116845	40	var	playgroundPage :new PlaygroundPage
+1116885	55	var	FLUID_CELL :Literal | AIR_CELL :Literal | SOLID_CELL :Literal | EMIT_RATE :Literal
+1116940	52	var	_v0 :new Vector2 | _v1 :new Vector2 | _v2 :new Vector2
+1116992	43	function(o,e,t)	clamp
+1117035	11062	class	FlipSim
+1128097	1499	var	flipSim :new FlipSim | vert :TemplateLiteral | frag$3 :TemplateLiteral
+1129596	103	var	COLORS :ArrayExpression
+1129699	7441	class	FlipAnimation
+1137140	38	var	flipAnimation :new FlipAnimation
+1137178	6085	class	EndSection
+1143263	32	var	endSection :new EndSection
+1143295	1058	class	ScrollNavSection
+1144353	44	var	scrollNavSection :new ScrollNavSection
+1144397	1308	class	PageExtraSections
+1145705	46	var	pageExtraSections :new PageExtraSections
+1145751	194	var	LOADING_RECTS :ArrayExpression
+1145945	2829	class	TransitionOverlay
+1148774	46	var	transitionOverlay :new TransitionOverlay
+1148820	5947	class	PageManager
+1154767	35	var	pagesManager :new PageManager
+1154802	6235	class	ScrollPane
+1161037	1538	class extends ScrollPane	ScrollManager
+1162575	38	var	scrollManager :new ScrollManager
+1162613	10	var	_geom :
+1162623	4470	class	Postprocessing
+1167093	7690	var	smaaBlendVert :TemplateLiteral | smaaBlendFrag :TemplateLiteral | smaaEdgesVert :TemplateLiteral | smaaEdgesFrag :TemplateLiteral | smaaWeightsVert :TemplateLiteral | smaaWeightsFrag :TemplateLiteral
+1174783	2885	class extends PostEffect	Smaa
+1177668	6659	var	frag$2 :TemplateLiteral | highPassFrag :TemplateLiteral | blurFrag :TemplateLiteral | fftFrag :TemplateLiteral | convolutionSrcFrag :TemplateLiteral | convolutionMixFrag :TemplateLiteral | convolutionCacheFrag :TemplateLiteral | convolutionFrag :TemplateLiteral
+1184327	8209	class extends PostEffect	Bloom
+1192536	861	var	frag$1 :TemplateLiteral
+1193397	1333	class extends PostEffect	ScreenPaintDistortion
+1194730	1180	var	fragmentShader :TemplateLiteral
+1195910	1203	class extends PostEffect	Final
+1197113	5110	var	easuFrag :TemplateLiteral | frag :TemplateLiteral
+1202223	1328	var	Fsr$1 :class
+1203551	237	class extends PostEffect	Fsr
+1203788	49	var	XHRItem :MemberExpression
+1203837	2115	class extends XHRItem	BufItem
+1205952	19	expr	BufItem.type="buf";
+1205971	27	expr	BufItem.extensions=["buf"];
+1205998	35	expr	BufItem.responseType="arraybuffer";
+1206217	89	var	durl :FunctionExpression
+1206306	125	TryStatement	TryStatement
+1206431	483	var	u8 :Identifier | u16 :Identifier | u32 :Identifier | fleb :new u8 | fdeb :new u8 | clim :new u8 | freb :FunctionExpression | _a :CallExpression | fl :MemberExpression | revfl :MemberExpression
+1206914	25	expr	fl[28]=258,revfl[258]=28;
+1206939	48	var	_b :CallExpression | fd :MemberExpression | rev :new u16
+1206987	153	ForStatement	ForStatement
+1207140	383	var	hMap :FunctionExpression | flt :new u8
+1207523	31	ForStatement	ForStatement
+1207554	33	ForStatement	ForStatement
+1207587	33	ForStatement	ForStatement
+1207620	33	ForStatement	ForStatement
+1207653	19	var	fdt :new u8
+1207672	30	ForStatement	ForStatement
+1207702	2405	var	flrm :CallExpression | fdrm :CallExpression | max :FunctionExpression | bits :FunctionExpression | bits16 :FunctionExpression | shft :FunctionExpression | slc :FunctionExpression | inflt :FunctionExpression | et :new u8 | zlv :FunctionExpression
+1210107	67	function(o,e)	unzlibSync
+1210174	53	var	td :LogicalExpression | tds :Literal
+1210227	46	TryStatement	TryStatement
+1210273	20244	class extends DataTextureLoader	EXRLoader
+1230517	51	var	AnyItem$2 :MemberExpression
+1230568	358	class extends AnyItem$2	EXRItem
+1230926	19	expr	EXRItem.type="exr";
+1230945	27	expr	EXRItem.extensions=["exr"];
+1230972	53	var	ImageItem :MemberExpression
+1231025	1040	class extends ImageItem	TextureItem
+1232065	27	expr	TextureItem.type="texture";
+1232092	26	expr	TextureItem.extensions=[];
+1232118	51	var	AnyItem$1 :MemberExpression
+1232169	444	class extends AnyItem$1	ThreeLoaderItem
+1232613	36	expr	ThreeLoaderItem.type="three-loader";
+1232649	30	expr	ThreeLoaderItem.extensions=[];
+1232679	170	var	shader :TemplateLiteral
+1232849	248	class	GlPositionOffset
+1233097	44	var	glPositionOffset :new GlPositionOffset
+1233141	1312	class	Support
+1234453	1657	var	support :new Support | textureBicubicShader :TemplateLiteral
+1236110	6146	class	App
+1242256	18	var	app :new App
+1242274	2195	class	Preloader
+1244469	30	var	preloader :new Preloader
+1244499	1684	class	Links
+1246183	22	var	links :new Links
+1246205	10	expr	new Color;
+1246215	885	class	UI
+1247100	59	var	ui :new UI | AnyItem :MemberExpression
+1247159	1287	class extends AnyItem	FontItem
+1248446	21	expr	FontItem.type="font";
+1248467	23	expr	FontItem.extensions=[];
+1248490	47	var	dateTime :CallExpression | _needsResize :UnaryExpression
+1248537	262	function()	preRun
+1248799	501	function()	run
+1249300	99	function()	init
+1249399	224	function()	start
+1249623	36	function()	onResize
+1249659	814	function(o)	_onResize
+1250473	322	function(o)	update
+1250795	245	function()	loop
+1251040	9	expr	preRun();
+1251049	94	expr	Object.assign||document.documentElement.classList.add("not-supported not-support
+1251143	51	expr	document.documentElement.classList.remove("no-js");
+1251194	190	expr	/(ipad|iphone|android)/i.test((navigator.userAgent||navigator.vendor).toLowerCas
+1251384	70	function(o)	preventZoom
+1251454	68	expr	window.addEventListener("wheel",o=>o.preventDefault(),{passive:!1});
+1251522	60	expr	document.addEventListener("gesturestart",o=>preventZoom(o));
+1251582	61	expr	document.addEventListener("gesturechange",o=>preventZoom(o));
+1251643	58	expr	document.addEventListener("gestureend",o=>preventZoom(o));

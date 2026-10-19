@@ -1,0 +1,20 @@
+HTTP/2 200 
+accept-ranges: bytes
+age: 0
+cache-control: public,max-age=0,must-revalidate
+cache-status: "Netlify Edge"; fwd=miss; fwd-status=200; stored
+content-type: text/html; charset=UTF-8
+date: Sun, 18 Oct 2026 21:55:12 GMT
+etag: "0701794648e4bbd2d2f82d047257eda1-ssl"
+expect-ct: max-age=604800
+permissions-policy: fullscreen=(self)
+referrer-policy: same-origin
+server: Netlify
+strict-transport-security: max-age=31557600; includesubdomains; preload
+vary: Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: deny
+x-nf-request-id: 01M58G5Z23R3RVSHFF1TMJQ1YF
+x-xss-protection: 1; mode=block
+content-length: 59671
+

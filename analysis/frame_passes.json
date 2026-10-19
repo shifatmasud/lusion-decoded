@@ -1,0 +1,134 @@
+[
+ {
+  "i": 0,
+  "w": 320,
+  "h": 200,
+  "fb": true,
+  "prog": 4,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_lowPaintTexture,u_prevPaintTexture,u_paintTexelSize,u_scrollOffset,u_drawFrom,u_drawTo,u_pushStrength,u_dissipations,u_vel,u_curlScale,u_curlStrength",
+  "order": 1
+ },
+ {
+  "i": 1,
+  "w": 160,
+  "h": 100,
+  "fb": true,
+  "prog": 2,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture",
+  "order": 2
+ },
+ {
+  "i": 2,
+  "w": 160,
+  "h": 100,
+  "fb": true,
+  "prog": 3,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture,u_delta",
+  "order": 3
+ },
+ {
+  "i": 3,
+  "w": 1280,
+  "h": 800,
+  "fb": true,
+  "prog": 2,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture",
+  "order": 5
+ },
+ {
+  "i": 4,
+  "w": 640,
+  "h": 400,
+  "fb": true,
+  "prog": 3,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture,u_delta",
+  "order": 7
+ },
+ {
+  "i": 5,
+  "w": 320,
+  "h": 200,
+  "fb": true,
+  "prog": 3,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture,u_delta",
+  "order": 9
+ },
+ {
+  "i": 6,
+  "w": 80,
+  "h": 50,
+  "fb": true,
+  "prog": 3,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture,u_delta",
+  "order": 13
+ },
+ {
+  "i": 7,
+  "w": 1280,
+  "h": 800,
+  "fb": true,
+  "prog": 20,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_bgColor,u_aspect,u_domWH,u_globalRadius",
+  "order": 27
+ },
+ {
+  "i": 8,
+  "w": 1280,
+  "h": 800,
+  "fb": true,
+  "prog": 18,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture,u_screenPaintTexture,u_screenPaintTexelSize,u_amount,u_rgbShift,u_multiplier,u_colorMultiplier,u_shade,u_blueNoiseTexture,u_blueNoiseTexelSize,u_blueNoiseCoordOffset",
+  "order": 29
+ },
+ {
+  "i": 9,
+  "w": 1280,
+  "h": 800,
+  "fb": true,
+  "prog": 8,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_texture",
+  "order": 32
+ },
+ {
+  "i": 10,
+  "w": 1280,
+  "h": 800,
+  "fb": true,
+  "prog": 9,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_edgesTexture,u_areaTexture,u_searchTexture,u_texelSize",
+  "order": 33
+ },
+ {
+  "i": 11,
+  "w": 1280,
+  "h": 800,
+  "fb": false,
+  "prog": 10,
+  "rt": 5121,
+  "rf": 6408,
+  "unis": "u_weightsTexture,u_texture,u_texelSize",
+  "order": 34
+ }
+]
