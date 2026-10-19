@@ -1,69 +1,32 @@
-> **Read in Notion:** [14. Special: the ScreenPaint cursor trail](https://shifatmasud.notion.site/3fe48559569d81a98b50c232287e3463) · Part of [Lusion.co Decoded](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
+> **Read in Notion:** [14. Special: Cursor fluid trail (ScreenPaint)](https://shifatmasud.notion.site/3fe48559569d81a98b50c232287e3463) · Part of [Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
 
-<callout icon="💧" color="purple_bg">
-	**Special chapter.** The liquid-glass cursor trail on lusion.co isn't a fluid solver and isn't a refraction shader in the physics sense. It's two small GPU passes. **ScreenPaint** (module 020) turns the pointer into an 8-bit velocity-and-weight texture that keeps moving and fading by itself. **ScreenPaintDistortion** (module 125, render order 75) reads that texture and smears the finished frame along the stored velocity with 9 taps, then adds a rainbow fringe on the fading edges. Chapter 5 (section 5.6) introduced the brush and chapter 8 placed the pass in the chain. This chapter covers everything else: every uniform, every channel, the live tuning values, the frame order, who else reads the texture, and how to build your own.
-</callout>
+# 14. Special: Cursor fluid trail (ScreenPaint)
+
+> 💧 **Special chapter.** The liquid-glass cursor trail on [lusion.co](http://lusion.co) isn't a fluid solver and isn't a refraction shader in the physics sense. It's two small GPU passes. **ScreenPaint** (module 020) turns the pointer into an 8-bit velocity-and-weight texture that keeps moving and fading by itself. **ScreenPaintDistortion** (module 125, render order 75) reads that texture and smears the finished frame along the stored velocity with 9 taps, then adds a rainbow fringe on the fading edges. Chapter 5 (section 5.6) introduced the brush and chapter 8 placed the pass in the chain. This chapter covers everything else: every uniform, every channel, the live tuning values, the frame order, who else reads the texture, and how to build your own.
+
 ![Concept: pointer and scroll input painted into a GPU velocity field](assets/14/05_screenpaint.jpg)
+
+*Concept: pointer and scroll input painted into a GPU velocity field*
+
 ## S.1 Where it lives
-<table header-row="true">
-<tr>
-<td>Piece</td>
-<td>File in the study archive</td>
-<td>Role</td>
-</tr>
-<tr>
-<td>`ScreenPaint` class (singleton `screenPaint`)</td>
-<td>`modules/020_ScreenPaint.js` (5,400 bytes; bundle bytes 612138–616322)</td>
-<td>Owns 4 render targets, builds the brush, runs the paint shader once per frame</td>
-</tr>
-<tr>
-<td>Paint shader `frag$n`</td>
-<td>`shaders_by_owner/ScreenPaint__fragSn.frag.glsl` (2,083 bytes; bundle byte 610092)</td>
-<td>Draws the capsule, advects, decays, injects velocity</td>
-</tr>
-<tr>
-<td>`ScreenPaintDistortion extends PostEffect`</td>
-<td>`modules/125_ScreenPaintDistortion.js` (2,962 bytes; bundle bytes 1193397–1195910)</td>
-<td>Post pass at render order 75 that bends the final frame</td>
-</tr>
-<tr>
-<td>Distortion shader `frag$1`</td>
-<td>`shaders_by_owner/ScreenPaintDistortion__fragS1.frag.glsl` (907 bytes; bundle byte 1192549). Compiled at runtime as program `runtime/home_compiled_shaders/037.glsl`</td>
-<td>9-tap directional smear plus colour fringe</td>
-</tr>
-<tr>
-<td>Separable blur</td>
-<td>`modules/017_Blur.js`</td>
-<td>Softens the 1/8-resolution copy that feeds back as the "push"</td>
-</tr>
-<tr>
-<td>Render target factory</td>
-<td>`modules/011_FboHelper.js`</td>
-<td>`createRenderTarget(1, 1)` defaults to `UnsignedByteType`, linear filtering, clamp, no depth</td>
-</tr>
-<tr>
-<td>Wiring and per-frame tuning</td>
-<td>`modules/136_App.js` (init, resize, update, lines 132–146)</td>
-<td>Creates both, pushes the queue, copies `properties.*` values into them every frame</td>
-</tr>
-<tr>
-<td>Default tuning values</td>
-<td>`modules/005_Properties.js`</td>
-<td>`screenPaint*` and `screenPaintDistortion*` defaults</td>
-</tr>
-<tr>
-<td>Scenes that change the tuning</td>
-<td>`065_GoalSection.js`, `094_AboutHero.js`, `105_AboutCapabilitySection.js`</td>
-<td>Change `screenPaintOffsetRatio` and the RGB shift per section</td>
-</tr>
-<tr>
-<td>Shaders that bind or read the texture</td>
-<td>`AboutAwardSection__titleFrag` (reads it), plus `021`, `032`, `037`, `071`, `072`, `019` (bind or declare it)</td>
-<td>See S.8</td>
-</tr>
-</table>
+
+| Piece | File in the study archive | Role |
+|---|---|---|
+| `ScreenPaint` class (singleton `screenPaint`) | `modules/020_ScreenPaint.js` (5,400 bytes; bundle bytes 612138–616322) | Owns 4 render targets, builds the brush, runs the paint shader once per frame |
+| Paint shader `frag$n` | `shaders_by_owner/ScreenPaint__fragSn.frag.glsl` (2,083 bytes; bundle byte 610092) | Draws the capsule, advects, decays, injects velocity |
+| `ScreenPaintDistortion extends PostEffect` | `modules/125_ScreenPaintDistortion.js` (2,962 bytes; bundle bytes 1193397–1195910) | Post pass at render order 75 that bends the final frame |
+| Distortion shader `frag$1` | `shaders_by_owner/ScreenPaintDistortion__fragS1.frag.glsl` (907 bytes; bundle byte 1192549). Compiled at runtime as program `runtime/home_compiled_shaders/037.glsl` | 9-tap directional smear plus colour fringe |
+| Separable blur | `modules/017_Blur.js` | Softens the 1/8-resolution copy that feeds back as the "push" |
+| Render target factory | `modules/011_FboHelper.js` | `createRenderTarget(1, 1)` defaults to `UnsignedByteType`, linear filtering, clamp, no depth |
+| Wiring and per-frame tuning | `modules/136_App.js` (init, resize, update, lines 132–146) | Creates both, pushes the queue, copies `properties.*` values into them every frame |
+| Default tuning values | `modules/005_Properties.js` | `screenPaint*` and `screenPaintDistortion*` defaults |
+| Scenes that change the tuning | `065_GoalSection.js`, `094_AboutHero.js`, `105_AboutCapabilitySection.js` | Change `screenPaintOffsetRatio` and the RGB shift per section |
+| Shaders that bind or read the texture | `AboutAwardSection__titleFrag` (reads it), plus `021`, `032`, `037`, `071`, `072`, `019` (bind or declare it) | See S.8 |
+
 A bundle-splitting quirk: the distortion shader string sits at the end of the `124_Bloom.js` slice (its bytes come just before the class), and the `125_ScreenPaintDistortion.js` slice ends with the `Final` grade shader. The minified names `frag$1` and `frag$n` connect each class to its shader.
+
 ## S.2 The whole system in one diagram
+
 ```mermaid
 flowchart LR
   subgraph CPU["CPU, every frame (ScreenPaint.update)"]
@@ -84,8 +47,11 @@ flowchart LR
   CURR --> TITLE["AboutAwardSection title shader"]
   SCENE["scene, Bloom 10, Final 30, PreUfx 50"] --> DIST --> REST["PostUfx 100, SMAA 500, FSR 2000"]
 ```
+
 ## S.3 Render targets and the texel layout
+
 **Confirmed (quoted, `020_ScreenPaint.js`):**
+
 ```javascript
 resize(e, t) {
   let r = e >> 2,
@@ -98,44 +64,29 @@ resize(e, t) {
     this._lowRenderTarget.setSize(a, l),
     this._lowBlurRenderTarget.setSize(a, l),
 ```
+
 ```javascript
 clear = () => {
   (fboHelper.clearColor(0.5, 0.5, 0, 0, this._lowRenderTarget),
   ...
 ```
+
 - **Four targets.** `prev` and `curr` at a quarter of the render size (360×225 for a 1440×900 render size) swap roles every frame. `low` and `lowBlur` at an eighth of the render size (180×112) hold the blurred feedback copy. `lowBlur` is only the blur's scratch buffer.
 - **8-bit storage.** `fboHelper.createRenderTarget(1, 1)` passes no float flag, so every target is `UnsignedByteType`. Values can only be 0 to 1 in steps of 1/255.
 - **Channel meaning** (from the clear colour and both shaders):
 
-<table header-row="true">
-<tr>
-<td>Channel</td>
-<td>Stores</td>
-<td>Rest value</td>
-<td>Live fade per frame</td>
-</tr>
-<tr>
-<td>R, G</td>
-<td>velocity x and y, biased: 0.5 means still</td>
-<td>0.5</td>
-<td>× 0.975 (`screenPaintVelocityDissipation`)</td>
-</tr>
-<tr>
-<td>B</td>
-<td>weight 1: the long tail</td>
-<td>0</td>
-<td>× 0.95 (`screenPaintWeight1Dissipation`)</td>
-</tr>
-<tr>
-<td>A</td>
-<td>weight 2: the short bright head</td>
-<td>0</td>
-<td>× 0.8 (`screenPaintWeight2Dissipation`)</td>
-</tr>
-</table>
+| Channel | Stores | Rest value | Live fade per frame |
+|---|---|---|---|
+| R, G | velocity x and y, biased: 0.5 means still | 0.5 | × 0.975 (`screenPaintVelocityDissipation`) |
+| B | weight 1: the long tail | 0 | × 0.95 (`screenPaintWeight1Dissipation`) |
+| A | weight 2: the short bright head | 0 | × 0.8 (`screenPaintWeight2Dissipation`) |
+
 At 60 fps those fades mean half-lives of about 27 frames (0.45 s) for velocity, 13.5 frames (0.23 s) for the tail and 3 frames (0.05 s) for the head. That gap between B and A is why the trail has a crisp leading stroke and a long soft wake.
+
 ## S.4 The CPU side: from pointer to brush
+
 **Confirmed (quoted, `020_ScreenPaint.update`):**
+
 ```javascript
 let t = this._currPaintRenderTarget.width,
   r = this._currPaintRenderTarget.height,
@@ -145,7 +96,9 @@ let t = this._currPaintRenderTarget.width,
   (this.sharedUniforms.u_prevPaintTexture.value = this._prevPaintRenderTarget.texture),
   (this.sharedUniforms.u_currPaintTexture.value = this._currPaintRenderTarget.texture));
 ```
+
 **1. Ping-pong swap first.** Last frame's output becomes `prev`, and the shared uniform `u_currPaintTexture` is pointed at the target about to be written. Every consumer holds a reference to that same uniform object, so they always read this frame's paint without being told.
+
 ```javascript
 let u = _v$4.distanceTo(input.prevMousePixelXY),
   f = math.fit(u, 0, this.radiusDistanceRange, this.minRadius, this.maxRadius);
@@ -156,9 +109,11 @@ let u = _v$4.distanceTo(input.prevMousePixelXY),
   (f = 0),
   (f = (f / properties.viewportHeight) * r),
 ```
+
 **2. Radius from speed.** The distance the pointer moved this frame (in CSS pixels) is mapped from 0–100 to `minRadius`–`maxRadius`. `App` sets `maxRadius = Math.max(40, properties.viewportWidth / 20)`, so on a 1440-wide window a fast flick paints a 72 px brush. That is 18 texels in the 225-row paint target after the last line converts CSS pixels to paint pixels. A still pointer gives radius 0, so nothing is drawn.
 
 **3. When it refuses to paint.** If the page isn't scrolling and the pointer hasn't moved, or drawing is off, or the device is mobile (or `needsMouseDown` is set) and the finger isn't held down for two frames in a row, the radius is forced to 0. On phones the trail only appears while you drag.
+
 ```javascript
 this._fromDrawData.copy(this._toDrawData),
 _v$4.copy(input.mouseXY),
@@ -170,19 +125,25 @@ _v$4
   .multiplyScalar(e * 0.8),
 this._material.uniforms.u_vel.value.multiplyScalar(this.accelerationDissipation).add(_v$4),
 ```
+
 **4. The brush is a segment, not a dot.** `u_drawFrom` is last frame's `u_drawTo`, and `u_drawTo` is the pointer converted from -1…1 to paint pixels. Packed as `(x, y, radius, weight)`, with weight always 1. Drawing the whole segment means a fast mouse never leaves gaps.
 
 **5. Brush velocity is a leaky integrator.** The movement in paint pixels, times `dt × 0.8`, is added to `u_vel` after the old value is multiplied by `accelerationDissipation` (0.8). Under steady motion it settles at about 5× one frame's step. That smooths jitter and gives the stroke a little momentum after you stop.
 
 **6. Scroll is part of the input.** `scrollViewDelta × properties.screenPaintOffsetRatio` is added to the pointer, scaled ×3 viewport for the radius test, so scrolling with a still mouse still paints a vertical streak. Sections change the ratio: `GoalSection` sets it to `1 - E` from its own progress, `AboutCapabilitySection` multiplies it down near its edges, and `AboutHero` sets it to 0.
+
 ```javascript
 fboHelper.render(this._material, this._currPaintRenderTarget),
 fboHelper.copy(this._currPaintRenderTarget.texture, this._lowRenderTarget),
 blur.blur(8, 1, this._lowRenderTarget, this._lowBlurRenderTarget));
 ```
+
 **7. Three GPU calls.** Paint into `curr`, copy it down to 1/8 resolution, then blur that copy. In `017_Blur.js`, `blur(radius, scale, input, intermediate)` with no output argument renders horizontally into `lowBlur` and vertically back into `low`, so `low` is blurred in place. The paint shader reads it next frame.
+
 ## S.5 The paint shader, line by line
+
 **Confirmed (quoted, `ScreenPaint__fragSn`, whitespace added):**
+
 ```glsl
 vec2 sdSegment(in vec2 p, in vec2 a, in vec2 b){
   vec2 pa = p - a, ba = b - a;
@@ -211,6 +172,7 @@ void main(){
   gl_FragColor = clamp(data, vec4(0.0), vec4(1.0));
 }
 ```
+
 - **`sdSegment`.** Distance from this texel to the line from `drawFrom` to `drawTo`, plus `h`, how far along the line (0 to 1) the closest point sits. This is the classic capsule distance function.
 - **`radiusWeight`.** Radius and weight blended along the segment, so a stroke can taper if the two ends differ. In practice `from.z` is last frame's radius, so a speeding-up stroke widens toward its head.
 - **`d`.** The brush mask: 1 on the line, fading to 0 at the radius. The `-0.01` lower edge makes a radius of 0 give `d = 0` everywhere.
@@ -221,8 +183,11 @@ void main(){
 - **Injection.** Inside the brush, add the smoothed brush velocity to xy and the brush weight to both z and w.
 - **`max(0.004, …)`.** Forces every weight change to be at least 0.004, about 1/255. In an 8-bit target a multiply like `0.012 × 0.95` rounds back to the same value forever, so without this the trail would never fully fade (or fill). With it, weights always step to exactly 0 or 1.
 - **Re-bias and clamp.** Back to 0–1 so it fits the RGBA8 target.
+
 ## S.6 The distortion pass, line by line
+
 **Confirmed (quoted, `ScreenPaintDistortion__fragS1`, whitespace added):**
+
 ```glsl
 #include <getBlueNoise>
 void main(){
@@ -240,6 +205,7 @@ void main(){
   gl_FragColor = color;
 }
 ```
+
 - **`data` at `v_uv`.** The paint texture covers the screen exactly, so the full-screen UV reads the right texel. Bilinear filtering upsamples it from 1/4 resolution for free.
 - **`weight`.** The average of the long tail and the short head.
 - **`vel`.** Signed velocity in -1…1, flipped, times weight, so the effect fades out with the paint even if a little velocity is left. The `-0.001` nudges away 8-bit rounding around 0.5.
@@ -250,14 +216,18 @@ void main(){
 - **Skipped when idle?** `needsRender()` returns `amount > 0`, so a section can switch the pass off by setting the amount to 0. With the default amount of 3 it runs every frame, even with an empty paint texture.
 
 **Confirmed (quoted, `136_App.update`):** the pass is re-tuned every frame from `properties`, which sections can change:
+
 ```javascript
 (properties.screenPaintDistortion.amount = properties.screenPaintDistortionAmount),
 (properties.screenPaintDistortion.rgbShift = properties.screenPaintDistortionRGBShift),
 (properties.screenPaintDistortion.colorMultiplier = properties.screenPaintDistortionColorMultiplier),
 (properties.screenPaintDistortion.multiplier = properties.screenPaintDistortionMultiplier),
 ```
+
 `AboutHero` blends the RGB shift from 0 up to the default (0.5) as you leave its section, so the about-page hero gets a clean, colourless smear.
+
 ## S.7 Frame order
+
 ```mermaid
 sequenceDiagram
   participant App as App.update(dt)
@@ -278,9 +248,13 @@ sequenceDiagram
   PP->>GPU: ScreenPaintDistortion 75 reads this frame's curr
   PP->>GPU: PostUfx 100, SMAA 500, FSR 2000
 ```
+
 Two consequences. The paint is written before the scene draws, so the distortion and any scene shader see the current frame. The push field, though, is one frame old, because `low` is refreshed after the paint render. And the distortion runs before PostUfx (100), so whatever PostUfx draws on top is not smeared.
+
 ## S.8 Who else uses the texture
+
 The shared uniform object `screenPaint.sharedUniforms.u_currPaintTexture` is passed into other materials, so they all follow the swap automatically.
+
 - **Reads it (confirmed): `AboutAwardSection__titleFrag`.** It samples with bicubic filtering, at screen position, and uses it to colour the award titles:
 
 ```glsl
@@ -291,14 +265,19 @@ float hue = (screenPaintData.x + screenPaintData.y) * 1.5 + d * 2.;
 vec3 color = mix(baseColor, texture2D(u_gradientTexture, vec2(hue, 0.0)).rgb,
                  max(screenPaintData.z, screenPaintData.w) * screenPaintStrength + constantStrength) + noise.x * 0.004;
 ```
-  Velocity picks a hue from a gradient strip, and weight decides how much of it shows (`screenPaintStrength` is 1, raised to 4 in one branch of the shader). The cursor literally paints colour into the type. Bicubic sampling hides the 1/4-resolution texels on large letters.
+
+Velocity picks a hue from a gradient strip, and weight decides how much of it shows (`screenPaintStrength` is 1, raised to 4 in one branch of the shader). The cursor literally paints colour into the type. Bicubic sampling hides the 1/4-resolution texels on large letters.
+
 - **Bind or declare it, but the shipped `main()` doesn't sample it (confirmed by search):** `HomeBalloonsBackground` (021, also live as runtime program 069), `HomeReelSection` video (037, runtime program 089), `ProjectDetailsItem` (072), `UfxMesh` (032), `UfxTextMesh` (071), and a shader string in the `019_BlueNoise` slice. Their uniform lists include `u_screenPaintTexture`, but nothing reads it.
 - **Uses the tuning only:** `GoalSection` (065), `AboutCapabilitySection` (105) and `AboutHero` (094) change the scroll ratio and the RGB shift, not the texture.
 - **Not a reader, despite the file:** `124_Bloom.js` only contains the distortion shader text because of where the bundle split fell.
+
 ## S.9 Reuse it: a cursor liquid trail for three.js and React
+
 The pattern: **paint pointer motion into a small texture that advects and fades by itself, then use that texture as a displacement field in one post pass.** The code below is my own teaching version, not Lusion's. It uses half-float targets, so velocity is signed and needs no 0.5 bias or 1/255 floor, and it makes the fades frame-rate independent with `pow(k, dt × 60)`.
 
 **Original: `cursorPaint.ts`**
+
 ```typescript
 import * as THREE from 'three';
 import { FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
@@ -383,8 +362,10 @@ export class CursorPaint {
   }
 }
 ```
+
 **Original: React Three Fiber wiring**
-```tsx
+
+```typescript
 import { useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, RenderPass, ShaderPass } from 'three-stdlib';
 import { useEffect, useMemo } from 'react';
@@ -423,87 +404,30 @@ export function CursorLiquid({ strength = 12 }) {
   return null;
 }
 ```
+
 **Upgrades in Lusion's order of value:**
+
 1. **Blurred push field.** Copy the paint to 1/8 resolution, blur it, and advect from that instead of from the sharp texel. That gives the soft, widening wake.
 2. **Noise in the advection.** Add a gradient-noise offset scaled by the paint weight, so the wake curls instead of sliding straight.
 3. **Scroll as input.** Add your scroll delta to the pointer and shift the advection lookup by it, so the trail sticks to the page while you scroll.
 4. **Share the texture.** Pass the same `{ value }` uniform object into other materials (titles, images) so they can tint or warp themselves where the cursor has been.
 5. **Mobile rule.** Only paint while a finger is down, as Lusion does.
+
 ## S.10 Confirmed vs inference
-<table header-row="true">
-<tr>
-<td>Observation</td>
-<td>Status</td>
-<td>Evidence</td>
-</tr>
-<tr>
-<td>Paint targets are 1/4 render size (`>> 2`), feedback targets 1/8 (`>> 3`)</td>
-<td>Confirmed</td>
-<td>`ScreenPaint.resize`</td>
-</tr>
-<tr>
-<td>All four targets are RGBA8 (`UnsignedByteType`), linear, clamp, no depth</td>
-<td>Confirmed</td>
-<td>`FboHelper.createRenderTarget` defaults; ScreenPaint calls it with `(1, 1)` only</td>
-</tr>
-<tr>
-<td>R,G = biased velocity, B and A = two weights; cleared to (0.5, 0.5, 0, 0)</td>
-<td>Confirmed</td>
-<td>`clear()`, paint shader `data.xy -= 0.5`, `u_dissipations.xxyz`</td>
-</tr>
-<tr>
-<td>Live values: push 25, velocity 0.975, weight1 0.95, weight2 0.8, noise on, curlScale 0.02, curlStrength 3, distortion amount 3, RGB shift 0.5, colour multiplier 10, multiplier 5</td>
-<td>Confirmed</td>
-<td>`005_Properties` defaults, copied each frame in `136_App` lines 132–146</td>
-</tr>
-<tr>
-<td>`maxRadius = max(40, viewportWidth / 20)`; radius 0 when idle; mobile paints only while held</td>
-<td>Confirmed</td>
-<td>`136_App`, `ScreenPaint.update`</td>
-</tr>
-<tr>
-<td>Paint renders before the scene; the distortion pass is order 75, before PostUfx 100</td>
-<td>Confirmed</td>
-<td>`App.update` order, `renderOrder = 75`</td>
-</tr>
-<tr>
-<td>The distortion shader is compiled on the home page</td>
-<td>Confirmed</td>
-<td>`runtime/home_compiled_shaders/037.glsl` matches `frag$1`</td>
-</tr>
-<tr>
-<td>Only `AboutAwardSection` title and the distortion pass sample the texture; six other shaders declare it unused</td>
-<td>Confirmed for shipped shader strings</td>
-<td>Search for `texture2D(u_screenPaintTexture` and `textureBicubic(u_screenPaintTexture` in `shaders_by_owner/`</td>
-</tr>
-<tr>
-<td>Both `u_scrollOffset` assignments write `.y`, so the horizontal case never sets `.x`</td>
-<td>Confirmed (code); a bug that is harmless on vertical pages (inference)</td>
-<td>`ScreenPaint.update`</td>
-</tr>
-<tr>
-<td>Fades are per frame, not scaled by `dt`, so a 120 Hz screen fades about twice as fast</td>
-<td>Confirmed (code); visual effect is inference</td>
-<td>`u_dissipations` set from raw constants</td>
-</tr>
-<tr>
-<td>The `0.004` floor exists to beat 8-bit rounding</td>
-<td>Inference</td>
-<td>0.004 ≈ 1/255 and the targets are RGBA8</td>
-</tr>
-<tr>
-<td>The "refraction" is perceptual: a velocity-directed smear plus a sine rainbow, not a physical IOR model</td>
-<td>Inference from confirmed shader</td>
-<td>No normals or refraction math in `frag$1`</td>
-</tr>
-<tr>
-<td>The noise is a gradient (not a true curl) field</td>
-<td>Inference from confirmed shader</td>
-<td>Uses `noised().yz` directly; a curl would rotate it 90°</td>
-</tr>
-<tr>
-<td>Unused texture uniforms are leftovers from earlier designs or shared material templates</td>
-<td>Inference</td>
-<td>Declared and bound, never sampled</td>
-</tr>
-</table>
+
+| Observation | Status | Evidence |
+|---|---|---|
+| Paint targets are 1/4 render size (`>> 2`), feedback targets 1/8 (`>> 3`) | Confirmed | `ScreenPaint.resize` |
+| All four targets are RGBA8 (`UnsignedByteType`), linear, clamp, no depth | Confirmed | `FboHelper.createRenderTarget` defaults; ScreenPaint calls it with `(1, 1)` only |
+| R,G = biased velocity, B and A = two weights; cleared to (0.5, 0.5, 0, 0) | Confirmed | `clear()`, paint shader `data.xy -= 0.5`, `u_dissipations.xxyz` |
+| Live values: push 25, velocity 0.975, weight1 0.95, weight2 0.8, noise on, curlScale 0.02, curlStrength 3, distortion amount 3, RGB shift 0.5, colour multiplier 10, multiplier 5 | Confirmed | `005_Properties` defaults, copied each frame in `136_App` lines 132–146 |
+| `maxRadius = max(40, viewportWidth / 20)`; radius 0 when idle; mobile paints only while held | Confirmed | `136_App`, `ScreenPaint.update` |
+| Paint renders before the scene; the distortion pass is order 75, before PostUfx 100 | Confirmed | `App.update` order, `renderOrder = 75` |
+| The distortion shader is compiled on the home page | Confirmed | `runtime/home_compiled_shaders/037.glsl` matches `frag$1` |
+| Only `AboutAwardSection` title and the distortion pass sample the texture; six other shaders declare it unused | Confirmed for shipped shader strings | Search for `texture2D(u_screenPaintTexture` and `textureBicubic(u_screenPaintTexture` in `shaders_by_owner/` |
+| Both `u_scrollOffset` assignments write `.y`, so the horizontal case never sets `.x` | Confirmed (code); a bug that is harmless on vertical pages (inference) | `ScreenPaint.update` |
+| Fades are per frame, not scaled by `dt`, so a 120 Hz screen fades about twice as fast | Confirmed (code); visual effect is inference | `u_dissipations` set from raw constants |
+| The `0.004` floor exists to beat 8-bit rounding | Inference | 0.004 ≈ 1/255 and the targets are RGBA8 |
+| The "refraction" is perceptual: a velocity-directed smear plus a sine rainbow, not a physical IOR model | Inference from confirmed shader | No normals or refraction math in `frag$1` |
+| The noise is a gradient (not a true curl) field | Inference from confirmed shader | Uses `noised().yz` directly; a curl would rotate it 90° |
+| Unused texture uniforms are leftovers from earlier designs or shared material templates | Inference | Declared and bound, never sampled |

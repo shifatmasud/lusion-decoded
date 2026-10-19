@@ -1,6 +1,10 @@
 # Lusion.co Decoded: companion repo
 
-This is the companion repository for **[Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc)**, a study of how the client side of [lusion.co](https://lusion.co) works: its WebGL engine, post-processing chain, virtual scroll, router, DOM-to-GPU sync, shaders, loading and layout. It also gives you a reusable architecture to build at the same baseline in your own projects.
+This is the companion repository for **[Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc)**, a study of how the client side of [lusion.co](https://lusion.co) works: its WebGL engine, post-processing chain, virtual scroll, router, DOM-to-GPU sync, shaders, loading and layout. It also gives you a reusable architecture to build at the same baseline in your own projects.
+
+![Concept: the system as modules plugged around one core engine](handbook/assets/11/09_blueprint.jpg)
+
+*Concept: the system as modules plugged around one core engine*
 
 The Notion handbook is the main, best-formatted version. This repo holds the same chapters as Markdown, the figures and screenshots, the scripts that did the capturing and analysis, and original teaching code.
 
@@ -10,7 +14,7 @@ The Notion handbook is the main, best-formatted version. This repo holds the sam
 
 | Chapter | Markdown in this repo | Notion page |
 |---|---|---|
-| Main page | this README | [Lusion.co Decoded](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc) |
+| Main page | this README | [Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc) |
 | 1. Stack and bundle anatomy | [01_stack_and_bundle_anatomy.md](handbook/01_stack_and_bundle_anatomy.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d8124ab68d56b80867ef5) |
 | 2. Boot sequence and main loop | [02_boot_sequence_and_main_loop.md](handbook/02_boot_sequence_and_main_loop.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d811e94b1cd6359ec9594) |
 | 3. Rendering engine and post-processing | [03_rendering_engine_and_post_processing.md](handbook/03_rendering_engine_and_post_processing.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d810bb1f9d6e4e072ee8a) |
@@ -22,15 +26,15 @@ The Notion handbook is the main, best-formatted version. This repo holds the sam
 | 9. Assets and loading | [09_assets_and_loading.md](handbook/09_assets_and_loading.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d81b397c9f275470e9b7a) |
 | 10. CSS, layout and DOM state | [10_css_layout_and_dom_state.md](handbook/10_css_layout_and_dom_state.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d81289d5ff6769e1f1d55) |
 | 11. System architecture plan and conceptual model | [11_system_architecture_plan_and_conceptual_model.md](handbook/11_system_architecture_plan_and_conceptual_model.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d81c1b174e921471bcaf6) |
-| 12. Teardown guide | [12_teardown_guide.md](handbook/12_teardown_guide.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d8160ba22f0f918a83fec) |
+| 12. Teardown guide: how to reverse engineer a site like this | [12_teardown_guide.md](handbook/12_teardown_guide.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d8160ba22f0f918a83fec) |
 | 13. Class and method inventory | [13_class_and_method_inventory.md](handbook/13_class_and_method_inventory.md) | [Notion](https://shifatmasud.notion.site/3fd48559569d81709a8ecf7dc5c65d23) |
-| 14. Special: cursor fluid trail (ScreenPaint) | [14_special_cursor_fluid_trail_screenpaint.md](handbook/14_special_cursor_fluid_trail_screenpaint.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d81a98b50c232287e3463) |
+| 14. Special: Cursor fluid trail (ScreenPaint) | [14_special_cursor_fluid_trail_screenpaint.md](handbook/14_special_cursor_fluid_trail_screenpaint.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d81a98b50c232287e3463) |
 | 15. Section-by-section screenshot atlas | [15_screenshot_atlas/](handbook/15_screenshot_atlas/15_0_overview.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d81069c7ff759ffc2bb9a) |
 | 15.1 Home | [15_1_home.md](handbook/15_screenshot_atlas/15_1_home.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d817bb6bfdc1a46b69d91) |
 | 15.2 About | [15_2_about.md](handbook/15_screenshot_atlas/15_2_about.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d810a98a2ee47788dcbb5) |
 | 15.3 Projects | [15_3_projects.md](handbook/15_screenshot_atlas/15_3_projects.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d815884e7f0f2ddd6a104) |
 | 15.4 Project page template | [15_4_project_template.md](handbook/15_screenshot_atlas/15_4_project_template.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d816381a1cb2ae37987bd) |
-| 15.5 Project pages gallery | [15_5_gallery.md](handbook/15_screenshot_atlas/15_5_gallery.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d817a9a25eb56b9252c63) |
+| 15.5 Project pages gallery (the other 18) | [15_5_gallery.md](handbook/15_screenshot_atlas/15_5_gallery.md) | [Notion](https://shifatmasud.notion.site/3fe48559569d817a9a25eb56b9252c63) |
 | Playground findings (note) | [15_6_playground_findings.md](handbook/15_screenshot_atlas/15_6_playground_findings.md) | covered in the [chapter 15 overview](https://shifatmasud.notion.site/3fe48559569d81069c7ff759ffc2bb9a) |
 
 Every chapter file starts with a **Read in Notion** link, and every Notion chapter page links back here.
@@ -64,8 +68,9 @@ The scripts were written for a one-off study and expect a local working folder w
 
 ### Notes on the Markdown
 
-- The Notion pages were built from these files and then extended. Figures added to Notion later are collected in a **Figures** section at the end of each chapter here; in Notion they sit next to the section they explain.
-- Some tables use HTML (`<table>`), and diagrams use Mermaid, which GitHub renders.
+- Each chapter file is generated from the current Notion page, so the text, tables and figures match Notion. Figures sit inline next to the section they explain, with their caption underneath.
+- Tables are GitHub Markdown tables, Notion callouts are blockquotes, and diagrams are Mermaid blocks, which GitHub renders.
+- The study archive zip on the Notion main page is not copied here; it holds Lusion's code.
 
 ## What is not in this repo, and why
 

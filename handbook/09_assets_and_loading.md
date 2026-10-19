@@ -1,12 +1,14 @@
-> **Read in Notion:** [9. Assets and loading](https://shifatmasud.notion.site/3fd48559569d81b397c9f275470e9b7a) · Part of [Lusion.co Decoded](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
+> **Read in Notion:** [9. Assets and loading](https://shifatmasud.notion.site/3fd48559569d81b397c9f275470e9b7a) · Part of [Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
 
 # 9. Assets and loading
 
-<image src="file-upload://3fd48559-569d-81fe-b667-00b2315d5842">Assets flow: one loader, many item types, weighted progress, then GPU warm-up before the site starts.</image>
+![Assets flow: one loader, many item types, weighted progress, then GPU warm-up before the site starts.](assets/09/07_assets.jpg)
+
+*Assets flow: one loader, many item types, weighted progress, then GPU warm-up before the site starts.*
 
 ## The idea in one sentence
 
-Lusion loads everything (fonts, HTML, textures, HDR maps, custom binary meshes) through **one small loader with pluggable item types**, adds shader compilation as extra "tasks", and drives the preloader counter from both, so the site only starts when the GPU is actually warm.
+Lusion loads everything (fonts, HTML, textures, HDR images, custom binary meshes) through **one small loader with pluggable item types**, adds shader compilation as extra "tasks", and drives the preloader counter from both, so the site only starts when the GPU is actually warm.
 
 ## 9.1 Boot order: fonts first, then the rest
 
@@ -31,6 +33,12 @@ app.initEngine(), input.preInit(), scrollManager.init(), pagesManager.preInit(),
 ...
 ui.preload(init, start);
 ```
+
+The same sequence as seen on the live site, from first paint to the hero:
+
+![The three-digit preloader counter (#preloader-percent-digits) climbing to 100 on lusion.co, then giving way to the hero.](assets/09/c9_preloader_strip.jpg)
+
+*The three-digit preloader counter (#preloader-percent-digits) climbing to 100 on [lusion.co](http://lusion.co), then giving way to the hero.*
 
 Why: the preloader digits use the brand font. Loading one weight first means the very first thing the visitor sees is already in the right typeface, with no flash of fallback text.
 
@@ -116,6 +124,12 @@ this._onLoading(o, e, a, 1, this.loadedWeight / this.totalWeight)
 
 So a big file can be given a bigger weight and count more on the progress bar. `postPercent` leaves room for work done after download (for example, decoding), which is folded in by `getCombinedPercent`.
 
+What the loader actually fetched on the home page, as DevTools would show it:
+
+![Network capture of the home page: 48 textures (about 6 MB), 20 .buf meshes (about 2 MB), 16 audio clips, 6 fonts, one 1.2 MB script, one EXR (matcap.exr) and a showreel video. Sizes are Content-Length; the waterfall shows the CSS and the script first, then fonts, then the burst of audio, textures and meshes.](assets/09/c9_network.png)
+
+*Network capture of the home page: 48 textures (about 6 MB), 20 .buf meshes (about 2 MB), 16 audio clips, 6 fonts, one 1.2 MB script, one EXR (matcap.exr) and a showreel video. Sizes are Content-Length; the waterfall shows the CSS and the script first, then fonts, then the burst of audio, textures and meshes.*
+
 ## 9.4 Custom binary meshes: BufItem
 
 The 3D models are not glTF. `BufItem` loads a `.buf` file as an `ArrayBuffer` with its own simple layout: a 4-byte header length, a JSON header, then raw attribute data.
@@ -149,7 +163,7 @@ flowchart LR
   F -- no --> H["geometry.setAttribute(name, itemSize)"]
 ```
 
-## 9.5 Textures and HDR maps
+## 9.5 Textures, HDR images and asset hosts
 
 `TextureItem` wraps an image in a Three.js `Texture` and sets sensible defaults, including maximum anisotropy and `flipY` unless the caller overrides them:
 
@@ -161,7 +175,7 @@ r.anisotropy = t.anisotropy || properties.renderer.capabilities.getMaxAnisotropy
 r.flipY = t.flipY === void 0 ? !0 : t.flipY;
 ```
 
-`EXRItem` hands `.exr` files (high dynamic range images, used for lighting) to Three's `EXRLoader`:
+`EXRItem` hands `.exr` files (high dynamic range images) to Three's `EXRLoader`:
 
 ```javascript
 // 131_EXRItem.js
@@ -180,11 +194,11 @@ CROSS_ORIGINS = { "https://lusion.dev/": "anonymous" };
 r.indexOf("_PATH") > -1 && ((this["LOCAL_" + r] = this[r]), (this[r] = CDN_PATH + this[r]));
 ```
 
-So assets can move to another host by changing one value, and anything loaded from lusion.dev automatically gets `crossOrigin = "anonymous"`, which WebGL needs to use an image from another origin as a texture.
+So assets can move to another host by changing one value, and anything loaded from [lusion.dev](http://lusion.dev) automatically gets `crossOrigin = "anonymous"`, which WebGL needs to use an image from another origin as a texture.
 
 ## 9.6 Shader compilation counts as loading
 
-This is the clever part. Downloading files is not the slow step on a WebGL site; compiling shaders on the GPU is. Lusion makes every material creation a *task* in a `TaskManager`:
+This is the clever part. Downloading files is not the only slow step on a WebGL site; compiling shaders on the GPU is too. Lusion makes every material creation a *task* in a `TaskManager`:
 
 ```javascript
 // 011_FboHelper.js (inside createRawShaderMaterial)
@@ -262,24 +276,16 @@ export async function loadAll(urls: string[], tasks: Array<() => Promise<void>>,
 
 ## 9.9 Confirmed vs inferred
 
-<table header-row="true">
-<tr><td>Point</td><td>Status</td><td>Evidence</td></tr>
-<tr><td>Fonts load first, then run() queues the rest</td><td>Confirmed</td><td>141_preRun.js</td></tr>
-<tr><td>Loader picks item class by type or file extension; de-duplicates by URL</td><td>Confirmed</td><td>004_QuickLoader.js</td></tr>
-<tr><td>Progress is loadedWeight / totalWeight, default weight 1</td><td>Confirmed</td><td>004_QuickLoader.js</td></tr>
-<tr><td>.buf = 4-byte length + JSON header + raw attribute arrays</td><td>Confirmed</td><td>128_BufItem.js</td></tr>
-<tr><td>Textures default to max anisotropy and flipY true</td><td>Confirmed</td><td>132_TextureItem.js</td></tr>
-<tr><td>Material creation is added to the TaskManager</td><td>Confirmed</td><td>011_FboHelper.js</td></tr>
-<tr><td>Preloader blends file progress with task progress and enforces minimum durations</td><td>Confirmed</td><td>137_Preloader.js</td></tr>
-<tr><td>The .buf files are exported by an in-house tool from their 3D software</td><td>Inferred</td><td>Format is custom; exporter not visible client-side</td></tr>
-<tr><td>The main reason for the task step is avoiding first-frame shader stutter</td><td>Inferred</td><td>Common WebGL practice; intent not stated in code</td></tr>
-</table>
-
-
-## Figures
-
-These figures were added to the Notion page after this Markdown was written. In Notion each one sits next to the section it explains, with its caption.
-
-![c9 network](assets/09/c9_network.png)
-
-![c9 preloader strip](assets/09/c9_preloader_strip.jpg)
+| Point | Status | Evidence |
+|---|---|---|
+| Fonts load first, then run() queues the rest | Confirmed | 141\_preRun.js |
+| Loader picks item class by type or file extension; de-duplicates by URL | Confirmed | 004\_QuickLoader.js |
+| Progress is loadedWeight / totalWeight, default weight 1 | Confirmed | 004\_QuickLoader.js |
+| .buf = 4-byte length + JSON header + raw attribute arrays | Confirmed | 128\_BufItem.js |
+| Textures default to max anisotropy and flipY true | Confirmed | 132\_TextureItem.js |
+| [lusion.dev](http://lusion.dev) is the one registered cross-origin host; CDN\_PATH empty in this build | Confirmed | 003\_Settings.js |
+| Material creation is added to the TaskManager | Confirmed | 011\_FboHelper.js |
+| Preloader blends file progress with task progress and enforces minimum durations | Confirmed | 137\_Preloader.js |
+| The .buf files are exported by an in-house tool from their 3D software | Inferred | Format is custom; exporter not visible client-side |
+| The main reason for the task step is avoiding first-frame shader stutter | Inferred | Common WebGL practice; intent not stated in code |
+| EXR files are used for lighting / environment maps | Inferred | Typical use of HDR images; the scenes that use them are not traced here |

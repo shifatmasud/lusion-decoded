@@ -1,4 +1,4 @@
-> **Read in Notion:** [15.6 Playground findings (note; no Notion sub-page)](https://shifatmasud.notion.site/3fe48559569d81069c7ff759ffc2bb9a) · Part of [Lusion.co Decoded](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
+> **Read in Notion:** [15.6 Playground findings (note; no Notion sub-page)](https://shifatmasud.notion.site/3fe48559569d81069c7ff759ffc2bb9a) · Part of [Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
 
 # 15.6 Playground: findings (no page created)
 

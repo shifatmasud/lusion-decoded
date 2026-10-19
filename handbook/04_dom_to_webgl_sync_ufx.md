@@ -1,16 +1,28 @@
-> **Read in Notion:** [4. DOM to WebGL sync (Ufx)](https://shifatmasud.notion.site/3fd48559569d816eb890f8d968ec1fae) · Part of [Lusion.co Decoded](https://shifatmasud.notion.site/Lusion-co-Decoded-Client-Side-Handbook-3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
+> **Read in Notion:** [4. DOM to WebGL sync (Ufx)](https://shifatmasud.notion.site/3fd48559569d816eb890f8d968ec1fae) · Part of [Lusion.co Decoded: Frontend Handbook](https://shifatmasud.notion.site/3fd48559569d81dd80b4c7407caf27cc) · [Repo home](https://github.com/shifatmasud/lusion-decoded)
 
 # 4. DOM to WebGL sync (Ufx)
 
 ![Concept: each DOM card has a GPU twin with the same rect](assets/04/03_domsync.jpg)
+
+*Concept: each DOM card has a GPU twin with the same rect*
+
 ## The idea
+
 Text and images stay in the HTML for SEO, accessibility and layout. But the pixels you see can come from **WebGL quads that copy each element's rectangle every frame**. That lets shaders dissolve, warp, color or reveal real page content. Lusion calls this system **Ufx** (UI effects).
+
+![Proof on the live home page: with the canvas hidden the project cards are empty boxes; with the HTML hidden the thumbnails remain. Pink boxes are the .project-item-main elements each UfxMesh follows.](assets/04/c4_live_ufx_cards.png)
+
+*Proof on the live home page: with the canvas hidden the project cards are empty boxes; with the HTML hidden the thumbnails remain. Pink boxes are the .project-item-main elements each UfxMesh follows.*
+
 ## The pieces
+
 - **UfxMesh**: one quad bound to one DOM element. It reads `getBoundingClientRect`-style values, converts them to pixels relative to the viewport, and tests whether the element is on screen (`testViewport`).
 - **Ufx**: a container that renders a list of UfxMeshes into the post chain.
 - **PreUfx** (`renderOrder 50`) and **PostUfx** (`100`): the two slots on either side of the fluid distortion.
 - **UfxTextMesh, text helpers and SplitType**: lines, words and characters get their own rects for staggered reveals.
+
 ## Quoted: the shared vertex chunk that maps a DOM rect to screen space
+
 ```glsl
 // shaders_by_owner/shared__ufxVert.chunk.glsl (verbatim, line breaks added)
 uniform vec3 u_position; uniform vec4 u_quaternion; uniform vec3 u_scale;
@@ -28,7 +40,32 @@ vec3 getScreenPosition(in vec3 basePos){
 }
 vec2 padUv(in vec2 uv){vec2 paddedUv=uv+mix(-u_domPadding.xz,u_domPadding.yw,uv)/u_domWH;paddedUv.y=1.-paddedUv.y;return paddedUv;}
 ```
+
 The `UfxMesh` quad shader (`UfxMesh__quadVert.vert.glsl`) includes this chunk and calls `getBasePosition`, `getScreenPosition` and `padUv`. The DOM's position and size go in as `u_domXY` and `u_domWH`. The shader scales a unit quad to that rectangle around a pivot, adds padding, can rotate and scale it with `u_quaternion` and `u_scale`, and flips Y (the DOM measures down, GL measures up) before the usual `projectionMatrix * modelViewMatrix`. This is the core trick.
+
+![The mapping drawn out: the DOM rect gives position (u_domXY) and size (u_domWH), padding grows the quad, and the Y flip moves it from CSS space into the camera's space.](assets/04/c4_dom_to_gl.png)
+
+*The mapping drawn out: the DOM rect gives position (u\_domXY) and size (u\_domWH), padding grows the quad, and the Y flip moves it from CSS space into the camera's space.*
+
+When each value is measured versus applied:
+
+```mermaid
+sequenceDiagram
+  participant DOM as DOM element
+  participant M as UfxMesh
+  participant S as scrollManager
+  participant GPU as quad shader
+  Note over DOM,M: on init, resize and layout change
+  M->>DOM: read rect (left, top, width, height)
+  M->>M: store base rect + pivot + padding
+  loop every frame
+    S->>M: current virtual scroll offset
+    M->>M: testViewport() skips off-screen meshes
+    M->>GPU: u_domXY, u_domWH, u_quaternion, u_scale
+    GPU->>GPU: getBasePosition, getScreenPosition, padUv
+  end
+```
+
 ```mermaid
 flowchart LR
   D["DOM element\n(real text/image)"] -->|rect each frame| U["UfxMesh\nu_domXY / u_domWH"]
@@ -38,11 +75,15 @@ flowchart LR
   V -- yes --> R["Ufx render\nPreUfx 50 / PostUfx 100"]
   R --> P["Post chain\n(distortion, SMAA, FSR)"]
 ```
+
 ## Why it works smoothly
+
 - Scroll is virtual (chapter 5), so the engine **knows** the scroll offset at render time. DOM and GL never drift apart the way they would with native scroll.
 - Rects are measured on resize and layout changes, and the scroll offset is added on the GPU each frame. That's cheap.
 - Elements off screen are skipped.
+
 ## Original teaching version
+
 ```javascript
 class DomQuad {
   constructor(el, material) { this.el = el; this.mat = material; this.measure(); }
@@ -50,12 +91,3 @@ class DomQuad {
   update() { const y = this.base.y - scroll.current; this.mat.uniforms.u_domXYWH.value.set(this.base.x, y, this.base.w, this.base.h); this.visible = y < innerHeight && y + this.base.h > 0; }
 }
 ```
-
-
-## Figures
-
-These figures were added to the Notion page after this Markdown was written. In Notion each one sits next to the section it explains, with its caption.
-
-![c4 dom to gl](assets/04/c4_dom_to_gl.png)
-
-![c4 live ufx cards](assets/04/c4_live_ufx_cards.png)
