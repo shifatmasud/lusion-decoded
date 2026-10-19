@@ -77,7 +77,7 @@ The following are Lusion's copyrighted work and are **deliberately left out**:
 - Lusion's assets: textures, meshes, audio, video, fonts
 - the study archive zip of all of the above
 
-Raw screenshot captures (about 90 MB of unannotated frames) are also left out for size; the annotated composites used in the chapters are included.
+Raw, unannotated screenshot captures are also left out for size; the annotated composites used in the chapters are included.
 
 ## Copyright and fair use
 
